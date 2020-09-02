@@ -1,0 +1,49 @@
+.key {
+  background-color: rgb(10, 10, 10);
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+
+.key div {
+  padding: 7px 0;
+  color: rgb(231, 231, 149);
+}
+
+.TopRow {
+  display: flex;
+  margin: 5px 0px;
+}
+
+.MidRow {
+  display: flex;
+  margin: 5px 0px;
+  margin-left: 50px;
+}
+.BottomRow {
+  display: flex;
+  margin: 5px 0px;
+  margin-left: 100px;
+}
+
+.spaceKey {
+  background-color: rgb(15, 15, 15);
+  width: 350px;
+  height: 50px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+
+.spaceKey div {
+  padding: 5px 0;
+  color: rgb(231, 231, 149);
+}
+
+.Space {
+  display: flex;
+  margin: 5px 0;
+  margin-left: 200px;
+}
