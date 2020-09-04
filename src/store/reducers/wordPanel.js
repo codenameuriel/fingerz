@@ -34,6 +34,12 @@ const reducer = (state=initialState, action) => {
         input: action.payload.input,
         typedKey: action.payload.typedKey
       };
+    case actionTypes.CLEAR_INPUT:
+      return {
+        ...state, 
+        startTime: 0,
+        input: ''
+      }
     default: return state;
   }
 };
