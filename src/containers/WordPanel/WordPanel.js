@@ -104,12 +104,12 @@ class WordPanel extends Component {
   //   });
   // }
 
-  
-
   render() {
     return (
       <div>
-        <WordList index={this.props.index} disableInput={this.props.onDisableInput}/>
+        <WordList 
+          index={this.props.index} 
+          disableInput={this.props.onDisableInput}/>
         <input 
           onChange={this.props.onHandleChange}
           disabled={this.props.disabled}

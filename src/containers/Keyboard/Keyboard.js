@@ -21,8 +21,9 @@ class Keyboard extends Component {
     switch(section) {
       case 'top':
         return (
-          TOPROWKEYS.map(key => (
-          <div className={KeyboardStyles.key}>
+          TOPROWKEYS.map((key, index) => (
+          <div key={`${key} ${index}`} className={KeyboardStyles.key}>
+
             <div 
               id={key} 
               ref={this[`${key}Key`]} 
@@ -31,8 +32,8 @@ class Keyboard extends Component {
         )));
       case 'mid':
         return (
-          MIDROWKEYS.map(key => (
-            <div className={KeyboardStyles.key}>
+          MIDROWKEYS.map((key, index) => (
+            <div key={`${key} ${index}`} className={KeyboardStyles.key}>
               <div 
                 id={key} 
                 ref={this[`${key}Key`]} 
@@ -41,8 +42,8 @@ class Keyboard extends Component {
           )));
         case 'bottom':
           return (
-            BOTTOMROWKEYS.map(key => (
-              <div className={KeyboardStyles.key}>
+            BOTTOMROWKEYS.map((key, index) => (
+              <div key={`${key} ${index}`} className={KeyboardStyles.key}>
                 <div 
                   id={key} 
                   ref={this[`${key}Key`]} 
