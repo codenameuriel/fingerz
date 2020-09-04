@@ -32,6 +32,24 @@ const clearInput = () => {
     type: actionTypes.CLEAR_INPUT
   }
 };
+
+const clearValues = () => {
+  return {
+    type: actionTypes.CLEAR_VALUES
+  }
+};
+
+const increaseIndex = () => {
+  return {
+    type: actionTypes.INCREASE_INDEX
+  }
+};
+
+export const disableInput = () => {
+  return {
+    type: actionTypes.DISABLE_INPUT
+  }
+};
  
 export const handleChange = event => {
   return dispatch => {
@@ -39,11 +57,26 @@ export const handleChange = event => {
 
     if (event.target.value !== event.target.value.trim()) {
       dispatch(clearInput());
+      dispatch(increaseIndex());
     }
-    
+
     dispatch(handleKeyPress());
+    setTimeout(() => dispatch(clearValues()), 135);
   }
 };
+
+// clearValues() {
+  //   const clearedKey = {...this.state.key};
+  //   const clearedKeyStyle = {...clearedKey.style};
+  //   clearedKey.value = '';
+  //   clearedKeyStyle.color = '';
+  //   clearedKey.style = clearedKeyStyle;
+
+  //   this.setState({
+  //     typedKey: '',
+  //     key: clearedKey
+  //   });
+  // }
 
 
 

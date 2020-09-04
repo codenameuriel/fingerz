@@ -106,13 +106,12 @@ class WordPanel extends Component {
   showWord(index) {
     const words = ['queen', 'spiritual', 'twin', 'incense', 'bowl', 'singing', 'noisy', 'sound', 'painting', 'organic'];
 
-    if (this.props.index === words.length) this.setState({index: 0});
+    if (this.props.index === words.length) this.props.onDisableInput();
 
     return words[index];
   }
 
   render() {
-    // console.log(this.props.pressedKey, 'logging key')
     return (
       <div>
         <h1 
@@ -124,7 +123,8 @@ class WordPanel extends Component {
         </h5>
 
         <input 
-          onChange={this.props.onHandleChange} 
+          onChange={this.props.onHandleChange}
+          disabled={this.props.disabled}
           type="text"
           value={this.props.input}/>
       </div>
@@ -137,7 +137,8 @@ const mapStateToProps = state => {
     startTime: state.wordPanel.startTime,
     index: state.wordPanel.index,
     input: state.wordPanel.input,
-    pressedKey: state.wordPanel.pressedKey
+    pressedKey: state.wordPanel.pressedKey,
+    disabled: state.wordPanel.disabled
   };
 };
 
@@ -145,6 +146,9 @@ const mapDispatchToProps = dispatch => {
   return {
     onHandleChange: event => {
       dispatch(actionCreators.handleChange(event));
+    },
+    onDisableInput: () => {
+      dispatch(actionCreators.disableInput());
     }
   };
 };

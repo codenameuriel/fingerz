@@ -9,7 +9,8 @@ const initialState = {
   endTime: 0,
   index: 0,
   input: '',
-  typedKey: ''
+  typedKey: '',
+  disabled: false
 };
 
 const reducer = (state=initialState, action) => {
@@ -39,7 +40,29 @@ const reducer = (state=initialState, action) => {
         ...state, 
         startTime: 0,
         input: ''
-      }
+      };
+    case actionTypes.CLEAR_VALUES:
+      const clearedKey = {...state.pressedKey};
+      const clearedKeyStyle = {...clearedKey.style};
+      clearedKey.value = '';
+      clearedKeyStyle.color = '';
+      clearedKey.style = clearedKeyStyle;
+
+      return {
+        ...state,
+        typedKey: '',
+        pressedKey: clearedKey
+      };
+    case actionTypes.INCREASE_INDEX:
+      return {
+        ...state,
+        index: state.index + 1
+      };
+    case actionTypes.DISABLE_INPUT:
+      return {
+        ...state, 
+        disabled: true
+      };
     default: return state;
   }
 };
