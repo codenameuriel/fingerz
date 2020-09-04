@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actionCreators from '../../store/actions/index';
+import WordList from '../../components/WordList/WordList';
 
 class WordPanel extends Component {
   // handleKeyPress() {
@@ -103,25 +104,12 @@ class WordPanel extends Component {
   //   });
   // }
 
-  showWord(index) {
-    const words = ['queen', 'spiritual', 'twin', 'incense', 'bowl', 'singing', 'noisy', 'sound', 'painting', 'organic'];
-
-    if (this.props.index === words.length) this.props.onDisableInput();
-
-    return words[index];
-  }
+  
 
   render() {
     return (
       <div>
-        <h1 
-          style={{marginBottom: '-20px'}}>{this.showWord(this.props.index)}
-        </h1>
-
-        <h5>
-          (Press <span style={{color: 'rgb(231, 231, 149)'}}>SPACE</span> for next word)
-        </h5>
-
+        <WordList index={this.props.index} disableInput={this.props.onDisableInput}/>
         <input 
           onChange={this.props.onHandleChange}
           disabled={this.props.disabled}
