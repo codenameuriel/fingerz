@@ -5,11 +5,13 @@
   box-sizing: border-box;
   border-radius: 5px;
   margin: 0 5px;
+  text-align: center;
 }
 
 .key div {
   padding: 7px 0;
   color: rgb(231, 231, 149);
+  margin-top: 8px;
 }
 
 .TopRow {
@@ -20,12 +22,13 @@
 .MidRow {
   display: flex;
   margin: 5px 0px;
-  margin-left: 50px;
+  margin-left: 25px;
 }
+
 .BottomRow {
   display: flex;
   margin: 5px 0px;
-  margin-left: 100px;
+  margin-left: 50px;
 }
 
 .spaceKey {
@@ -35,15 +38,17 @@
   box-sizing: border-box;
   border-radius: 5px;
   margin: 0 5px;
+  text-align: center;
 }
 
 .spaceKey div {
   padding: 5px 0;
   color: rgb(231, 231, 149);
+  margin-top: 8px;
 }
 
 .Space {
   display: flex;
   margin: 5px 0;
-  margin-left: 200px;
+  margin-left: 135px;
 }

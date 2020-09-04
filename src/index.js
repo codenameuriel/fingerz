@@ -4,17 +4,16 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import keyboardReducer from './store/reducers/keyboard';
 import wordPanelReducer from './store/reducers/wordPanel';
+import thunk from 'redux-thunk';
 
 const rootReducer = combineReducers({
-  keyboard: keyboardReducer,
   wordPanel: wordPanelReducer
 });
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 const app = (
   <Provider store={store}>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import KeyboardStyles from './Keyboard.module.css';
 import { connect } from 'react-redux';
 
 const TOPROWKEYS = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'];
@@ -21,7 +22,7 @@ class Keyboard extends Component {
       case 'top':
         return (
           TOPROWKEYS.map(key => (
-          <div className="key">
+          <div className={KeyboardStyles.key}>
             <div 
               id={key} 
               ref={this[`${key}Key`]} 
@@ -31,7 +32,7 @@ class Keyboard extends Component {
       case 'mid':
         return (
           MIDROWKEYS.map(key => (
-            <div className="key">
+            <div className={KeyboardStyles.key}>
               <div 
                 id={key} 
                 ref={this[`${key}Key`]} 
@@ -41,7 +42,7 @@ class Keyboard extends Component {
         case 'bottom':
           return (
             BOTTOMROWKEYS.map(key => (
-              <div className="key">
+              <div className={KeyboardStyles.key}>
                 <div 
                   id={key} 
                   ref={this[`${key}Key`]} 
@@ -50,7 +51,7 @@ class Keyboard extends Component {
             )));
         case 'space':
           return (
-            <div className="spaceKey">
+            <div className={KeyboardStyles.spaceKey}>
                 <div 
                   id="space"
                   ref={this.spaceKey} 
@@ -63,12 +64,13 @@ class Keyboard extends Component {
 
   setStyle(key) {
     if (key.current) {
-      if (this.props.key.value === key.current.id ) {
-        return this.props.key.style;
+      console.log(this.props.pressedKey.value)
+      if (this.props.pressedKey.value === key.current.id ) {
+        return this.props.pressedKey.style;
       }
 
-      if (this.props.key.value === ' ' && key.current.id === 'space') {
-        return this.props.key.style;
+      if (this.props.pressedKey.value === ' ' && key.current.id === 'space') {
+        return this.props.pressedKey.style;
       }
 
       else return null;
@@ -78,19 +80,19 @@ class Keyboard extends Component {
   render() {
     return (
       <div>
-        <div className="TopRow">
+        <div className={KeyboardStyles.TopRow}>
             {this.createKeyDivs('top')}
           </div>
 
-          <div className="MidRow">
+          <div className={KeyboardStyles.MidRow}>
             {this.createKeyDivs('mid')}
           </div>
 
-          <div className="BottomRow">
+          <div className={KeyboardStyles.BottomRow}>
             {this.createKeyDivs('bottom')}
           </div>
 
-          <div className="Space">
+          <div className={KeyboardStyles.Space}>
             {this.createKeyDivs('space')}
           </div>
       </div>
@@ -100,7 +102,7 @@ class Keyboard extends Component {
 
 const mapStateToProps = state => {
   return {
-    key: state.keyboard.key
+    pressedKey: state.wordPanel.pressedKey
   };
 };
 

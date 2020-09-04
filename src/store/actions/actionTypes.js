@@ -1,0 +1,2 @@
+export const HANDLE_KEY_PRESS = 'HANDLE_KEY_PRESS';
+export const HANDLE_CHANGE = 'HANDLE_CHANGE';
