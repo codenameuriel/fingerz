@@ -1,18 +1,18 @@
 import React from 'react';
 
 const WordList = props => {
-  const showWord = (index) => {
-    const words = ['queen', 'articulate', 'spiritual', 'twin', 'incense', 'bowl', 'singing', 'noisy', 'sound', 'painting', 'organic'];
+  const showWord = () => {
+    // const words = ['queen', 'articulate', 'spiritual', 'twin', 'incense', 'bowl', 'singing', 'noisy', 'sound', 'painting', 'organic'];
 
-    if (index === words.length) props.disableInput();
+    // if (index === words.length) props.disableInput();
 
-    return words[index];
+    return props.wordList[props.index];
   }
 
   return (
     <div>
       <h1 
-        style={{marginBottom: '-20px'}}>{showWord(props.index)}
+        style={{marginBottom: '-20px'}}>{showWord()}
       </h1>
 
       <h5>

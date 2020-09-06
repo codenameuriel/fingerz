@@ -52,11 +52,18 @@ export const disableInput = () => {
 };
  
 export const handleChange = event => {
-  return dispatch => {
+  return (dispatch, getState) => {
+    const {index, wordList } = getState().wordPanel;
+
     dispatch(updateStateOnChange(event));
 
     if (event.target.value !== event.target.value.trim()) {
       dispatch(clearInput());
+
+      if (index === wordList.length) {
+        dispatch(disableInput()); 
+      }
+     
       dispatch(increaseIndex());
     }
 

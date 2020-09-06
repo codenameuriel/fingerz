@@ -10,7 +10,8 @@ const initialState = {
   index: 0,
   input: '',
   typedKey: '',
-  disabled: false
+  disabled: false,
+  wordList: ['queen', 'articulate', 'spiritual', 'twin', 'incense', 'bowl', 'singing', 'noisy', 'sound', 'painting', 'organic']
 };
 
 const reducer = (state=initialState, action) => {

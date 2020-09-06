@@ -109,6 +109,7 @@ class WordPanel extends Component {
       <div>
         <WordList 
           index={this.props.index} 
+          wordList={this.props.wordList}
           disableInput={this.props.onDisableInput}/>
         <input 
           onChange={this.props.onHandleChange}
@@ -126,7 +127,8 @@ const mapStateToProps = state => {
     index: state.wordPanel.index,
     input: state.wordPanel.input,
     pressedKey: state.wordPanel.pressedKey,
-    disabled: state.wordPanel.disabled
+    disabled: state.wordPanel.disabled,
+    wordList: state.wordPanel.wordList
   };
 };
 
