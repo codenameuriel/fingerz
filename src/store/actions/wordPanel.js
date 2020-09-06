@@ -50,14 +50,61 @@ export const disableInput = () => {
     type: actionTypes.DISABLE_INPUT
   }
 };
+
+const startTime = (time) => {
+  return {
+    type: actionTypes.START_TIME,
+    payload: {
+      startTime: time
+    }
+  };
+};
+
+const endTime = (time) => {
+  return {
+    type: 'END_TIME',
+    payload: {
+      endTime: time
+    }
+  };
+};
+
+const calculateSpeed = (dispatch, time, type) => {
+  switch(type) {
+    case 'start':
+      const start = Date.now() / 1000;
+      let beginTime;
+
+      beginTime = time === 0 ? start : Math.min(time, start);
+      console.log(beginTime);
+      console.log((beginTime / 1000));
+      
+      dispatch(startTime(beginTime));
+      break;
+    case 'end':
+      const end = Date.now() / 1000;
+      console.log(end);
+      const doneTime = Math.floor((end - time));
+      console.log(doneTime.toFixed(3));
+
+      dispatch(endTime(doneTime));
+      break;
+    default:
+      return null;
+  } 
+}; 
+
  
 export const handleChange = event => {
   return (dispatch, getState) => {
-    const {index, wordList } = getState().wordPanel;
+    const {index, wordList, startTime } = getState().wordPanel;
+
+    calculateSpeed(dispatch, startTime, 'start');
 
     dispatch(updateStateOnChange(event));
 
     if (event.target.value !== event.target.value.trim()) {
+      calculateSpeed(dispatch, startTime, 'end');
       dispatch(clearInput());
 
       if (index === wordList.length) {
@@ -68,7 +115,7 @@ export const handleChange = event => {
     }
 
     dispatch(handleKeyPress());
-    setTimeout(() => dispatch(clearValues()), 135);
+    setTimeout(() => dispatch(clearValues()), 140);
   }
 };
 

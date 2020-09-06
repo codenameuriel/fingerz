@@ -65,7 +65,6 @@ class Keyboard extends Component {
 
   setStyle(key) {
     if (key.current) {
-      console.log(this.props.pressedKey.value)
       if (this.props.pressedKey.value === key.current.id ) {
         return this.props.pressedKey.style;
       }

@@ -8,12 +8,13 @@ const WordList = props => {
 
   return (
     <div className={WordListStyles.WordList}>
-      <h1 
-        style={{marginBottom: '-20px'}}>{showWord()}
-      </h1>
-
+      <div className={WordListStyles.Word}>
+        <h1 
+          style={{marginBottom: '-20px'}}>{showWord()}
+        </h1>
+      </div>
       <h5>
-        (Press <span style={{color: 'rgb(231, 231, 149)'}}>SPACE</span> for next word)
+        (press <span style={{color: 'rgb(231, 231, 149)'}}>space</span> for next word)
       </h5> 
     </div>
   );

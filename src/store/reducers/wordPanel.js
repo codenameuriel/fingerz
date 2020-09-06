@@ -11,7 +11,7 @@ const initialState = {
   input: '',
   typedKey: '',
   disabled: false,
-  wordList: ['queen', 'articulate', 'spiritual', 'twin', 'incense', 'bowl', 'singing', 'noisy', 'sound', 'painting', 'organic']
+  wordList: ['who', 'queen', 'articulate', 'spiritual', 'twin', 'incense', 'bowl', 'singing', 'noisy', 'sound', 'painting', 'organic']
 };
 
 const reducer = (state=initialState, action) => {
@@ -63,6 +63,16 @@ const reducer = (state=initialState, action) => {
       return {
         ...state, 
         disabled: true
+      };
+    case actionTypes.START_TIME:
+      return {
+        ...state,
+        startTime: action.payload.startTime
+      };
+    case actionTypes.END_TIME:
+      return {
+        ...state, 
+        endTime: action.payload.endTime
       };
     default: return state;
   }
