@@ -1,0 +1,13 @@
+.WordPanel {
+  margin-left: 20%;
+}
+
+.WordPanel input {
+  width: 30%;
+  height: 50px;
+  font-size: 35px;
+  padding: 5px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  background-color: rgb(212, 212, 212);
+}

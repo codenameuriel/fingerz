@@ -1,16 +1,13 @@
 import React from 'react';
+import WordListStyles from './WordList.module.css';
 
 const WordList = props => {
   const showWord = () => {
-    // const words = ['queen', 'articulate', 'spiritual', 'twin', 'incense', 'bowl', 'singing', 'noisy', 'sound', 'painting', 'organic'];
-
-    // if (index === words.length) props.disableInput();
-
     return props.wordList[props.index];
   }
 
   return (
-    <div>
+    <div className={WordListStyles.WordList}>
       <h1 
         style={{marginBottom: '-20px'}}>{showWord()}
       </h1>

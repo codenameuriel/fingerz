@@ -80,7 +80,7 @@ class Keyboard extends Component {
 
   render() {
     return (
-      <div>
+      <div className={KeyboardStyles.Keyboard}>
         <div className={KeyboardStyles.TopRow}>
             {this.createKeyDivs('top')}
           </div>

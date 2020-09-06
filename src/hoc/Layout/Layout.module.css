@@ -1,0 +1,6 @@
+.Layout {
+  display: flex;
+  flex-flow: column;
+  margin-left: 25%;
+  margin-top: 10%;
+}

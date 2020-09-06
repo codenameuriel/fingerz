@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actionCreators from '../../store/actions/index';
 import WordList from '../../components/WordList/WordList';
+import WordPanelStyles from './WordPanel.module.css';
 
 class WordPanel extends Component {
   // handleKeyPress() {
@@ -106,7 +107,7 @@ class WordPanel extends Component {
 
   render() {
     return (
-      <div>
+      <div className={WordPanelStyles.WordPanel}>
         <WordList 
           index={this.props.index} 
           wordList={this.props.wordList}

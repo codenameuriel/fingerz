@@ -1,7 +1,11 @@
+.Keyboard {
+  margin-top: 10%;
+}
+
 .key {
-  background-color: rgb(10, 10, 10);
-  width: 50px;
-  height: 50px;
+  background-color: rgb(8, 8, 8);
+  width: 80px;
+  height: 80px;
   box-sizing: border-box;
   border-radius: 5px;
   margin: 0 5px;
@@ -9,9 +13,11 @@
 }
 
 .key div {
-  padding: 7px 0;
+  padding: 20px;
+  height: 40px;
+  font-size: 35px;
   color: rgb(231, 231, 149);
-  margin-top: 8px;
+  border-radius: 5px;
 }
 
 .TopRow {
@@ -28,13 +34,13 @@
 .BottomRow {
   display: flex;
   margin: 5px 0px;
-  margin-left: 50px;
+  margin-left: 80px;
 }
 
 .spaceKey {
-  background-color: rgb(15, 15, 15);
-  width: 350px;
-  height: 50px;
+  background-color: rgb(8, 8, 8);
+  width: 650px;
+  height: 80px;
   box-sizing: border-box;
   border-radius: 5px;
   margin: 0 5px;
@@ -42,13 +48,15 @@
 }
 
 .spaceKey div {
-  padding: 5px 0;
+  padding: 15px;
   color: rgb(231, 231, 149);
-  margin-top: 8px;
+  height: 50px;
+  font-size: 35px;
+  border-radius: 5px;
 }
 
 .Space {
   display: flex;
-  margin: 5px 0;
-  margin-left: 135px;
+  margin: 10px 0;
+  margin-left: 205px;
 }
