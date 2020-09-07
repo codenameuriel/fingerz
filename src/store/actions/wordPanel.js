@@ -97,7 +97,7 @@ const updateSpeedCounter = (...args) => {
   const [wpmCounter, wordList, index, endTime] = args;
   const updatedCounter = {...wpmCounter};
 
-  updatedCounter[wordList[index]] = endTime;
+  updatedCounter[wordList[index]] = +(60 / endTime).toFixed(2);
   console.log(updatedCounter);
 
   return {
@@ -114,6 +114,7 @@ export const handleChange = event => {
       getState().wordPanel;
 
     const options = {};
+  
     if (index < wordList.length) {
       calculateSpeed(options, dispatch, startTime, 'start');
    
