@@ -11,14 +11,14 @@ const initialState = {
   input: '',
   typedKey: '',
   disabled: false,
-  wordList: ['who', 'queen', 'articulate', 'spiritual', 'twin', 'incense', 'bowl', 'singing', 'noisy', 'sound', 'painting', 'organic']
+  wordList: ['who', 'queen', 'articulate', 'spiritual', 'twin', 'incense', 'bowl', 'singing', 'noisy', 'sound', 'painting', 'organic'],
+  wpmCounter: {}
 };
 
 const reducer = (state=initialState, action) => {
   switch(action.type) {
     case actionTypes.HANDLE_KEY_PRESS:
       const pressedKey = {...state.pressedKey};
-      // work on this
       const pressedKeyStyle = {
         color: 'rgb(145, 82, 145)',
         backgroundColor: 'rgb(0, 0, 0)'
@@ -74,26 +74,13 @@ const reducer = (state=initialState, action) => {
         ...state, 
         endTime: action.payload.endTime
       };
+    case actionTypes.UPDATE_WPM_COUNTER:
+      return {
+        ...state, 
+        wpmCounter: action.payload.wpmCounter
+      };
     default: return state;
   }
 };
 
 export default reducer;
-
-// handleOnChange = event => {
-//   this.calculateSpeed('start');
-
-//   this.setState({
-//     input: event.target.value,
-//     typedKey: event.target.value[event.target.value.length - 1]
-//   });
-
-//   // if the SPACE key has been pressed
-//   if (event.target.value !== event.target.value.trim()) {
-//     this.calculateSpeed('end');
-//     this.clearInput();
-//   }
-
-//   this.handleKeyPress();
-//   setTimeout(() => this.clearValues(), 135);
-// }

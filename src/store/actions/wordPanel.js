@@ -18,37 +18,28 @@ const updateStateOnChange = event => {
   };
 };
 
- // clearInput() {
-  //   this.setState({
-  //     startTime: 0, 
-  //     input: ''
-  //   });
-
-  //   this.increaseIndex();
-  // }
-
 const clearInput = () => {
   return {
     type: actionTypes.CLEAR_INPUT
-  }
+  };
 };
 
 const clearValues = () => {
   return {
     type: actionTypes.CLEAR_VALUES
-  }
+  };
 };
 
 const increaseIndex = () => {
   return {
     type: actionTypes.INCREASE_INDEX
-  }
+  };
 };
 
 export const disableInput = () => {
   return {
     type: actionTypes.DISABLE_INPUT
-  }
+  };
 };
 
 const startTime = (time) => {
@@ -69,42 +60,74 @@ const endTime = (time) => {
   };
 };
 
-const calculateSpeed = (dispatch, time, type) => {
+const calcEndTimeAndWPM = (...args) => {
+  const [options, dispatch, doneTime] = args;
+  const { counter, words, index } = options;
+
+  dispatch(endTime(doneTime));
+  dispatch(updateSpeedCounter(counter, words, index, doneTime));
+}
+
+const calculateSpeed = (...args) => {
+  const [options, dispatch, time, type] = args;
+
   switch(type) {
     case 'start':
       const start = Date.now() / 1000;
       let beginTime;
 
       beginTime = time === 0 ? start : Math.min(time, start);
-      console.log(beginTime);
-      console.log((beginTime / 1000));
       
       dispatch(startTime(beginTime));
       break;
     case 'end':
       const end = Date.now() / 1000;
-      console.log(end);
-      const doneTime = Math.floor((end - time));
-      console.log(doneTime.toFixed(3));
-
-      dispatch(endTime(doneTime));
+      let doneTime = end - time;
+      let stringifiedTime = doneTime.toString().slice(0, 5);
+      doneTime = parseFloat(stringifiedTime);
+      
+      calcEndTimeAndWPM(options, dispatch, doneTime);
       break;
     default:
       return null;
   } 
-}; 
+};
 
- 
+const updateSpeedCounter = (...args) => {
+  const [wpmCounter, wordList, index, endTime] = args;
+  const updatedCounter = {...wpmCounter};
+
+  updatedCounter[wordList[index]] = endTime;
+  console.log(updatedCounter);
+
+  return {
+    type: actionTypes.UPDATE_WPM_COUNTER,
+    payload: {
+      wpmCounter: updatedCounter
+    }
+  };
+};
+
 export const handleChange = event => {
   return (dispatch, getState) => {
-    const {index, wordList, startTime } = getState().wordPanel;
+    const { index, wordList, startTime, wpmCounter } = 
+      getState().wordPanel;
 
-    calculateSpeed(dispatch, startTime, 'start');
+    const options = {};
 
+    calculateSpeed(options, dispatch, startTime, 'start');
+   
     dispatch(updateStateOnChange(event));
 
     if (event.target.value !== event.target.value.trim()) {
-      calculateSpeed(dispatch, startTime, 'end');
+      const options = {
+        counter: wpmCounter, 
+        words: wordList,
+        index: index
+      };
+
+      calculateSpeed(options, dispatch, startTime, 'end');
+      
       dispatch(clearInput());
 
       if (index === wordList.length) {
@@ -118,36 +141,3 @@ export const handleChange = event => {
     setTimeout(() => dispatch(clearValues()), 140);
   }
 };
-
-// clearValues() {
-  //   const clearedKey = {...this.state.key};
-  //   const clearedKeyStyle = {...clearedKey.style};
-  //   clearedKey.value = '';
-  //   clearedKeyStyle.color = '';
-  //   clearedKey.style = clearedKeyStyle;
-
-  //   this.setState({
-  //     typedKey: '',
-  //     key: clearedKey
-  //   });
-  // }
-
-
-
-// handleOnChange = event => {
-  //   this.calculateSpeed('start');
-
-  //   this.setState({
-  //     input: event.target.value,
-  //     typedKey: event.target.value[event.target.value.length - 1]
-  //   });
-
-  //   // if the SPACE key has been pressed
-  //   if (event.target.value !== event.target.value.trim()) {
-  //     this.calculateSpeed('end');
-  //     this.clearInput();
-  //   }
-
-  //   this.handleKeyPress();
-  //   setTimeout(() => this.clearValues(), 135);
-  // }
