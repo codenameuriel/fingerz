@@ -114,30 +114,31 @@ export const handleChange = event => {
       getState().wordPanel;
 
     const options = {};
-
-    calculateSpeed(options, dispatch, startTime, 'start');
+    if (index < wordList.length) {
+      calculateSpeed(options, dispatch, startTime, 'start');
    
-    dispatch(updateStateOnChange(event));
+      dispatch(updateStateOnChange(event));
 
-    if (event.target.value !== event.target.value.trim()) {
-      const options = {
-        counter: wpmCounter, 
-        words: wordList,
-        index: index
-      };
+      if (event.target.value !== event.target.value.trim()) {
+        const options = {
+          counter: wpmCounter, 
+          words: wordList,
+          index: index
+        };
 
-      calculateSpeed(options, dispatch, startTime, 'end');
+        calculateSpeed(options, dispatch, startTime, 'end');
+        
+        dispatch(clearInput());
+
+        if (index === wordList.length) {
+          dispatch(disableInput()); 
+        }
       
-      dispatch(clearInput());
-
-      if (index === wordList.length) {
-        dispatch(disableInput()); 
+        dispatch(increaseIndex());
       }
-     
-      dispatch(increaseIndex());
-    }
 
-    dispatch(handleKeyPress());
-    setTimeout(() => dispatch(clearValues()), 140);
-  }
+      dispatch(handleKeyPress());
+      setTimeout(() => dispatch(clearValues()), 140);
+    }
+   };
 };
