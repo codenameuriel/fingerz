@@ -1,0 +1,15 @@
+.WPMSummary {
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.Average {
+  
+  width: 35%;
+}
+
+.Review {
+  margin-left: 300px;
+  width: 25%;
+}
