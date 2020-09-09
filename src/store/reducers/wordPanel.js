@@ -11,7 +11,7 @@ const initialState = {
   input: '',
   typedKey: '',
   disabled: false,
-  wordList: ['who', 'queen', 'articulate', 'spiritual', 'twin', 'incense', 'bowl', 'singing', 'noisy', 'sound', 'painting', 'organic'],
+  wordList: ['atrocious', 'excellent', 'articulate', 'spiritual', 'always', 'incense', 'basketball', 'singing', 'noisy', 'reverberate', 'painting', 'organic'],
   wpmCounter: {}
 };
 

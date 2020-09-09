@@ -7,6 +7,10 @@ import WPMSummary from '../../components/WPMSummary/WPMSummary';
 import Button from '../../components/UI/Button/Button';
 
 class WordPanel extends Component {
+  componentDidMount() {
+    this.inputElement.focus();
+  }
+
   showDisplay() {
     if (this.props.index < this.props.wordList.length) {
       return (
@@ -19,7 +23,8 @@ class WordPanel extends Component {
             onChange={this.props.onHandleChange}
             disabled={this.props.disabled}
             type="text"
-            value={this.props.input}/>
+            value={this.props.input}
+            ref={inputElement => this.inputElement = inputElement}/>
         </div>
       );
     } 
