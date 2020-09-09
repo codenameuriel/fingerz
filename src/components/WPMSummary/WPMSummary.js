@@ -12,7 +12,7 @@ const WPMSummary = props => {
       
       const scoreDisplay = (
         <div className={WPMSummaryStyles.WordWPM}>
-          <p>{`${key}:   ${score}`}</p>
+          <p><span style={{color: 'white'}}>{`${key}`}</span>: {`${score}`}</p>
         </div>
       );
       
