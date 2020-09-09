@@ -11,8 +11,8 @@ const WPMSummary = props => {
       const score = parseInt(props.wpmCounter[key].toString().split('.')[0]);
       
       const scoreDisplay = (
-        <div>
-          <p>{`${key}: ${score}`}</p>
+        <div className={WPMSummaryStyles.WordWPM}>
+          <p>{`${key}:   ${score}`}</p>
         </div>
       );
       
@@ -31,7 +31,7 @@ const WPMSummary = props => {
 
     const averageWPM = Math.floor(parseFloat((total / Object.keys(props.wpmCounter).length).toFixed(2)));
 
-    return averageWPM; 
+    return <p>{averageWPM}</p>; 
   };
   
   return (
@@ -40,16 +40,16 @@ const WPMSummary = props => {
         <div>
           <h1>WPM Per Word</h1> 
         </div>
-        <div>
+        <div className={WPMSummaryStyles.WordSummary}>
           {renderWordSummary()}
         </div>
       </div> 
 
       <div className={WPMSummaryStyles.Average}>
-        <div>
+        <div className={WPMSummaryStyles.ScoreHeader}>
           <h1>Average WPM</h1>
         </div>
-        <div>
+        <div className={WPMSummaryStyles.Score}>
           {renderAverageWPM()}
         </div>
       </div>

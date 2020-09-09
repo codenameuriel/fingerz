@@ -1,16 +1,13 @@
-.WordList h1 {
-  /* margin-left: 75px; */
-  font-size: 60px;
+.Word {
+  font-size: 30px;
   color: white;
+  text-align: center;
+  background-color: black;
+  width: 300px;
 }
 
 .WordList h5 {
-  margin-left: 13px;
   font-size: 25px;
   color: white;
-}
-
-.Word {
   text-align: center;
-  width: 30%;
 }

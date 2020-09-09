@@ -1,9 +1,15 @@
 .Keyboard {
-  margin-top: 10%;
+  margin-top: 5%;
+  padding: 10px 0;
+  background-color: rgb(22, 22, 41);
+  width: 65%;
+  align-items: center;
+  display: flex;
+  flex-flow: column;
+  border-radius: 5px;
 }
 
-.key {
-  /* background-color: rgb(8, 8, 8); */
+.key { 
   background-color: rgb(0, 0, 0);
   width: 80px;
   height: 80px;
@@ -39,7 +45,6 @@
 }
 
 .spaceKey {
-  /* background-color: rgb(8, 8, 8); */
   background-color: black;
   width: 650px;
   height: 80px;
