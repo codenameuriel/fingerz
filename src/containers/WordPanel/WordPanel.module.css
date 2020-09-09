@@ -1,5 +1,7 @@
 .WordPanel {
   margin-left: 20%;
+  display: flex;
+  flex-flow: column;
 }
 
 .WPMSummary {
@@ -21,4 +23,20 @@
 
 .WordPanel input:focus {
   outline: none;
+}
+
+.WPMSummary button {
+  margin-left: 750px;
+  margin-top: 30px;
+  background-color: rgb(185, 182, 141);
+  color: black;
+  font-size: 20px;
+  border: none;
+  width: 100px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+.WPMSummary button:hover {
+  background-color:rgb(231, 231, 149); 
 }

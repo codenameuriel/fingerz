@@ -28,7 +28,9 @@ class WordPanel extends Component {
       return (
         <div className={WordPanelStyles.WPMSummary}>
           <WPMSummary wpmCounter={this.props.wpmCounter}/>
-          <Button text="Reset" handleClick={this.props.onRestartTest}/>
+          <Button
+            text="Restart" 
+            handleClick={this.props.onRestartTest}/>
         </div>
       );
     }

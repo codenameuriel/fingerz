@@ -38,7 +38,7 @@ const WPMSummary = props => {
     <div className={WPMSummaryStyles.WPMSummary}>
       <div className={WPMSummaryStyles.Review}>
         <div>
-          <h1>Word Per Minute Review</h1> 
+          <h1>WPM Per Word</h1> 
         </div>
         <div>
           {renderWordSummary()}
