@@ -5,10 +5,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
-  background-color: rgb(31, 0, 27);
+  background-color: rgb(26, 0, 22);
+  /* font-family: 'Long Cang', cursive; */
+  font-family: 'Architects Daughter', cursive;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+button {
+  font-family: inherit;
 }

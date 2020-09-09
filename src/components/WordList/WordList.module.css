@@ -1,9 +1,9 @@
 .Word {
-  font-size: 30px;
+  font-size: 28px;
   color: white;
   text-align: center;
   background-color: black;
-  width: 300px;
+  width: 350px;
 }
 
 .WordList h5 {
