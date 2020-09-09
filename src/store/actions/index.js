@@ -1,1 +1,1 @@
-export { handleChange, disableInput } from './wordPanel';
+export { handleChange, disableInput, restartTest } from './wordPanel';

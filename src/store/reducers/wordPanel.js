@@ -79,6 +79,19 @@ const reducer = (state=initialState, action) => {
         ...state, 
         wpmCounter: action.payload.wpmCounter
       };
+    case actionTypes.RESTART_TEST:
+      const restartPressedKey = {...state.pressedKey};
+      const restartPressedKeyStyle = {};
+      restartPressedKey.value = '';
+      restartPressedKey.style = restartPressedKeyStyle;
+      
+      return {
+        ...state,
+        pressedKey: restartPressedKey,
+        endTime: 0,
+        index: 0,
+        wpmCounter: {}
+      }
     default: return state;
   }
 };

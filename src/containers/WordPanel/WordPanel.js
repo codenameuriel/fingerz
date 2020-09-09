@@ -4,6 +4,7 @@ import * as actionCreators from '../../store/actions/index';
 import WordList from '../../components/WordList/WordList';
 import WordPanelStyles from './WordPanel.module.css';
 import WPMSummary from '../../components/WPMSummary/WPMSummary';
+import Button from '../../components/UI/Button/Button';
 
 class WordPanel extends Component {
   showDisplay() {
@@ -27,6 +28,7 @@ class WordPanel extends Component {
       return (
         <div className={WordPanelStyles.WPMSummary}>
           <WPMSummary wpmCounter={this.props.wpmCounter}/>
+          <Button text="Reset" handleClick={this.props.onRestartTest}/>
         </div>
       );
     }
@@ -60,6 +62,9 @@ const mapDispatchToProps = dispatch => {
     },
     onDisableInput: () => {
       dispatch(actionCreators.disableInput());
+    },
+    onRestartTest: () => {
+      dispatch(actionCreators.restartTest());
     }
   };
 };

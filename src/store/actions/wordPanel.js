@@ -143,3 +143,9 @@ export const handleChange = event => {
     }
    };
 };
+
+export const restartTest = () => {
+  return {
+    type: actionTypes.RESTART_TEST
+  };
+};
