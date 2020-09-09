@@ -124,9 +124,11 @@ const checkForTypo = (...args) => {
   const [dispatch, words, index, input] = args;
 
   if (words[index][input.length - 1] !== input[input.length -1]) {
-    console.log('you have a typo');
+    console.log('you have a typo', input);
     dispatch(showInputError());
-  } else {
+  } 
+
+  if (words[index][input.length -1] === input[input.length -1] || input[input.length - 1] === ' ') {
     dispatch(clearInputError());
   }
 };
