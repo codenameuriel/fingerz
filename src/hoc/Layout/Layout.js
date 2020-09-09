@@ -6,8 +6,8 @@ import LayoutStyles from './Layout.module.css';
 const Layout = () => {
   return (
     <div className={LayoutStyles.Layout}>
-      <WordPanel />
-      <Keyboard />
+        <WordPanel />
+        <Keyboard />
     </div>
   );
 }

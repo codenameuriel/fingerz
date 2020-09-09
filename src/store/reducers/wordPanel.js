@@ -12,7 +12,8 @@ const initialState = {
   typedKey: '',
   disabled: false,
   wordList: ['atrocious', 'excellent', 'articulate', 'spiritual', 'always', 'incense', 'basketball', 'singing', 'noisy', 'reverberate', 'painting', 'organic'],
-  wpmCounter: {}
+  wpmCounter: {},
+  showInputError: false
 };
 
 const reducer = (state=initialState, action) => {
@@ -92,6 +93,16 @@ const reducer = (state=initialState, action) => {
         index: 0,
         wpmCounter: {}
       }
+    case actionTypes.SHOW_INPUT_ERROR:
+      return {
+        ...state,
+        showInputError: true
+      };
+    case actionTypes.CLEAR_INPUT_ERROR:
+      return {
+        ...state, 
+        showInputError: false
+      };
     default: return state;
   }
 };

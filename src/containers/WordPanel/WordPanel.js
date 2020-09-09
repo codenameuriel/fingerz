@@ -22,6 +22,7 @@ class WordPanel extends Component {
           <input 
             onChange={this.props.onHandleChange}
             disabled={this.props.disabled}
+            style={this.props.showInputError ? {backgroundColor: 'red'} : null}
             type="text"
             value={this.props.input}
             ref={inputElement => this.inputElement = inputElement}/>
@@ -58,7 +59,8 @@ const mapStateToProps = state => {
     pressedKey: state.wordPanel.pressedKey,
     disabled: state.wordPanel.disabled,
     wordList: state.wordPanel.wordList,
-    wpmCounter: state.wordPanel.wpmCounter
+    wpmCounter: state.wordPanel.wpmCounter,
+    showInputError: state.wordPanel.showInputError
   };
 };
 

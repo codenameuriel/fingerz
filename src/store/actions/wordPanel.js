@@ -108,6 +108,29 @@ const updateSpeedCounter = (...args) => {
   };
 };
 
+const showInputError = () => {
+  return {
+    type: actionTypes.SHOW_INPUT_ERROR
+  };
+};
+
+const clearInputError = () => {
+  return {
+    type: actionTypes.CLEAR_INPUT_ERROR
+  };
+};
+
+const checkForTypo = (...args) => {
+  const [dispatch, words, index, input] = args;
+
+  if (words[index][input.length - 1] !== input[input.length -1]) {
+    console.log('you have a typo');
+    dispatch(showInputError());
+  } else {
+    dispatch(clearInputError());
+  }
+};
+
 export const handleChange = event => {
   return (dispatch, getState) => {
     const { index, wordList, startTime, wpmCounter } = 
@@ -119,7 +142,9 @@ export const handleChange = event => {
       calculateSpeed(options, dispatch, startTime, 'start');
    
       dispatch(updateStateOnChange(event));
-
+ 
+      checkForTypo(dispatch, wordList, index, event.target.value);
+    
       if (event.target.value !== event.target.value.trim()) {
         const options = {
           counter: wpmCounter, 

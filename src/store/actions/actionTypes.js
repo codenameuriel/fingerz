@@ -8,3 +8,5 @@ export const START_TIME = 'START_TIME';
 export const END_TIME = 'END_TIME';
 export const UPDATE_WPM_COUNTER = 'UPDATE_WPM_COUNTER';
 export const RESTART_TEST = 'RESTART_TEST';
+export const SHOW_INPUT_ERROR = 'SHOW_INPUT_ERROR';
+export const CLEAR_INPUT_ERROR = 'CLEAR_INPUT_ERROR';
