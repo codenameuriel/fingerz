@@ -41,17 +41,18 @@
 .BottomRow {
   display: flex;
   margin: 5px 0px;
-  margin-left: 80px;
+  margin-left: -50px;
 }
 
 .spaceKey {
   background-color: black;
-  width: 650px;
+  width: 525px;
   height: 80px;
   box-sizing: border-box;
   border-radius: 5px;
   margin: 0 5px;
   text-align: center;
+  margin-left: -60px;
 }
 
 .spaceKey div {

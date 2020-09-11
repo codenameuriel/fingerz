@@ -1,5 +1,4 @@
 // wordPanel action creators
-
 import * as actionTypes from './actionTypes';
 
 const handleKeyPress = () => {
@@ -122,20 +121,22 @@ const clearInputError = () => {
 
 const checkForTypo = (...args) => {
   const [dispatch, words, index, input] = args;
+  const currentChar = [input.length - 1];
 
-  if (words[index][input.length - 1] !== input[input.length -1]) {
-    console.log('you have a typo', input);
+  if (words[index][currentChar] !== input[currentChar] && input.length !== 0) {
     dispatch(showInputError());
-  } 
-
-  if (words[index][input.length -1] === input[input.length -1] || input[input.length - 1] === ' ') {
-    dispatch(clearInputError());
   }
+
+  if (input.length === 0) dispatch(clearInputError());
+
+  if (words[index][currentChar] === input[currentChar] || input[currentChar] === ' ') {
+    dispatch(clearInputError());
+  } 
 };
 
 export const handleChange = event => {
   return (dispatch, getState) => {
-    const { index, wordList, startTime, wpmCounter } = 
+    const { index, wordList, startTime, wpmCounter, typoCounter } = 
       getState().wordPanel;
 
     const options = {};
@@ -145,7 +146,7 @@ export const handleChange = event => {
    
       dispatch(updateStateOnChange(event));
  
-      checkForTypo(dispatch, wordList, index, event.target.value);
+      checkForTypo(dispatch, wordList, index, event.target.value, typoCounter);
     
       if (event.target.value !== event.target.value.trim()) {
         const options = {

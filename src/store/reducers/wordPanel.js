@@ -13,7 +13,8 @@ const initialState = {
   disabled: false,
   wordList: ['atrocious', 'excellent', 'articulate', 'spiritual', 'always', 'incense', 'basketball', 'singing', 'noisy', 'reverberate', 'painting', 'organic'],
   wpmCounter: {},
-  showInputError: false
+  showInputError: false,
+  typoCounter: []
 };
 
 const reducer = (state=initialState, action) => {
