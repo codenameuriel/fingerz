@@ -11,6 +11,10 @@ class WordPanel extends Component {
     this.inputElement.focus();
   }
 
+  componentDidUpdate() {
+    if (this.inputElement) this.inputElement.focus();
+  }
+
   showDisplay() {
     if (this.props.index < this.props.wordList.length) {
       return (
