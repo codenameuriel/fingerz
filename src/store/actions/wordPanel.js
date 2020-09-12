@@ -92,6 +92,7 @@ const calculateSpeed = (...args) => {
   } 
 };
 
+
 const updateSpeedCounter = (...args) => {
   const [wpmCounter, wordList, index, endTime] = args;
   const updatedCounter = {...wpmCounter};
@@ -121,17 +122,22 @@ const clearInputError = () => {
 
 const checkForTypo = (...args) => {
   const [dispatch, words, index, input] = args;
-  const currentChar = [input.length - 1];
+  const lastChar = [input.length - 1];
 
-  if (words[index][currentChar] !== input[currentChar] && input.length !== 0) {
-    dispatch(showInputError());
+  let isTypedCorrectly = true;
+  let isTypedIncorrectly = false;
+
+  for (let i = 0; i < input.length; i++) {
+    if (words[index][i] !== input[i]) isTypedIncorrectly = true;
   }
 
-  if (input.length === 0) dispatch(clearInputError());
+  if (isTypedCorrectly && isTypedIncorrectly) dispatch(showInputError());
 
-  if (words[index][currentChar] === input[currentChar] || input[currentChar] === ' ') {
+  if (input.length === 0 || input[lastChar] === ' ') {
     dispatch(clearInputError());
-  } 
+  }
+
+  if (isTypedCorrectly && !isTypedIncorrectly) dispatch(clearInputError());
 };
 
 export const handleChange = event => {
