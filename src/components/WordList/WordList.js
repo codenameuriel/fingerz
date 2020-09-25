@@ -2,21 +2,33 @@ import React from 'react';
 import WordListStyles from './WordList.module.css';
 
 const WordList = props => {
-  const selectNineWords = arr => {
-    const selection = arr.filter((word, index) => {
-      return index <= 8;
-    });
+  const createWordRows = arr => {
+    const WORDSPERROW = 3;
+    const wordMatrix = [];
+    let wordRow = [];
 
-    return selection;
+    for (let word of arr) {
+      if (wordRow.length !== WORDSPERROW) wordRow.push(word);
+      if (wordRow.length === WORDSPERROW) {
+        wordMatrix.push(wordRow);
+        wordRow = [];
+      }
+    }
+
+    console.log(wordMatrix);
   }
 
   // once the words are selected
   // need to store in state a word list that excludes the words selected
 
+  // thinking that WordList should be a class component to connect to Redux store to store/dispatch newly updated word list
+  // also to retrieve that updated word list to continue rendering after the last word of the previously selected words is typed
+
   const showWord = () => {
     // return props.wordList[props.index];
   
-    return selectNineWords(props.wordList).join(' ');
+    createWordRows(props.wordList);
+    return props.wordList[props.index];
   }
 
   return (
