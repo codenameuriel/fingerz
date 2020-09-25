@@ -31,9 +31,13 @@ class WordList extends Component {
       return (
         <div className={WordListStyles.WordsContainer}>
           <div className={WordListStyles.WordRowOne}>
-            {this.props.matrix[this.props.wordRowIndex].map(word => {
+            {this.props.matrix[this.props.wordRowIndex].map((word, index) => {
               return (
-                <div className={WordListStyles.Word}>
+                <div 
+                  className={WordListStyles.Word}
+                  id={index}
+                  style={this.props.index === index ? 
+                    {backgroundColor: 'rgb(185, 182, 141)'} : null}>
                   <h1>{word}</h1>
                 </div>
               );
@@ -48,9 +52,6 @@ class WordList extends Component {
               );
             })}
           </div>
-          
-          {/* <h1>{this.props.matrix[this.props.wordRowIndex].join(' ')}</h1> */}
-          {/* <h1>{this.props.matrix[this.props.wordRowIndex + 1].join(' ')}</h1> */}
         </div>
       );
     }
