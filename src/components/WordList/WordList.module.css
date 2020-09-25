@@ -1,9 +1,19 @@
-.Word {
+.WordsContainer {
   color: white;
   text-align: center;
   background-color: black;
   /* width: 350px; */
-  padding: 0px 20px 15px 20px;
+  padding: 0 0 12px 0;
+}
+
+.WordRowOne {
+  display: flex;
+  flex-direction: row;
+}
+
+.WordRowTwo {
+  display: flex;
+  flex-direction: row;
 }
 
 .WordList h5 {
@@ -13,6 +23,6 @@
 }
 
 .Word h1 {
-  margin: 0;
-  font-size: 50px;
+  margin: 0 25px 0 25px;
+  font-size: 45px;
 }

@@ -6,7 +6,7 @@ import * as actionCreators from '../../store/actions/index';
 class WordList extends Component {
   componentDidMount() {
     const wordMatrix = this.createWordRows(this.props.wordList);
-    // console.log(wordMatrix);
+
     this.props.onGenerateMatrix(wordMatrix);
   }
   
@@ -24,27 +24,43 @@ class WordList extends Component {
     }
 
     return wordMatrix;
-    // console.log(wordMatrix);
   }
 
   renderWords = () => {
     if (this.props.matrix.length !== 0) {
-    return (
-      <div className={WordListStyles.Word}>
-        <h1>{this.props.matrix[0].join(' ')}</h1>
-        <h1>{this.props.matrix[1].join(' ')}</h1>
-      </div>
-    );
+      return (
+        <div className={WordListStyles.WordsContainer}>
+          <div className={WordListStyles.WordRowOne}>
+            {this.props.matrix[this.props.wordRowIndex].map(word => {
+              return (
+                <div className={WordListStyles.Word}>
+                  <h1>{word}</h1>
+                </div>
+              );
+            })}
+          </div>
+          <div className={WordListStyles.WordRowTwo}>
+            {this.props.matrix[this.props.wordRowIndex + 1].map(word => {
+              return (
+                <div className={WordListStyles.Word}>
+                  <h1>{word}</h1>
+                </div>
+              );
+            })}
+          </div>
+          
+          {/* <h1>{this.props.matrix[this.props.wordRowIndex].join(' ')}</h1> */}
+          {/* <h1>{this.props.matrix[this.props.wordRowIndex + 1].join(' ')}</h1> */}
+        </div>
+      );
     }
   }
 
   showWord = () => {
-    // return props.wordList[props.index];
-  
-    // this.createWordRows(this.props.wordList);
     // return this.props.wordList[this.props.index];
-    console.log(this.props.matrix[this.props.wordRowIndex]);
-    if (this.props.matrix.length !== 0) return this.props.matrix[this.props.wordRowIndex].join(' ');
+    if (this.props.matrix.length !== 0) {
+      return this.props.matrix[this.props.wordRowIndex].join(' ');
+    }
   }
 
   render() {
