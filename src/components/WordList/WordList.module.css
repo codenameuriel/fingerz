@@ -1,13 +1,18 @@
 .Word {
-  font-size: 28px;
   color: white;
   text-align: center;
   background-color: black;
-  width: 350px;
+  /* width: 350px; */
+  padding: 0px 20px 15px 20px;
 }
 
 .WordList h5 {
   font-size: 25px;
   color: white;
   text-align: center;
+}
+
+.Word h1 {
+  margin: 0;
+  font-size: 50px;
 }

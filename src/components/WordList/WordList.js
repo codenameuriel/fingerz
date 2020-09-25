@@ -6,7 +6,7 @@ import * as actionCreators from '../../store/actions/index';
 class WordList extends Component {
   componentDidMount() {
     const wordMatrix = this.createWordRows(this.props.wordList);
-    console.log(wordMatrix);
+    // console.log(wordMatrix);
     this.props.onGenerateMatrix(wordMatrix);
   }
   
@@ -27,21 +27,35 @@ class WordList extends Component {
     // console.log(wordMatrix);
   }
 
+  renderWords = () => {
+    if (this.props.matrix.length !== 0) {
+    return (
+      <div className={WordListStyles.Word}>
+        <h1>{this.props.matrix[0].join(' ')}</h1>
+        <h1>{this.props.matrix[1].join(' ')}</h1>
+      </div>
+    );
+    }
+  }
+
   showWord = () => {
     // return props.wordList[props.index];
   
     // this.createWordRows(this.props.wordList);
-    return this.props.wordList[this.props.index];
+    // return this.props.wordList[this.props.index];
+    console.log(this.props.matrix[this.props.wordRowIndex]);
+    if (this.props.matrix.length !== 0) return this.props.matrix[this.props.wordRowIndex].join(' ');
   }
 
   render() {
     return (
       <div className={WordListStyles.WordList}>
-        <div className={WordListStyles.Word}>
+        {/* <div className={WordListStyles.Word}>
           <h1 
             style={{marginBottom: '-20px'}}>{this.showWord()}
           </h1>
-        </div>
+        </div> */}
+        {this.renderWords()}
         <h5>
           (press <span style={{color: 'rgb(231, 231, 149)'}}>space</span> for next word)
         </h5> 
@@ -53,7 +67,9 @@ class WordList extends Component {
 const mapStateToProps = state => {
   return {
     wordList: state.wordPanel.wordList,
-    index: state.wordPanel.index
+    index: state.wordPanel.index,
+    matrix: state.wordList.matrix,
+    wordRowIndex: state.wordList.wordRowIndex
   }
 };
 
