@@ -3,6 +3,11 @@ import WordListStyles from './WordList.module.css';
 import { connect } from 'react-redux';
 
 class WordList extends Component {
+  componentDidMount() {
+    const wordMatrix = this.createWordRows(this.props.wordList);
+    console.log(wordMatrix);
+  }
+  
   createWordRows = arr => {
     const WORDSPERROW = 3;
     const wordMatrix = [];
@@ -16,19 +21,14 @@ class WordList extends Component {
       }
     }
 
-    console.log(wordMatrix);
+    return wordMatrix;
+    // console.log(wordMatrix);
   }
-
-  // once the words are selected
-  // need to store in state a word list that excludes the words selected
-
-  // thinking that WordList should be a class component to connect to Redux store to store/dispatch newly updated word list
-  // also to retrieve that updated word list to continue rendering after the last word of the previously selected words is typed
 
   showWord = () => {
     // return props.wordList[props.index];
   
-    this.createWordRows(this.props.wordList);
+    // this.createWordRows(this.props.wordList);
     return this.props.wordList[this.props.index];
   }
 
