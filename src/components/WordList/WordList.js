@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import WordListStyles from './WordList.module.css';
+import { connect } from 'react-redux';
 
 class WordList extends Component {
   createWordRows = arr => {
@@ -47,4 +48,11 @@ class WordList extends Component {
   }
 }
 
-export default WordList;
+const mapStateToProps = state => {
+  return {
+    wordList: state.wordPanel.wordList,
+    index: state.wordPanel.index
+  }
+};
+
+export default connect(mapStateToProps)(WordList);

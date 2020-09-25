@@ -20,8 +20,6 @@ class WordPanel extends Component {
       return (
         <div className={WordPanelStyles.WordPanel}>
          <WordList 
-            index={this.props.index} 
-            wordList={this.props.wordList}
             disableInput={this.props.onDisableInput}/>
           <input 
             onChange={this.props.onHandleChange}
