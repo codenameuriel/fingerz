@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import WordListStyles from './WordList.module.css';
 
-const WordList = props => {
-  const createWordRows = arr => {
+class WordList extends Component {
+  createWordRows = arr => {
     const WORDSPERROW = 3;
     const wordMatrix = [];
     let wordRow = [];
@@ -24,25 +24,27 @@ const WordList = props => {
   // thinking that WordList should be a class component to connect to Redux store to store/dispatch newly updated word list
   // also to retrieve that updated word list to continue rendering after the last word of the previously selected words is typed
 
-  const showWord = () => {
+  showWord = () => {
     // return props.wordList[props.index];
   
-    createWordRows(props.wordList);
-    return props.wordList[props.index];
+    this.createWordRows(this.props.wordList);
+    return this.props.wordList[this.props.index];
   }
 
-  return (
-    <div className={WordListStyles.WordList}>
-      <div className={WordListStyles.Word}>
-        <h1 
-          style={{marginBottom: '-20px'}}>{showWord()}
-        </h1>
+  render() {
+    return (
+      <div className={WordListStyles.WordList}>
+        <div className={WordListStyles.Word}>
+          <h1 
+            style={{marginBottom: '-20px'}}>{this.showWord()}
+          </h1>
+        </div>
+        <h5>
+          (press <span style={{color: 'rgb(231, 231, 149)'}}>space</span> for next word)
+        </h5> 
       </div>
-      <h5>
-        (press <span style={{color: 'rgb(231, 231, 149)'}}>space</span> for next word)
-      </h5> 
-    </div>
-  );
+    );
+  }
 }
 
 export default WordList;
