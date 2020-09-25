@@ -2,8 +2,21 @@ import React from 'react';
 import WordListStyles from './WordList.module.css';
 
 const WordList = props => {
+  const selectNineWords = arr => {
+    const selection = arr.filter((word, index) => {
+      return index <= 8;
+    });
+
+    return selection;
+  }
+
+  // once the words are selected
+  // need to store in state a word list that excludes the words selected
+
   const showWord = () => {
-    return props.wordList[props.index];
+    // return props.wordList[props.index];
+  
+    return selectNineWords(props.wordList).join(' ');
   }
 
   return (
