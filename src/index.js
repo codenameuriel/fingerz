@@ -7,6 +7,7 @@ import * as serviceWorker from './serviceWorker';
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import wordPanelReducer from './store/reducers/wordPanel';
+import wordListReducer from './store/reducers/wordList';
 import thunk from 'redux-thunk';
 
 const composeEnhancers = (
@@ -14,7 +15,8 @@ const composeEnhancers = (
 );
 
 const rootReducer = combineReducers({
-  wordPanel: wordPanelReducer
+  wordPanel: wordPanelReducer,
+  wordList: wordListReducer
 });
 
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));

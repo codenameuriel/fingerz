@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import WordListStyles from './WordList.module.css';
 import { connect } from 'react-redux';
+import * as actionCreators from '../../store/actions/index';
 
 class WordList extends Component {
   componentDidMount() {
     const wordMatrix = this.createWordRows(this.props.wordList);
     console.log(wordMatrix);
+    this.props.onGenerateMatrix(wordMatrix);
   }
   
   createWordRows = arr => {
@@ -55,4 +57,10 @@ const mapStateToProps = state => {
   }
 };
 
-export default connect(mapStateToProps)(WordList);
+const mapDispatchToProps = dispatch => {
+  return {
+    onGenerateMatrix: matrix => dispatch(actionCreators.generateWordMatrix(matrix))
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(WordList);

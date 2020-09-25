@@ -12,5 +12,8 @@ const reducer = (state=initialState, action) => {
         ...state,
         matrix: action.payload.matrix
       }
+    default: return state;
   }
 };
+
+export default reducer;
