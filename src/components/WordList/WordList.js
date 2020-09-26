@@ -85,8 +85,8 @@ const mapStateToProps = state => {
   return {
     wordList: state.wordPanel.wordList,
     index: state.wordPanel.index,
-    matrix: state.wordList.matrix,
-    wordRowIndex: state.wordList.wordRowIndex
+    matrix: state.wordPanel.matrix,
+    wordRowIndex: state.wordPanel.wordRowIndex
   }
 };
 

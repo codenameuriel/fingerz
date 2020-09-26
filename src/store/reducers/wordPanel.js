@@ -14,7 +14,9 @@ const initialState = {
   wordList: ['atrocious', 'excellent', 'articulate', 'spiritual', 'always', 'incense', 'basketball', 'singing', 'noisy', 'reverberate', 'painting', 'organic'],
   wpmCounter: {},
   showInputError: false,
-  typoCounter: []
+  typoCounter: [],
+  wordRowIndex: 0,
+  matrix: []
 };
 
 const reducer = (state=initialState, action) => {
@@ -59,7 +61,7 @@ const reducer = (state=initialState, action) => {
     case actionTypes.INCREASE_INDEX:
       return {
         ...state,
-        index: state.index + 1
+        index: action.payload.index
       };
     case actionTypes.DISABLE_INPUT:
       return {
@@ -104,6 +106,16 @@ const reducer = (state=initialState, action) => {
         ...state, 
         showInputError: false
       };
+    case actionTypes.LOADNEXTWORDROW:
+      return {
+        ...state,
+        wordRowIndex: state.wordRowIndex + 1
+      }
+     case actionTypes.GENERATEWORDMATRIX: 
+      return {
+        ...state,
+        matrix: action.payload.matrix
+      }
     default: return state;
   }
 };

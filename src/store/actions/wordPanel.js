@@ -29,9 +29,15 @@ const clearValues = () => {
   };
 };
 
-const increaseIndex = () => {
+const increaseIndex = (index) => {
+  if (index === 2) index = 0;
+  else index = index + 1;
+
   return {
-    type: actionTypes.INCREASE_INDEX
+    type: actionTypes.INCREASE_INDEX,
+    payload: {
+      index: index
+    }
   };
 };
 
@@ -140,36 +146,67 @@ const checkForTypo = (...args) => {
   if (isTypedCorrectly && !isTypedIncorrectly) dispatch(clearInputError());
 };
 
+const loadNextWordRow = () => {
+  return {
+    type: actionTypes.LOADNEXTWORDROW
+  }
+};
+
+export const generateWordMatrix = wordMatrix => {
+  return {
+    type: actionTypes.GENERATEWORDMATRIX,
+    payload: {
+      matrix: wordMatrix
+    }
+  };
+};
+
 export const handleChange = event => {
   return (dispatch, getState) => {
-    const { index, wordList, startTime, wpmCounter, typoCounter } = 
+    // added matrix and wordRowIndex
+    const { index, wordList, matrix, startTime, wpmCounter, typoCounter, wordRowIndex } = 
       getState().wordPanel;
 
     const options = {};
-  
-    if (index < wordList.length) {
+ 
+    // if still typing words
+    // comparison needs to change to matrix[wordRowIndex].length
+    // if (index < wordList.length) {
+      if (index < matrix[wordRowIndex].length) {
       calculateSpeed(options, dispatch, startTime, 'start');
    
       dispatch(updateStateOnChange(event));
  
-      checkForTypo(dispatch, wordList, index, event.target.value, typoCounter);
-    
+      // changed wordList for matrix[wordRowIndex]
+      checkForTypo(dispatch, matrix[wordRowIndex], index, event.target.value, typoCounter);
+   
+      // if space was pressed
+      // options needs to use matrix[wordRowIndex] instead of wordList to calculate speed
       if (event.target.value !== event.target.value.trim()) {
         const options = {
           counter: wpmCounter, 
-          words: wordList,
+          // words: wordList,
+          words: matrix[wordRowIndex],
           index: index
         };
 
+        // options needs to include changes above
         calculateSpeed(options, dispatch, startTime, 'end');
         
         dispatch(clearInput());
 
+        // comparison needs to be made on matrix[wordRowIndex]
         if (index === wordList.length) {
           dispatch(disableInput()); 
         }
+
+        // when the first row of words were typed focus on the next row
+        // adds 1 to wordRowIndex
+        // check for case when increasing index goes out of bound of the lenght of the matrix
+        if (index === 2) dispatch(loadNextWordRow());
       
-        dispatch(increaseIndex());
+        // if space was pressed, move on to the next word
+        dispatch(increaseIndex(index));
       }
 
       dispatch(handleKeyPress());

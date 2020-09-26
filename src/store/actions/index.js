@@ -1,2 +1,2 @@
-export { handleChange, disableInput, restartTest } from './wordPanel';
-export { generateWordMatrix } from './wordList';
+export { handleChange, disableInput, restartTest, generateWordMatrix } from './wordPanel';
+// export { generateWordMatrix } from './wordList';

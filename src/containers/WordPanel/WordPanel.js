@@ -32,7 +32,8 @@ class WordPanel extends Component {
       );
     } 
 
-    if (this.props.index === this.props.wordList.length) {
+    // changed index to wordRowIndex and wordList to matrix
+    if (this.props.wordRowIndex === this.props.matrix.length) {
       return (
         <div className={WordPanelStyles.WPMSummary}>
           <WPMSummary wpmCounter={this.props.wpmCounter}/>
@@ -53,6 +54,7 @@ class WordPanel extends Component {
   }
 }
 
+// added wordRowIndex and matrix
 const mapStateToProps = state => {
   return {
     startTime: state.wordPanel.startTime,
@@ -62,7 +64,9 @@ const mapStateToProps = state => {
     disabled: state.wordPanel.disabled,
     wordList: state.wordPanel.wordList,
     wpmCounter: state.wordPanel.wpmCounter,
-    showInputError: state.wordPanel.showInputError
+    showInputError: state.wordPanel.showInputError,
+    wordRowIndex: state.wordPanel.wordRowIndex,
+    matrix: state.wordPanel.matrix
   };
 };
 
