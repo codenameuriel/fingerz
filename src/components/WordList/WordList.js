@@ -27,7 +27,23 @@ class WordList extends Component {
   }
 
   renderWords = () => {
-    if (this.props.matrix.length !== 0) {
+    let secondRow;
+
+    if (this.props.matrix.length !== 0 && this.props.wordRowIndex + 1 !== this.props.matrix.length && this.props.wordRowIndex !== this.props.matrix.length) {
+      secondRow = (
+        <div className={WordListStyles.WordRowTwo}>
+          {this.props.matrix[this.props.wordRowIndex + 1].map(word => {
+            return (
+              <div className={WordListStyles.Word}>
+                <h1>{word}</h1>
+              </div>
+            );
+          })}
+        </div> 
+      );
+    }
+    
+    if (this.props.matrix.length !== 0 && this.props.wordRowIndex !== 4) {
       return (
         <div className={WordListStyles.WordsContainer}>
           <div className={WordListStyles.WordRowOne}>
@@ -43,26 +59,18 @@ class WordList extends Component {
               );
             })}
           </div>
-          <div className={WordListStyles.WordRowTwo}>
-            {this.props.matrix[this.props.wordRowIndex + 1].map(word => {
-              return (
-                <div className={WordListStyles.Word}>
-                  <h1>{word}</h1>
-                </div>
-              );
-            })}
-          </div>
+          {secondRow}
         </div>
       );
     }
   }
 
-  showWord = () => {
-    // return this.props.wordList[this.props.index];
-    if (this.props.matrix.length !== 0) {
-      return this.props.matrix[this.props.wordRowIndex].join(' ');
-    }
-  }
+  // showWord = () => {
+  //   // return this.props.wordList[this.props.index];
+  //   if (this.props.matrix.length !== 0) {
+  //     return this.props.matrix[this.props.wordRowIndex].join(' ');
+  //   }
+  // }
 
   render() {
     return (

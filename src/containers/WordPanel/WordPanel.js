@@ -8,15 +8,18 @@ import Button from '../../components/UI/Button/Button';
 
 class WordPanel extends Component {
   componentDidMount() {
-    this.inputElement.focus();
+    // this.inputElement.focus();
   }
 
   componentDidUpdate() {
-    if (this.inputElement) this.inputElement.focus();
+    // if (this.inputElement) this.inputElement.focus();
+    if (this.props.wordRowIndex === this.props.matrix.length) this.props.onShowWPMSummary();
   }
 
+  // changed this.props.wordList.length in if statement
+  // this.props.index < this.props.wordList.length
   showDisplay() {
-    if (this.props.index < this.props.wordList.length) {
+    if (!this.props.showWPMSummary) {
       return (
         <div className={WordPanelStyles.WordPanel}>
          <WordList 
@@ -33,7 +36,8 @@ class WordPanel extends Component {
     } 
 
     // changed index to wordRowIndex and wordList to matrix
-    if (this.props.wordRowIndex === this.props.matrix.length) {
+    // this.props.wordRowIndex === this.props.matrix.length
+    if (this.props.showWPMSummary) {
       return (
         <div className={WordPanelStyles.WPMSummary}>
           <WPMSummary wpmCounter={this.props.wpmCounter}/>
@@ -66,7 +70,8 @@ const mapStateToProps = state => {
     wpmCounter: state.wordPanel.wpmCounter,
     showInputError: state.wordPanel.showInputError,
     wordRowIndex: state.wordPanel.wordRowIndex,
-    matrix: state.wordPanel.matrix
+    matrix: state.wordPanel.matrix,
+    showWPMSummary: state.wordPanel.showWPMSummary
   };
 };
 
@@ -80,6 +85,9 @@ const mapDispatchToProps = dispatch => {
     },
     onRestartTest: () => {
       dispatch(actionCreators.restartTest());
+    },
+    onShowWPMSummary: () => {
+      dispatch(actionCreators.showWPMSummary());
     }
   };
 };

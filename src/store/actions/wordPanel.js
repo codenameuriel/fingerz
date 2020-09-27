@@ -161,6 +161,12 @@ export const generateWordMatrix = wordMatrix => {
   };
 };
 
+export const showWPMSummary = () => {
+  return {
+    type: actionTypes.SHOWWPMSUMMARY 
+  }
+};
+
 export const handleChange = event => {
   return (dispatch, getState) => {
     // added matrix and wordRowIndex

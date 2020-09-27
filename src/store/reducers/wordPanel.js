@@ -16,7 +16,8 @@ const initialState = {
   showInputError: false,
   typoCounter: [],
   wordRowIndex: 0,
-  matrix: []
+  matrix: [],
+  showWPMSummary: false
 };
 
 const reducer = (state=initialState, action) => {
@@ -115,6 +116,11 @@ const reducer = (state=initialState, action) => {
       return {
         ...state,
         matrix: action.payload.matrix
+      }
+    case actionTypes.SHOWWPMSUMMARY:
+      return {
+        ...state,
+        showWPMSummary: true
       }
     default: return state;
   }
