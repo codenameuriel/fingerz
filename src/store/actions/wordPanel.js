@@ -148,13 +148,13 @@ const checkForTypo = (...args) => {
 
 const loadNextWordRow = () => {
   return {
-    type: actionTypes.LOADNEXTWORDROW
+    type: actionTypes.LOAD_NEXT_WORD_ROW
   }
 };
 
 export const generateWordMatrix = wordMatrix => {
   return {
-    type: actionTypes.GENERATEWORDMATRIX,
+    type: actionTypes.GENERATE_WORD_MATRIX,
     payload: {
       matrix: wordMatrix
     }
@@ -163,7 +163,7 @@ export const generateWordMatrix = wordMatrix => {
 
 export const showWPMSummary = () => {
   return {
-    type: actionTypes.SHOWWPMSUMMARY 
+    type: actionTypes.SHOW_WPM_SUMMARY 
   }
 };
 

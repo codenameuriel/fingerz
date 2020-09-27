@@ -95,7 +95,9 @@ const reducer = (state=initialState, action) => {
         pressedKey: restartPressedKey,
         endTime: 0,
         index: 0,
-        wpmCounter: {}
+        wpmCounter: {},
+        wordRowIndex: 0,
+        showWPMSummary: false
       }
     case actionTypes.SHOW_INPUT_ERROR:
       return {
@@ -107,17 +109,17 @@ const reducer = (state=initialState, action) => {
         ...state, 
         showInputError: false
       };
-    case actionTypes.LOADNEXTWORDROW:
+    case actionTypes.LOAD_NEXT_WORD_ROW:
       return {
         ...state,
         wordRowIndex: state.wordRowIndex + 1
       }
-     case actionTypes.GENERATEWORDMATRIX: 
+     case actionTypes.GENERATE_WORD_MATRIX: 
       return {
         ...state,
         matrix: action.payload.matrix
       }
-    case actionTypes.SHOWWPMSUMMARY:
+    case actionTypes.SHOW_WPM_SUMMARY:
       return {
         ...state,
         showWPMSummary: true
