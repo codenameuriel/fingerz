@@ -3,7 +3,7 @@
   text-align: center;
   background-color: black;
   /* width: 350px; */
-  padding: 0 0 12px 0;
+  padding: 15px;
 }
 
 .WordRowOne {
@@ -24,6 +24,7 @@
 
 .Word {
   width: 100%;
+  border-radius: 3px;
 }
 
 .Word h1 {

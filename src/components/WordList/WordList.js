@@ -51,9 +51,11 @@ class WordList extends Component {
               return (
                 <div 
                   className={WordListStyles.Word}
-                  id={index}
                   style={this.props.index === index ? 
-                    {backgroundColor: 'rgb(185, 182, 141)'} : null}>
+                    {
+                      backgroundColor: 'rgb(185, 182, 141)',
+                      
+                      } : null}>
                   <h1>{word}</h1>
                 </div>
               );
