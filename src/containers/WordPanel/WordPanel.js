@@ -30,6 +30,8 @@ class WordPanel extends Component {
         <div className={WordPanelStyles.WordPanel}>
          <WordList 
             disableInput={onDisableInput}/>
+
+          <Button text="Load Random Word Pack"/>
           <input 
             onChange={onHandleChange}
             disabled={disabled}

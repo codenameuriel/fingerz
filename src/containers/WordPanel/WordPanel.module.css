@@ -6,6 +6,23 @@
   align-items: center;
 }
 
+.WordPanel button {
+  margin-bottom: 10px;
+  padding: 15px;
+  background-color: rgb(72, 43, 70);
+  color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+.WordPanel button:hover {
+  background-color: rgb(67 1 62);
+  color: white;
+}
+
 .WPMSummary {
   margin-top: -100px;
   margin-bottom: -100px;
@@ -33,16 +50,22 @@
   margin-left: 350px;
   margin-top: 20px;
   position: relative;
-  background-color:rgb(212, 212, 158); 
-  color: black;
+  /* background-color:rgb(212, 212, 158);  */
+  background-color: rgb(72, 43, 70);
+  /* color: black; */
+  color: white;
   font-size: 20px;
   border: none;
   width: 200px;
   height: 50px;
   border-radius: 5px;
+  outline: none;
+  cursor: pointer;
 }
 
 .WPMSummary button:hover {
-  background-color: black;
-  color: rgb(231, 231, 149); 
+  /* background-color: black; */
+  background-color: rgb(67 1 62);
+  /* color: rgb(231, 231, 149);  */
+  color: white;
 }
