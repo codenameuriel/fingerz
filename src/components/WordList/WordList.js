@@ -5,19 +5,23 @@ import * as actionCreators from '../../store/actions/index';
 
 class WordList extends Component {
   componentDidMount() {
-    const wordMatrix = this.createWordRows(this.props.wordList);
+    const { wordList, onGenerateMatrix } = this.props;
 
-    this.props.onGenerateMatrix(wordMatrix);
+    const wordMatrix = this.createWordMatrix(wordList);
+
+    onGenerateMatrix(wordMatrix);
   }
   
-  createWordRows = arr => {
-    const WORDSPERROW = 9;
+  createWordMatrix = arr => {
+    const WORDS_PER_ROW = 9;
     const wordMatrix = [];
     let wordRow = [];
 
-    for (let word of arr) {
-      if (wordRow.length !== WORDSPERROW) wordRow.push(word);
-      if (wordRow.length === WORDSPERROW) {
+    for (let i = 0; i < arr.length; i++) {
+      const word = arr[i];
+
+      if (wordRow.length !== WORDS_PER_ROW) wordRow.push(word);
+      if (wordRow.length === WORDS_PER_ROW || i === arr.length - 1) {
         wordMatrix.push(wordRow);
         wordRow = [];
       }
@@ -27,14 +31,15 @@ class WordList extends Component {
   }
 
   renderWords = () => {
+    const { matrix, wordRowIndex, index: propIndex } = this.props;
     let secondRow;
 
-    if (this.props.matrix.length !== 0 && this.props.wordRowIndex + 1 !== this.props.matrix.length && this.props.wordRowIndex !== this.props.matrix.length) {
+    if (matrix.length !== 0 && wordRowIndex + 1 !== matrix.length && wordRowIndex !== matrix.length) {
       secondRow = (
         <div className={WordListStyles.WordRowTwo}>
-          {this.props.matrix[this.props.wordRowIndex + 1].map(word => {
+          {matrix[wordRowIndex + 1].map(word => {
             return (
-              <div className={WordListStyles.Word}>
+              <div className={WordListStyles.Word} key={word}>
                 <h1>{word}</h1>
               </div>
             );
@@ -43,19 +48,17 @@ class WordList extends Component {
       );
     }
     
-    if (this.props.matrix.length !== 0 && this.props.wordRowIndex !== 6) {
+    if (matrix.length !== 0 && wordRowIndex !== matrix.length) {
       return (
         <div className={WordListStyles.WordsContainer}>
           <div className={WordListStyles.WordRowOne}>
-            {this.props.matrix[this.props.wordRowIndex].map((word, index) => {
+            {matrix[wordRowIndex].map((word, index) => {
               return (
                 <div 
                   className={WordListStyles.Word}
-                  style={this.props.index === index ? 
-                    {
-                      backgroundColor: 'rgb(185, 182, 141)',
-
-                      } : null}>
+                  key={word}
+                  style={propIndex === index ? 
+                    {backgroundColor: 'rgb(185, 182, 141)'} : null}>
                   <h1>{word}</h1>
                 </div>
               );

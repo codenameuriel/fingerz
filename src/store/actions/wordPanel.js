@@ -200,7 +200,8 @@ export const handleChange = event => {
           dispatch(disableInput()); 
         }
 
-        if (index === 8) dispatch(loadNextWordRow());
+        const lastIndexInMatrix = matrix[wordRowIndex].length - 1;
+        if (index === lastIndexInMatrix) dispatch(loadNextWordRow());
     
         // if space was pressed, move on to the next word
         dispatch(increaseIndex(index));

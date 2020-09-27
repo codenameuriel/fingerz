@@ -12,36 +12,42 @@ class WordPanel extends Component {
   }
 
   componentDidUpdate() {
+    const { matrix, wordRowIndex } = this.props;
+
     if (this.inputElement) this.inputElement.focus();
-    if (this.props.wordRowIndex === this.props.matrix.length) {
+    if (wordRowIndex === matrix.length) {
       this.props.onShowWPMSummary(); 
     }
   }
 
   showDisplay() {
-    if (!this.props.showWPMSummary) {
+    const { 
+      showWPMSummary, onDisableInput, onHandleChange, showInputError, input, wpmCounter, onRestartTest, disabled
+    } = this.props; 
+
+    if (!showWPMSummary) {
       return (
         <div className={WordPanelStyles.WordPanel}>
          <WordList 
-            disableInput={this.props.onDisableInput}/>
+            disableInput={onDisableInput}/>
           <input 
-            onChange={this.props.onHandleChange}
-            disabled={this.props.disabled}
-            style={this.props.showInputError ? {backgroundColor: 'red'} : null}
+            onChange={onHandleChange}
+            disabled={disabled}
+            style={showInputError ? {backgroundColor: 'red'} : null}
             type="text"
-            value={this.props.input}
+            value={input}
             ref={inputElement => this.inputElement = inputElement}/>
         </div>
       );
     } 
 
-    if (this.props.showWPMSummary) {
+    if (showWPMSummary) {
       return (
         <div className={WordPanelStyles.WPMSummary}>
-          <WPMSummary wpmCounter={this.props.wpmCounter}/>
+          <WPMSummary wpmCounter={wpmCounter}/>
           <Button
             text="Restart" 
-            handleClick={this.props.onRestartTest}/>
+            handleClick={onRestartTest}/>
         </div>
       );
     }

@@ -11,7 +11,7 @@ const WPMSummary = props => {
       const score = parseInt(props.wpmCounter[key].toString().split('.')[0]);
       
       const scoreDisplay = (
-        <div className={WPMSummaryStyles.WordWPM}>
+        <div className={WPMSummaryStyles.WordWPM} key={key + score}>
           <p><span style={{color: 'white'}}>{`${key}`}</span>: {`${score}`}</p>
         </div>
       );
