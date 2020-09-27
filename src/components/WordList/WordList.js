@@ -11,7 +11,7 @@ class WordList extends Component {
   }
   
   createWordRows = arr => {
-    const WORDSPERROW = 3;
+    const WORDSPERROW = 9;
     const wordMatrix = [];
     let wordRow = [];
 
@@ -43,7 +43,7 @@ class WordList extends Component {
       );
     }
     
-    if (this.props.matrix.length !== 0 && this.props.wordRowIndex !== 4) {
+    if (this.props.matrix.length !== 0 && this.props.wordRowIndex !== 6) {
       return (
         <div className={WordListStyles.WordsContainer}>
           <div className={WordListStyles.WordRowOne}>
@@ -54,7 +54,7 @@ class WordList extends Component {
                   style={this.props.index === index ? 
                     {
                       backgroundColor: 'rgb(185, 182, 141)',
-                      
+
                       } : null}>
                   <h1>{word}</h1>
                 </div>

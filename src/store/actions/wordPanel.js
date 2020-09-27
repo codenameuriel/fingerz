@@ -30,7 +30,7 @@ const clearValues = () => {
 };
 
 const increaseIndex = (index) => {
-  if (index === 2) index = 0;
+  if (index === 8) index = 0;
   else index = index + 1;
 
   return {
@@ -172,6 +172,8 @@ export const handleChange = event => {
     const { index, wordList, matrix, startTime, wpmCounter, typoCounter, wordRowIndex } = 
       getState().wordPanel;
 
+      console.log(wordList.length)
+
     const options = {};
  
     // if still typing words
@@ -198,7 +200,7 @@ export const handleChange = event => {
           dispatch(disableInput()); 
         }
 
-        if (index === 2) dispatch(loadNextWordRow());
+        if (index === 8) dispatch(loadNextWordRow());
     
         // if space was pressed, move on to the next word
         dispatch(increaseIndex(index));
