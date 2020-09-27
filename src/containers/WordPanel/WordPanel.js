@@ -8,16 +8,16 @@ import Button from '../../components/UI/Button/Button';
 
 class WordPanel extends Component {
   componentDidMount() {
-    // this.inputElement.focus();
+    this.inputElement.focus();
   }
 
   componentDidUpdate() {
-    // if (this.inputElement) this.inputElement.focus();
-    if (this.props.wordRowIndex === this.props.matrix.length) this.props.onShowWPMSummary();
+    if (this.inputElement) this.inputElement.focus();
+    if (this.props.wordRowIndex === this.props.matrix.length) {
+      this.props.onShowWPMSummary(); 
+    }
   }
 
-  // changed this.props.wordList.length in if statement
-  // this.props.index < this.props.wordList.length
   showDisplay() {
     if (!this.props.showWPMSummary) {
       return (
@@ -35,8 +35,6 @@ class WordPanel extends Component {
       );
     } 
 
-    // changed index to wordRowIndex and wordList to matrix
-    // this.props.wordRowIndex === this.props.matrix.length
     if (this.props.showWPMSummary) {
       return (
         <div className={WordPanelStyles.WPMSummary}>
@@ -58,7 +56,6 @@ class WordPanel extends Component {
   }
 }
 
-// added wordRowIndex and matrix
 const mapStateToProps = state => {
   return {
     startTime: state.wordPanel.startTime,

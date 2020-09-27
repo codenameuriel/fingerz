@@ -169,48 +169,37 @@ export const showWPMSummary = () => {
 
 export const handleChange = event => {
   return (dispatch, getState) => {
-    // added matrix and wordRowIndex
     const { index, wordList, matrix, startTime, wpmCounter, typoCounter, wordRowIndex } = 
       getState().wordPanel;
 
     const options = {};
  
     // if still typing words
-    // comparison needs to change to matrix[wordRowIndex].length
-    // if (index < wordList.length) {
-      if (index < matrix[wordRowIndex].length) {
+    if (index < matrix[wordRowIndex].length) {
       calculateSpeed(options, dispatch, startTime, 'start');
-   
+  
       dispatch(updateStateOnChange(event));
- 
-      // changed wordList for matrix[wordRowIndex]
+
       checkForTypo(dispatch, matrix[wordRowIndex], index, event.target.value, typoCounter);
-   
+  
       // if space was pressed
-      // options needs to use matrix[wordRowIndex] instead of wordList to calculate speed
       if (event.target.value !== event.target.value.trim()) {
         const options = {
-          counter: wpmCounter, 
-          // words: wordList,
+          counter: wpmCounter,
           words: matrix[wordRowIndex],
           index: index
         };
 
-        // options needs to include changes above
         calculateSpeed(options, dispatch, startTime, 'end');
         
         dispatch(clearInput());
 
-        // comparison needs to be made on matrix[wordRowIndex]
         if (index === wordList.length) {
           dispatch(disableInput()); 
         }
 
-        // when the first row of words were typed focus on the next row
-        // adds 1 to wordRowIndex
-        // check for case when increasing index goes out of bound of the lenght of the matrix
         if (index === 2) dispatch(loadNextWordRow());
-      
+    
         // if space was pressed, move on to the next word
         dispatch(increaseIndex(index));
       }
@@ -218,7 +207,7 @@ export const handleChange = event => {
       dispatch(handleKeyPress());
       setTimeout(() => dispatch(clearValues()), 140);
     }
-   };
+  };
 };
 
 export const restartTest = () => {

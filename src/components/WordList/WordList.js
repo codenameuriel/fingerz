@@ -65,21 +65,9 @@ class WordList extends Component {
     }
   }
 
-  // showWord = () => {
-  //   // return this.props.wordList[this.props.index];
-  //   if (this.props.matrix.length !== 0) {
-  //     return this.props.matrix[this.props.wordRowIndex].join(' ');
-  //   }
-  // }
-
   render() {
     return (
       <div className={WordListStyles.WordList}>
-        {/* <div className={WordListStyles.Word}>
-          <h1 
-            style={{marginBottom: '-20px'}}>{this.showWord()}
-          </h1>
-        </div> */}
         {this.renderWords()}
         <h5>
           (press <span style={{color: 'rgb(231, 231, 149)'}}>space</span> for next word)
