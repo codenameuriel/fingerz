@@ -28,14 +28,12 @@ class WordPanel extends Component {
     if (!showWPMSummary) {
       return (
         <div className={WordPanelStyles.WordPanel}>
-         <WordList 
-            disableInput={onDisableInput}/>
-
-          <Button text="Load Random Word Pack"/>
+          <WordList disableInput={onDisableInput} error={showInputError}/>
+          <Button text="Randomize Words"/>
           <input 
             onChange={onHandleChange}
             disabled={disabled}
-            style={showInputError ? {backgroundColor: 'red'} : null}
+            style={showInputError ? {backgroundColor: 'rgb(159, 0, 0)'} : null}
             type="text"
             value={input}
             ref={inputElement => this.inputElement = inputElement}/>

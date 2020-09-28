@@ -31,7 +31,7 @@ class WordList extends Component {
   }
 
   renderWords = () => {
-    const { matrix, wordRowIndex, index: propIndex } = this.props;
+    const { matrix, wordRowIndex, index: propIndex, error } = this.props;
     let secondRow;
 
     if (matrix.length !== 0 && wordRowIndex + 1 !== matrix.length && wordRowIndex !== matrix.length) {
@@ -57,8 +57,8 @@ class WordList extends Component {
                 <div 
                   className={WordListStyles.Word}
                   key={word}
-                  style={propIndex === index ? 
-                    {backgroundColor: 'rgb(185, 182, 141)'} : null}>
+                  style={propIndex === index && !error ?
+                    {backgroundColor: 'rgb(185, 182, 141)'} : error && propIndex === index ? {backgroundColor: 'rgb(159, 0, 0'} : null}>
                   <h1>{word}</h1>
                 </div>
               );
