@@ -6,7 +6,6 @@ const NavBar = () => {
     <header className={NavBarStyles.NavBar}>
       <nav>
         <ul>
-
         </ul>
       </nav>
     </header>
