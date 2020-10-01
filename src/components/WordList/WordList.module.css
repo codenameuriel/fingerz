@@ -16,12 +16,6 @@
   flex-direction: row;
 }
 
-.WordList h5 {
-  font-size: 25px;
-  color: white;
-  text-align: center;
-}
-
 .Word {
   border-radius: 3px;
 }

@@ -74,9 +74,6 @@ class WordList extends Component {
     return (
       <div className={WordListStyles.WordList}>
         {this.renderWords()}
-        <h5>
-          (press <span style={{color: 'rgb(231, 231, 149)'}}>space</span> for next word)
-        </h5> 
       </div>
     );
   }

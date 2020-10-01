@@ -30,6 +30,9 @@ class WordPanel extends Component {
         <div className={WordPanelStyles.WordPanel}>
           <WordList disableInput={onDisableInput} error={showInputError}/>
           <Button text="Randomize Words"/>
+          <h5>
+            (press <span style={{color: 'rgb(231, 231, 149)'}}>space</span> for next word)
+          </h5> 
           <input 
             onChange={onHandleChange}
             disabled={disabled}
