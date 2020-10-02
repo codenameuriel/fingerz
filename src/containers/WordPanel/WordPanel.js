@@ -24,7 +24,7 @@ class WordPanel extends Component {
     const { 
       showWPMSummary, onDisableInput, onHandleChange, showInputError, input, wpmCounter, onRestartTest, disabled
     } = this.props; 
-
+    
     if (!showWPMSummary) {
       return (
         <div className={WordPanelStyles.WordPanel}>
