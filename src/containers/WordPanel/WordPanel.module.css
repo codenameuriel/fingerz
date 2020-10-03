@@ -2,9 +2,12 @@
   display: flex;
   flex-flow: column;
   align-items: center;
+  min-height: 450px;
 }
 
 .WordPanel button {
+  position: fixed;
+  top: 250px;
   padding: 15px;
   background-color: rgb(72, 43, 70);
   color: white;
@@ -22,11 +25,11 @@
 }
 
 .WordPanel h5 {
+  position: fixed;
+  top: 350px;
   font-size: 28px;
   color: white;
   text-align: center;
-  margin-top: 65px;
-  margin-bottom: 25px;
 }
 
 .WPMSummary {
@@ -37,7 +40,9 @@
 }
 
 .WordPanel input {
-  width: 40%;
+  position: fixed;
+  top: 450px;
+  width: 425px;
   height: 50px;
   font-size: 40px;
   padding: 5px;
@@ -45,6 +50,7 @@
   color: white;
   background-color: rgb(185, 182, 141);
   border: none;
+  border-radius: 5px;
   align-self: center;
 }
 
@@ -56,9 +62,7 @@
   margin-left: 350px;
   margin-top: 20px;
   position: relative;
-  /* background-color:rgb(212, 212, 158);  */
   background-color: rgb(72, 43, 70);
-  /* color: black; */
   color: white;
   font-size: 20px;
   border: none;
@@ -70,8 +74,6 @@
 }
 
 .WPMSummary button:hover {
-  /* background-color: black; */
   background-color: rgb(67 1 62);
-  /* color: rgb(231, 231, 149);  */
   color: white;
 }

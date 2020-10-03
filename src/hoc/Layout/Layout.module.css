@@ -1,6 +1,7 @@
 .Layout {
   display: flex;
   flex-flow: column;
+  height: 100vh;
   align-items: center;
   margin-left: auto;
   margin-right: auto;

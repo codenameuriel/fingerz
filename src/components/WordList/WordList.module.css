@@ -1,9 +1,8 @@
 .WordsContainer {
   color: white;
-  text-align: center;
   background-color: black;
-  /* width: 350px; */
   padding: 15px;
+  border-radius: 5px;
 }
 
 .WordRowOne {
@@ -17,7 +16,7 @@
 }
 
 .Word {
-  border-radius: 3px;
+  border-radius: 5px;
 }
 
 .Word h1 {
