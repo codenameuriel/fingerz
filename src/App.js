@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import Layout from './hoc/Layout/Layout';
-import WordPanel from './containers/WordPanel/WordPanel';
-import Keyboard from './containers/Keyboard/Keyboard';
+import TypeTest from './components/TypeTest/TypeTest';
 
 class App extends Component {
   render() {
 
     return (
       <Layout>
-        <WordPanel />
-        <Keyboard />
+        <TypeTest />
       </Layout>
     )
   }
