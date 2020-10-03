@@ -1,8 +1,6 @@
 .WordPanel {
   display: flex;
   flex-flow: column;
-  width: 50%;
-  height: 300px;
   align-items: center;
 }
 
