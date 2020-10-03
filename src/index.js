@@ -9,6 +9,8 @@ import { Provider } from 'react-redux';
 import wordPanelReducer from './store/reducers/wordPanel';
 import thunk from 'redux-thunk';
 
+import { BrowserRouter } from 'react-router-dom';
+
 const composeEnhancers = (
   window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 );
@@ -21,9 +23,11 @@ const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
 
 const app = (
   <Provider store={store}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+    <BrowserRouter>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </BrowserRouter>
   </Provider>
 );
 
