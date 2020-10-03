@@ -1,9 +1,10 @@
 import React from 'react';
 import NavItemStyles from './NavItem.module.css';
+import { NavLink } from 'react-router-dom';
 
-const NavItem = prop => {
+const NavItem = props => {
   return (
-    <li className={NavItemStyles.NavItem}>{prop.name}</li>
+    <NavLink to={props.link} className={NavItemStyles.NavItem}>{props.name}</NavLink>
   );
 };
 

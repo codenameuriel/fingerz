@@ -7,8 +7,8 @@ const NavBar = () => {
     <header className={NavBarStyles.NavBar}>
       <nav>
         <ul>
-          <NavItem name="Home" />
-          <NavItem name="Words" />
+          <NavItem name="Home" link="/"/>
+          <NavItem name="Words" link="/words"/>
         </ul>
       </nav>
     </header>

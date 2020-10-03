@@ -1,5 +1,5 @@
 .NavItem {
-  list-style: none;
+  text-decoration: none;
   color: white;
   font-size: 35px;
   background-color: black;
