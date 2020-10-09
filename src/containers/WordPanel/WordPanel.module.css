@@ -1,22 +1,23 @@
 .WordPanel {
+  /* background-color: magenta; */
+  padding: 2% 2%;
+  padding-bottom: 1%;
   display: flex;
-  flex-flow: column;
-  align-items: center;
-  min-height: 450px;
+  flex-direction: column;
 }
 
 .WordPanel button {
-  position: fixed;
-  top: 250px;
+  width: 13%;
   padding: 15px;
   background-color: rgb(72, 43, 70);
   color: white;
-  font-size: 20px;
+  font-size: 1.2vw;
   border: none;
   border-radius: 5px;
   outline: none;
   cursor: pointer;
-  margin-top: 35px;
+  margin: 25px auto;
+  transition: background-color 0.2s;
 }
 
 .WordPanel button:hover {
@@ -25,11 +26,11 @@
 }
 
 .WordPanel h5 {
-  position: fixed;
-  top: 350px;
-  font-size: 28px;
+  width: 20%;
+  font-size: 120%;
   color: white;
   text-align: center;
+  margin: 0 auto;
 }
 
 .WPMSummary {
@@ -40,18 +41,16 @@
 }
 
 .WordPanel input {
-  position: fixed;
-  top: 450px;
-  width: 425px;
-  height: 50px;
-  font-size: 40px;
+  width: 23%;
   padding: 5px;
+  font-size: 165%;
   text-align: center;
   color: white;
   background-color: rgb(185, 182, 141);
   border: none;
   border-radius: 5px;
   align-self: center;
+  margin-top: 15px;
 }
 
 .WordPanel input:focus {

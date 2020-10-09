@@ -1,12 +1,12 @@
 /* KEYBOARD PAGE LAYOUT */
 .KeyboardPage {
-  height: 40vh;
+  padding: 1% 2%;
+  /* background-color: yellow; */
 }
 
 /* KEYBOARD */
 .Keyboard {
   width: 55%;
-  height: 400px;
   background-color: rgb(22, 22, 41);
   border-radius: 5px;
   margin: 0 auto;
@@ -17,9 +17,10 @@
 /* KEYBOARD TOP ROW */
 .TopRow {
   width: 95%;
+  /* background-color: red; */
   display: inline-flex;
-  justify-content: center;
-  margin-left: 2.5%;
+  justify-content: left;
+  margin-left: 4%;
   margin-bottom: 2%;
 }
 
@@ -92,6 +93,7 @@
 .Space {
   display: inline-flex;
   margin-left: 25%;
+  margin-bottom: 2%;
   width: 95%;
 }
 

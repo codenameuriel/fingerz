@@ -3,23 +3,27 @@
   background-color: black;
   padding: 15px;
   border-radius: 5px;
+  width: 70%;
+  height: 128px;
+  margin: 0 auto;
 }
 
 .WordRowOne {
-  display: flex;
-  flex-direction: row;
+  display: inline-flex;
+  width: 100%;
 }
 
 .WordRowTwo {
-  display: flex;
-  flex-direction: row;
+  display: inline-flex;
+  width: 100%;
 }
 
 .Word {
+  display: inline-flex;
   border-radius: 5px;
+  margin: 0 auto;
 }
 
 .Word h1 {
-  margin: 0 12px 0 12px;
-  font-size: 35px;
+  font-size: 175%;
 }

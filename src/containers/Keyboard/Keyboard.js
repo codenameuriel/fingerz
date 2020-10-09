@@ -80,7 +80,6 @@ class Keyboard extends Component {
   render() {
     return (
       <div className={KeyboardStyles.KeyboardPage}>
-        <div className="row">
           <div className={KeyboardStyles.Keyboard}>
             <div className={KeyboardStyles.TopRow}>
               {this.createKeyDivs('top')}
@@ -98,7 +97,6 @@ class Keyboard extends Component {
               {this.createKeyDivs('space')}
             </div>
           </div>
-        </div>
       </div>
     );
   }
