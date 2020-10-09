@@ -1,66 +1,112 @@
+/* div element that contains entire keyboard */
+.KeyboardPage {
+  background-color: yellow;
+  height: 40vh;
+}
+
+/* div element that represents the keyboard */
 .Keyboard {
-  display: flex;
-  flex-flow: column;
-  padding: 15px 0;
-  width: 1000px;
+  width: 55%;
+  height: 400px;
   background-color: rgb(22, 22, 41);
-  align-items: center;
   border-radius: 5px;
-  align-self: center;
+  margin: 0 auto;
+  padding-top: 25px;
+  overflow: hidden;
 }
 
-.key { 
+/* div element that represents the key */
+.TopRowKey { 
   background-color: rgb(0, 0, 0);
-  width: 80px;
-  height: 80px;
-  box-sizing: border-box;
+  width: 8%;
+  height: 70px;
   border-radius: 5px;
-  margin: 0 5px;
-  text-align: center;
+  margin-left: 1.5%;
 }
 
-.key div {
-  padding: 15px;
-  height: 40px;
-  font-size: 35px;
+/* inner key div that holds the letter */
+.TopRowKey div {
   color: rgb(231, 231, 149);
   border-radius: 5px;
+  font-size: 150%;
+  text-align: center;
+  margin-top: 15px;
 }
 
+/* div element that encapsulates top level key divs */
 .TopRow {
-  display: flex;
-  margin: 5px 0;
+  width: 95%;
+  display: inline-flex;
+  justify-content: center;
+  margin-left: 2.5%;
+  margin-bottom: 2%;
+}
+
+.MidRowKey {
+  background-color: rgb(0, 0, 0);
+  width: 8%;
+  height: 70px;
+  border-radius: 5px;
+  margin-left: 1.5%;
+}
+
+.MidRowKey div {
+  color: rgb(231, 231, 149);
+  border-radius: 5px;
+  font-size: 150%;
+  text-align: center;
+  margin-top: 15px;
 }
 
 .MidRow {
-  display: flex;
-  margin: 5px 0 5px 25px;
+ display: inline-flex;
+ justify-content: left;
+ width: 95%;
+ margin-left: 8%;
+ margin-bottom: 2%;
 }
 
 .BottomRow {
-  display: flex;
-  margin: 5px 0 5px -50px;
+  display: inline-flex;
+  width: 95%;
+  margin-left: 12%;
+  margin-bottom: 2%;
 }
 
-.spaceKey {
+.BottomRowKey {
   background-color: black;
-  width: 525px;
-  height: 80px;
-  box-sizing: border-box;
+  width: 8%;
+  height: 70px;
   border-radius: 5px;
-  margin: 0 5px -5px -60px;
-  text-align: center;
+  margin-left: 1.5%;
 }
 
-.spaceKey div {
-  padding: 15px;
+.BottomRowKey div {
   color: rgb(231, 231, 149);
-  height: 50px;
-  font-size: 35px;
   border-radius: 5px;
+  font-size: 150%;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.SpaceKey {
+  background-color: black;
+  width: 60%;
+  height: 70px;
+  border-radius: 5px;
+  margin-left: 1.5%;
+}
+
+.SpaceKey div {
+  color: rgb(231, 231, 149);
+  font-size: 150%;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 15px;
 }
 
 .Space {
-  display: flex;
-  margin: 10px 0 10px 205px;
+  display: inline-flex;
+  margin-left: 25%;
+  width: 95%;
 }

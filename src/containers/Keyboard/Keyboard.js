@@ -22,19 +22,19 @@ class Keyboard extends Component {
       case 'top':
         return (
           TOPROWKEYS.map((key, index) => (
-          <div key={`${key} ${index}`} className={KeyboardStyles.key}>
-
-            <div 
+          <div key={`${key} ${index}`} className={KeyboardStyles.TopRowKey}>
+            <div class="row"
               id={key} 
               ref={this[`${key}Key`]} 
-              style={this.setStyle(this[`${key}Key`])}>{key}</div>
+              style={this.setStyle(this[`${key}Key`])}>{key}
+            </div>
           </div>
         )));
       case 'mid':
         return (
           MIDROWKEYS.map((key, index) => (
-            <div key={`${key} ${index}`} className={KeyboardStyles.key}>
-              <div 
+            <div key={`${key} ${index}`} className={KeyboardStyles.MidRowKey}>
+              <div class="row"
                 id={key} 
                 ref={this[`${key}Key`]} 
                 style={this.setStyle(this[`${key}Key`])}>{key}</div>
@@ -43,8 +43,8 @@ class Keyboard extends Component {
         case 'bottom':
           return (
             BOTTOMROWKEYS.map((key, index) => (
-              <div key={`${key} ${index}`} className={KeyboardStyles.key}>
-                <div 
+              <div key={`${key} ${index}`} className={KeyboardStyles.BottomRowKey}>
+                <div class="row"
                   id={key} 
                   ref={this[`${key}Key`]} 
                   style={this.setStyle(this[`${key}Key`])}>{key}</div>
@@ -52,8 +52,8 @@ class Keyboard extends Component {
             )));
         case 'space':
           return (
-            <div className={KeyboardStyles.spaceKey}>
-                <div 
+            <div className={KeyboardStyles.SpaceKey}>
+                <div class="row"
                   id="space"
                   ref={this.spaceKey} 
                   style={this.setStyle(this.spaceKey)}>space</div>
@@ -79,22 +79,26 @@ class Keyboard extends Component {
 
   render() {
     return (
-      <div className={KeyboardStyles.Keyboard}>
-        <div className={KeyboardStyles.TopRow}>
-            {this.createKeyDivs('top')}
-          </div>
+      <div className={KeyboardStyles.KeyboardPage}>
+        <div className="row">
+          <div className={KeyboardStyles.Keyboard}>
+            <div className={KeyboardStyles.TopRow}>
+              {this.createKeyDivs('top')}
+            </div>
 
-          <div className={KeyboardStyles.MidRow}>
-            {this.createKeyDivs('mid')}
-          </div>
+            <div className={KeyboardStyles.MidRow}>
+              {this.createKeyDivs('mid')}
+            </div>
 
-          <div className={KeyboardStyles.BottomRow}>
-            {this.createKeyDivs('bottom')}
-          </div>
+            <div className={KeyboardStyles.BottomRow}>
+              {this.createKeyDivs('bottom')}
+            </div>
 
-          <div className={KeyboardStyles.Space}>
-            {this.createKeyDivs('space')}
+            <div className={KeyboardStyles.Space}>
+              {this.createKeyDivs('space')}
+            </div>
           </div>
+        </div>
       </div>
     );
   }
