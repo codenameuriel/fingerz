@@ -1,27 +1,21 @@
 .WPMSummary {
   color: white;
-  display: flex;
-  font-size: 20px;
-  margin-top: 75px;
+  display: inline-flex;
+  font-size: 100%;
+  margin-top: 15px;
 }
 
 .Average {
   width: 35%;
-  margin-left: 50px;
-  margin-right: 100px;
-  height: 30%;
+  margin: 15px auto 0 0;
 }
 
 .WordWPM {
   color: rgb(231, 231, 149); 
   background-color: black;
-  text-align: center;
-  width: 150px;
   border-radius: 5px;
-}
-
-.WordSummary {
-  margin-left: 25%;
+  width: 40%;
+  margin: 5px auto;
 }
 
 .Score {
@@ -29,6 +23,8 @@
   color: rgb(231, 231, 149); 
   background-color: black;
   border-radius: 5px;
+  width: 40%;
+  margin: 15px auto;
 }
 
 .ScoreHeader {
@@ -36,27 +32,26 @@
 }
 
 .Average p {
-  font-size: 50px;
+  font-size: 200%;
 }
 
 .Review {
-  margin-left: 100px;
-  margin-right: 50px;
-  width: 43%;
-  height: 400px;
+  margin: 15px auto 0 auto;
+  width: 35%;
+  height: 350px;
   overflow: scroll;
   text-align: center;
 }
 
 ::-webkit-scrollbar {
-  width: 3px;
-  height: 3px;
+  width: 1px;
+  height: 1px;
 }
 
 ::-webkit-scrollbar-track {
-  background: black;
+  background-color: rgb(185, 182, 141);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(28, 28, 51);
+  background: white;
 }

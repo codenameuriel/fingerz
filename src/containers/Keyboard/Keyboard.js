@@ -23,7 +23,7 @@ class Keyboard extends Component {
         return (
           TOPROWKEYS.map((key, index) => (
           <div key={`${key} ${index}`} className={KeyboardStyles.TopRowKey}>
-            <div class="row"
+            <div className="row"
               id={key} 
               ref={this[`${key}Key`]} 
               style={this.setStyle(this[`${key}Key`])}>{key}
@@ -34,7 +34,7 @@ class Keyboard extends Component {
         return (
           MIDROWKEYS.map((key, index) => (
             <div key={`${key} ${index}`} className={KeyboardStyles.MidRowKey}>
-              <div class="row"
+              <div className="row"
                 id={key} 
                 ref={this[`${key}Key`]} 
                 style={this.setStyle(this[`${key}Key`])}>{key}</div>
@@ -44,7 +44,7 @@ class Keyboard extends Component {
           return (
             BOTTOMROWKEYS.map((key, index) => (
               <div key={`${key} ${index}`} className={KeyboardStyles.BottomRowKey}>
-                <div class="row"
+                <div className="row"
                   id={key} 
                   ref={this[`${key}Key`]} 
                   style={this.setStyle(this[`${key}Key`])}>{key}</div>
@@ -53,7 +53,7 @@ class Keyboard extends Component {
         case 'space':
           return (
             <div className={KeyboardStyles.SpaceKey}>
-                <div class="row"
+                <div className="row"
                   id="space"
                   ref={this.spaceKey} 
                   style={this.setStyle(this.spaceKey)}>space</div>

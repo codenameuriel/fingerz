@@ -1,5 +1,4 @@
 .WordPanel {
-  /* background-color: magenta; */
   padding: 2% 2%;
   padding-bottom: 1%;
   display: flex;
@@ -16,7 +15,7 @@
   border-radius: 5px;
   outline: none;
   cursor: pointer;
-  margin: 25px auto;
+  margin: 50px auto 0 auto;
   transition: background-color 0.2s;
 }
 
@@ -30,14 +29,7 @@
   font-size: 120%;
   color: white;
   text-align: center;
-  margin: 0 auto;
-}
-
-.WPMSummary {
-  margin-top: -100px;
-  margin-bottom: -100px;
-  width: 50%;
-  height: 500px;
+  margin: 48px auto 10px auto;
 }
 
 .WordPanel input {
@@ -50,26 +42,34 @@
   border: none;
   border-radius: 5px;
   align-self: center;
-  margin-top: 15px;
 }
 
 .WordPanel input:focus {
   outline: none;
 }
 
+.WPMSummary {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 65%;
+}
+
 .WPMSummary button {
-  margin-left: 350px;
-  margin-top: 20px;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 15px;
+  padding: 10px;
   background-color: rgb(72, 43, 70);
   color: white;
-  font-size: 20px;
+  font-size: 90%;
   border: none;
-  width: 200px;
-  height: 50px;
+  width: 10%;
   border-radius: 5px;
   outline: none;
   cursor: pointer;
+  transition: background-color 0.2s;
 }
 
 .WPMSummary button:hover {

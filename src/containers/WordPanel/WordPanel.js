@@ -8,7 +8,7 @@ import Button from '../../components/UI/Button/Button';
 
 class WordPanel extends Component {
   componentDidMount() {
-    this.inputElement.focus();
+    // this.inputElement.focus();
   }
 
   componentDidUpdate() {

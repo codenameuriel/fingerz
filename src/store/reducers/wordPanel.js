@@ -11,7 +11,7 @@ const initialState = {
   input: '',
   typedKey: '',
   disabled: false,
-  wordList: ['baby', 'back', 'backlash', 'balance', 'banking', 'baseball', 'bathroom', 'basic', 'better', 'below', 'basketball', 'barely', 'biggest', 'billionaire', 'board', 'blame', 'birth', 'blog', 'bold', 'breakthrough', 'brain', 'branch', 'brand', 'bridge', 'both', 'boost', 'break', 'born', 'brief', 'beautiful', 'backpack', 'boot', 'border', 'brunch', 'buyer', 'bypass', 'business', 'bullet', 'broker', 'brilliant', 'broadband', 'brightness', 'breached', 'book', 'boss', 'boister', 'blow', 'bitcoins', 'broadly', 'blue', 'bird', 'believe', 'beginning', 'because'],
+  wordList: ['baby', 'back', 'backlash', 'balance', 'banking', 'baseball', 'bathroom', 'basic', 'better', 'below', 'basketball', 'barely', 'biggest', 'billionaire', 'board', 'blame', 'birth', 'blog', 'bold', 'breakthrough', 'brain', 'branch', 'brand', 'bridge', 'both', 'boost', 'break', 'born', 'brief', 'beautiful', 'backpack', 'boot', 'border', 'brunch', 'buyer', 'bypass', 'business', 'bullet', 'broker', 'brilliant', 'broadband', 'brightness', 'breached', 'book', 'boss'],
   wpmCounter: {},
   showInputError: false,
   typoCounter: [],
