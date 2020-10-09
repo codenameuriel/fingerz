@@ -1,18 +1,18 @@
 /* header element */
-.NavBar {
-  background-color: rgb(72, 43, 70);
-  width: 100%;
-  height: 80px;
-  margin-bottom: 30px;
+.Header {
+  height: 90px;
+  margin-bottom: 35px;
 }
 
-.NavBar nav {
-  margin-top: 10px;
+/* nav element */
+.Nav {
+  background-color: rgb(72, 43, 70);
+  height: 80px;
 }
 
 /* ul element */
 .NavItems {
-  display: flex;
   list-style: none;
   float: right;
+  margin-top: 20px;
 }

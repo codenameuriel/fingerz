@@ -1,21 +1,26 @@
 /* li element */
 .NavItem {
   display: inline-block;
+  margin-right: 35px;
+}
+
+/* a link - NavLink element */
+.NavItem a {
+  text-decoration: none;
+  font-size: 130%;
+  color: white;
   background-color: black;
-  margin-left: 35px;
   border-radius: 3px;
   padding: 10px;
   transition: background-color 0.2s;
 }
 
-.NavItem:hover {
+.NavItem a:hover {
   cursor: pointer;
   background-color: rgb(185, 182, 141);
 }
 
-/* a link NavLink element */
-.NavItem a {
-  text-decoration: none;
-  font-size: 130%;
-  color: white;
+/* active class for NavLink element */
+.NavItem a.active {
+  background-color: rgb(185, 182, 141); 
 }

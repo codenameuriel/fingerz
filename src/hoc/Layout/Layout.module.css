@@ -1,8 +1,4 @@
 .Layout {
-  display: flex;
-  flex-flow: column;
+  /* background-color: blue; */
   height: 100vh;
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto;
 }

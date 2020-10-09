@@ -5,8 +5,10 @@ import NavBar from '../../components/Navigation/NavBar/NavBar';
 const Layout = props => {
   return (
     <div className={LayoutStyles.Layout}>
-      <NavBar />
-      {props.children}
+      <div className="row">
+        <NavBar />
+        {props.children}
+      </div>
     </div>
   );
 }
