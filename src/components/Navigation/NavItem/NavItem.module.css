@@ -1,14 +1,21 @@
+/* li element */
 .NavItem {
-  text-decoration: none;
-  color: white;
-  font-size: 35px;
+  display: inline-block;
   background-color: black;
-  margin-right: 35px;
-  padding: 15px;
+  margin-left: 35px;
   border-radius: 3px;
+  padding: 10px;
+  transition: background-color 0.2s;
 }
 
 .NavItem:hover {
   cursor: pointer;
   background-color: rgb(185, 182, 141);
+}
+
+/* a link NavLink element */
+.NavItem a {
+  text-decoration: none;
+  font-size: 130%;
+  color: white;
 }

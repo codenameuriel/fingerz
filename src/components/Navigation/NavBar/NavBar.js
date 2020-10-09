@@ -6,10 +6,12 @@ const NavBar = () => {
   return (
     <header className={NavBarStyles.NavBar}>
       <nav>
-        <ul>
-          <NavItem name="Type Test" link="/type-test"/>
-          <NavItem name="Words" link="/words"/>
-        </ul>
+        <div className="row">
+          <ul className={NavBarStyles.NavItems}>
+            <NavItem name="Type Test" link="/type-test"/>
+            <NavItem name="Words" link="/words"/>
+          </ul>
+        </div>
       </nav>
     </header>
   );

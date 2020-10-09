@@ -7,7 +7,12 @@
 html {
   background-color: rgb(26, 0, 22);
   font-family: 'Architects Daughter', cursive;
-  /* font-weight: 300; */
+  font-weight: 100;
   font-size: 20px;
   text-rendering: optimizeLegibility;
+}
+
+.row {
+  max-width: 95%;
+  margin: 0 auto;
 }
