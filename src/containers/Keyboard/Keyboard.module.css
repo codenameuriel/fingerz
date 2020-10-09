@@ -1,10 +1,9 @@
-/* div element that contains entire keyboard */
+/* KEYBOARD PAGE LAYOUT */
 .KeyboardPage {
-  background-color: yellow;
   height: 40vh;
 }
 
-/* div element that represents the keyboard */
+/* KEYBOARD */
 .Keyboard {
   width: 55%;
   height: 400px;
@@ -15,7 +14,15 @@
   overflow: hidden;
 }
 
-/* div element that represents the key */
+/* KEYBOARD TOP ROW */
+.TopRow {
+  width: 95%;
+  display: inline-flex;
+  justify-content: center;
+  margin-left: 2.5%;
+  margin-bottom: 2%;
+}
+
 .TopRowKey { 
   background-color: rgb(0, 0, 0);
   width: 8%;
@@ -24,7 +31,6 @@
   margin-left: 1.5%;
 }
 
-/* inner key div that holds the letter */
 .TopRowKey div {
   color: rgb(231, 231, 149);
   border-radius: 5px;
@@ -33,14 +39,14 @@
   margin-top: 15px;
 }
 
-/* div element that encapsulates top level key divs */
-.TopRow {
-  width: 95%;
+/* KEYBOARD MID ROW */
+.MidRow {
   display: inline-flex;
-  justify-content: center;
-  margin-left: 2.5%;
+  justify-content: left;
+  width: 95%;
+  margin-left: 8%;
   margin-bottom: 2%;
-}
+ }
 
 .MidRowKey {
   background-color: rgb(0, 0, 0);
@@ -58,14 +64,7 @@
   margin-top: 15px;
 }
 
-.MidRow {
- display: inline-flex;
- justify-content: left;
- width: 95%;
- margin-left: 8%;
- margin-bottom: 2%;
-}
-
+/* KEYBOARD BOTTOM ROW */
 .BottomRow {
   display: inline-flex;
   width: 95%;
@@ -89,6 +88,13 @@
   margin-top: 15px;
 }
 
+/* KEYBOARD SPACE ROW */
+.Space {
+  display: inline-flex;
+  margin-left: 25%;
+  width: 95%;
+}
+
 .SpaceKey {
   background-color: black;
   width: 60%;
@@ -103,10 +109,4 @@
   border-radius: 5px;
   text-align: center;
   margin-top: 15px;
-}
-
-.Space {
-  display: inline-flex;
-  margin-left: 25%;
-  width: 95%;
 }
