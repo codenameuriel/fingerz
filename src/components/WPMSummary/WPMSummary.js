@@ -3,10 +3,11 @@ import WPMSummaryStyles from './WPMSummary.module.css';
 
 const WPMSummary = props => {
   const renderWordSummary = () => {
+    const { wpmCounter } = props;
     const summary = [];
 
-    for (let key in props.wpmCounter) {
-      const score = parseInt(props.wpmCounter[key].toString().split('.')[0]);
+    for (let key in wpmCounter) {
+      const score = parseInt(wpmCounter[key].toString().split('.')[0]);
       
       const scoreDisplay = (
         <div className={WPMSummaryStyles.WordWPM} key={key + score}>
@@ -37,27 +38,48 @@ const WPMSummary = props => {
     const averageWPM = 
       Math.floor(parseFloat((total / Object.keys(wpmCounter).length).toFixed(2)));
 
-    renderSlowestWPMWords();
-
     return <p>{averageWPM}</p>; 
   };
 
-  const renderSlowestWPMWords = () => {
-    const { wpmCounter } = props;
-    const wpmScores = Object.values(wpmCounter);
-    const slowestWPMScores = wpmScores.sort((a, b) => a - b).slice(0, 9);
-    const slowestWPMWords = [];
+  const sort = (arr1, arr2) => {
+    return arr1[1] - arr2[1];
+  };
 
+  const slowestWPMWords = () => {
+    const { wpmCounter } = props;
+    const wpmScores = [];
+    const slowestWords = [];
+   
     for (let key in wpmCounter) {
-      if (slowestWPMScores.includes(wpmCounter[key])) {
-        slowestWPMWords.push(key);
-      }
+      wpmScores.push([key, wpmCounter[key]]);
     }
 
-    console.log(slowestWPMWords);
-    return slowestWPMWords;
+    const slowestWPMScores = wpmScores.sort(sort).slice(0, 9);
+
+    for (let i = 0; i < slowestWPMScores.length; i++) {
+      let word = slowestWPMScores[i][0];
+      slowestWords.push(word);
+    }
+
+    return slowestWords;
   };
+
+  const renderSlowestWPMWords = arr => {
+    const summary = [];
+
+    for (let i = 0; i < arr.length; i++) {
+      const wordDisplay = (
+        <div className={WPMSummaryStyles.SlowWord}>
+          <p>{arr[i]}</p>
+        </div>
+      );
+
+      summary.push(wordDisplay);
+    }
   
+    return summary;
+  };
+
   return (
     <div className={WPMSummaryStyles.WPMSummary}>
       <div className={WPMSummaryStyles.Review}>
@@ -67,7 +89,14 @@ const WPMSummary = props => {
         <div className={WPMSummaryStyles.WordSummary}>
           {renderWordSummary()}
         </div>
-      </div> 
+      </div>
+
+      <div className={WPMSummaryStyles.SlowestWordsContainer}>
+        <h1>Slowest Words</h1>
+        <div className={WPMSummaryStyles.SlowestWordsList}>
+          {renderSlowestWPMWords(slowestWPMWords())}
+        </div>
+      </div>
 
       <div className={WPMSummaryStyles.Average}>
         <div className={WPMSummaryStyles.ScoreHeader}>
