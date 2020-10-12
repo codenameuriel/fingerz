@@ -87,10 +87,12 @@ const calculateSpeed = (...args) => {
       break;
     case 'end':
       const end = Date.now() / 1000;
-      let doneTime = end - time;
-      let stringifiedTime = doneTime.toString().slice(0, 5);
-      doneTime = parseFloat(stringifiedTime);
-      
+      let doneTime;
+      let stringifiedTime;
+      doneTime = options.error ? 0 : end - time;
+      stringifiedTime = options.error ? 0 : doneTime.toString().slice(0, 5);
+      doneTime = options.error ? 0 : parseFloat(stringifiedTime);
+
       calcEndTimeAndWPM(options, dispatch, doneTime);
       break;
     default:
@@ -98,14 +100,12 @@ const calculateSpeed = (...args) => {
   } 
 };
 
-
 const updateSpeedCounter = (...args) => {
   const [wpmCounter, wordList, index, endTime] = args;
   const updatedCounter = {...wpmCounter};
 
-  updatedCounter[wordList[index]] = +(60 / endTime).toFixed(2);
-  // console.log(updatedCounter);
-
+  updatedCounter[wordList[index]] = endTime === 0 ? 0 : +(60 / endTime).toFixed(2);
+  
   return {
     type: actionTypes.UPDATE_WPM_COUNTER,
     payload: {
@@ -170,7 +170,7 @@ export const showWPMSummary = () => {
 // redux thunk
 export const handleChange = event => {
   return (dispatch, getState) => {
-    const { index, wordList, matrix, startTime, wpmCounter, typoCounter, wordRowIndex } = 
+    const { index, wordList, matrix, startTime, wpmCounter, typoCounter, wordRowIndex, showInputError } = 
       getState().wordPanel;
 
     const options = {};
@@ -188,7 +188,8 @@ export const handleChange = event => {
         const options = {
           counter: wpmCounter,
           words: matrix[wordRowIndex],
-          index: index
+          index: index,
+          error: showInputError
         };
 
         calculateSpeed(options, dispatch, startTime, 'end');
