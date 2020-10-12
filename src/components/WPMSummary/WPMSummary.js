@@ -20,16 +20,42 @@ const WPMSummary = props => {
     return summary;
   };
 
-  const renderAverageWPM = () => {
+  const getTotal = obj => {
     let total = 0;
 
-    for (let key in props.wpmCounter) {
-      total += props.wpmCounter[key];
+    for (let key in obj) {
+      total += obj[key];
     }
 
-    const averageWPM = Math.floor(parseFloat((total / Object.keys(props.wpmCounter).length).toFixed(2)));
+    return total;
+  };
+
+  const renderAverageWPM = () => {
+    const { wpmCounter } = props;
+    const total = getTotal(wpmCounter);
+
+    const averageWPM = 
+      Math.floor(parseFloat((total / Object.keys(wpmCounter).length).toFixed(2)));
+
+    renderSlowestWPMWords();
 
     return <p>{averageWPM}</p>; 
+  };
+
+  const renderSlowestWPMWords = () => {
+    const { wpmCounter } = props;
+    const wpmScores = Object.values(wpmCounter);
+    const slowestWPMScores = wpmScores.sort((a, b) => a - b).slice(0, 9);
+    const slowestWPMWords = [];
+
+    for (let key in wpmCounter) {
+      if (slowestWPMScores.includes(wpmCounter[key])) {
+        slowestWPMWords.push(key);
+      }
+    }
+
+    console.log(slowestWPMWords);
+    return slowestWPMWords;
   };
   
   return (
