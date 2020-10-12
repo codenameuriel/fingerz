@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actionCreators from '../../store/actions/index';
 import WordList from '../../components/WordList/WordList';
@@ -8,7 +9,7 @@ import Button from '../../components/UI/Button/Button';
 
 class WordPanel extends Component {
   componentDidMount() {
-    // this.inputElement.focus();
+    this.inputElement.focus();
   }
 
   componentDidUpdate() {
@@ -36,7 +37,7 @@ class WordPanel extends Component {
           <input 
             onChange={onHandleChange}
             disabled={disabled}
-            style={showInputError ? {backgroundColor: 'rgb(159, 0, 0)'} : null}
+            style={showInputError ? {backgroundColor: '#9f0000'} : null}
             type="text"
             value={input}
             ref={inputElement => this.inputElement = inputElement}/>

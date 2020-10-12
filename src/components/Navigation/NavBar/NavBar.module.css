@@ -1,7 +1,15 @@
 /* nav element */
 .Nav {
-  background-color: rgb(72, 43, 70);
+  background-color: #3d253c;
   height: 80px;
+}
+
+/* experimenting with a logo */
+.Nav img {
+  width: 5%;
+  height: 80px;
+  background-color: #3d253c;
+  margin-left: 1%;
 }
 
 /* ul element */

@@ -2,8 +2,6 @@ import React from 'react';
 import WPMSummaryStyles from './WPMSummary.module.css';
 
 const WPMSummary = props => {
-  console.log(props.wpmCounter);
-  
   const renderWordSummary = () => {
     const summary = [];
 

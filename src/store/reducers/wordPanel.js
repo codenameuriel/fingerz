@@ -11,7 +11,10 @@ const initialState = {
   input: '',
   typedKey: '',
   disabled: false,
-  wordList: ['baby', 'back', 'backlash', 'balance', 'banking', 'baseball', 'bathroom', 'basic', 'better', 'below', 'basketball', 'barely', 'biggest', 'billionaire', 'board', 'blame', 'birth', 'blog', 'bold', 'breakthrough', 'brain', 'branch', 'brand', 'bridge', 'both', 'boost', 'break', 'born', 'brief', 'beautiful', 'backpack', 'boot', 'border', 'brunch', 'buyer', 'bypass', 'business', 'bullet', 'broker', 'brilliant', 'broadband', 'brightness', 'breached', 'book', 'boss'],
+  // wordList: ['baby', 'back', 'backlash', 'balance', 'banking', 'baseball', 'bathroom', 'basic', 'better', 'below', 'basketball', 'barely', 'biggest', 'billionaire', 'board', 'blame', 'birth', 'blog', 'bold', 'breakthrough', 'brain', 'branch', 'brand', 'bridge', 'both', 'boost', 'break', 'born', 'brief', 'beautiful', 'backpack', 'boot', 'border', 'brunch', 'buyer', 'bypass', 'business', 'bullet', 'broker', 'brilliant', 'broadband', 'brightness', 'breached', 'book', 'boss'],
+  wordList: [
+    'grass', 'grease','race', 'Swedes', 'Qatar', 'Greece', 'verde', 'terse', 'tweed', 'west', 'east', 'gas', 'far', 'as', 'geez', 'we', 'sat', 'cart', 'tree', 'faster', 'fast', 'reverberate', 'cascade', 'greatest', 'accrete', 'abracadabra', 'defaced', 'redfaced', 'barge', 'tweet', 'retract', 'drag', 'starve', 'water', 'effect', 'state'
+  ],
   wpmCounter: {},
   showInputError: false,
   typoCounter: [],

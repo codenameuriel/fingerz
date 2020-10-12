@@ -6,10 +6,26 @@ import * as actionCreators from '../../store/actions/index';
 class WordList extends Component {
   componentDidMount() {
     const { wordList, onGenerateMatrix } = this.props;
+    const shuffledWordList = this.shuffleWords(wordList);
 
-    const wordMatrix = this.createWordMatrix(wordList);
+    const wordMatrix = this.createWordMatrix(shuffledWordList);
 
     onGenerateMatrix(wordMatrix);
+  }
+
+  shuffleWords = arr => {
+    let words = [...arr];
+    let shuffledWords = [];
+
+    for (let i = words.length - 1; i >= 0; i--) {
+      let randomIndex = Math.floor(Math.random() * words.length); 
+      
+      shuffledWords.push(words[randomIndex]);
+      
+      words = words.filter(word => word !== words[randomIndex]);
+      }
+    
+      return shuffledWords;
   }
   
   createWordMatrix = arr => {
@@ -58,7 +74,7 @@ class WordList extends Component {
                   className={WordListStyles.Word}
                   key={word}
                   style={propIndex === index && !error ?
-                    {backgroundColor: 'rgb(185, 182, 141)'} : error && propIndex === index ? {backgroundColor: 'rgb(159, 0, 0'} : null}>
+                    {backgroundColor: 'rgb(185, 182, 141)'} : error && propIndex === index ? {backgroundColor: '#9f0000'} : null}>
                   <h1>{word}</h1>
                 </div>
               );

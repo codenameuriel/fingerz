@@ -104,7 +104,7 @@ const updateSpeedCounter = (...args) => {
   const updatedCounter = {...wpmCounter};
 
   updatedCounter[wordList[index]] = +(60 / endTime).toFixed(2);
-  console.log(updatedCounter);
+  // console.log(updatedCounter);
 
   return {
     type: actionTypes.UPDATE_WPM_COUNTER,
@@ -167,12 +167,11 @@ export const showWPMSummary = () => {
   }
 };
 
+// redux thunk
 export const handleChange = event => {
   return (dispatch, getState) => {
     const { index, wordList, matrix, startTime, wpmCounter, typoCounter, wordRowIndex } = 
       getState().wordPanel;
-
-      console.log(wordList.length)
 
     const options = {};
  

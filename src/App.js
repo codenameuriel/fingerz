@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <Layout>
         <Switch>
-          <Route exact path="/type-test" component={TypeTest}/>
+          <Route path="/type-test" component={TypeTest}/>
           <Redirect exact from="/" to="/type-test"/>
         </Switch>
       </Layout>
