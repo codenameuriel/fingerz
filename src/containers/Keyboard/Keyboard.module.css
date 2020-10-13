@@ -1,6 +1,6 @@
 /* KEYBOARD */
 .Keyboard {
-  width: 55%;
+  width: 60%;
   background-color: #1c1c34;
   border-radius: 5px;
   margin: 0 auto;
@@ -11,7 +11,6 @@
 /* KEYBOARD TOP ROW */
 .TopRow {
   width: 95%;
-  /* background-color: red; */
   display: inline-flex;
   justify-content: left;
   margin-left: 4%;
@@ -27,9 +26,9 @@
 }
 
 .TopRowKey div {
-  color: rgb(231, 231, 149);
-  /* color: #bfbd98; */
-  /* color: white; */
+  /* color: rgb(231, 231, 149); */
+  /* color: teal; */
+  color: #00e6e6;
   border-radius: 5px;
   font-size: 150%;
   text-align: center;
@@ -54,7 +53,9 @@
 }
 
 .MidRowKey div {
-  color: rgb(231, 231, 149);
+  /* color: rgb(231, 231, 149); */
+  /* color: teal; */
+  color: #00e6e6;
   border-radius: 5px;
   font-size: 150%;
   text-align: center;
@@ -78,7 +79,9 @@
 }
 
 .BottomRowKey div {
-  color: rgb(231, 231, 149);
+  /* color: rgb(231, 231, 149); */
+  /* color: teal; */
+  color: #00e6e6;
   border-radius: 5px;
   font-size: 150%;
   text-align: center;
@@ -102,7 +105,9 @@
 }
 
 .SpaceKey div {
-  color: rgb(231, 231, 149);
+  /* color: rgb(231, 231, 149); */
+  /* color: teal; */
+  color: #00e6e6;
   font-size: 150%;
   border-radius: 5px;
   text-align: center;

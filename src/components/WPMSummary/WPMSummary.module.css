@@ -1,9 +1,37 @@
 .WPMSummary {
   color: white;
-  display: inline-flex;
+  display: flex;
+  flex-direction: row;
   font-size: 100%;
-  margin-top: 15px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+}
+
+.WPMSummaryContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 65%;
+  height: 50vh;
+  padding-top: 50px;
+}
+
+.WPMSummaryContainer button {
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #3d253c;
+  color: white;
+  font-size: 90%;
+  border: none;
+  width: 10%;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.WPMSummaryContainer button:hover {
+  background-color: #7c4b7a;
+  color: white;
 }
 
 .Average {
@@ -27,21 +55,23 @@
   background-color: black;
   color: white; 
   border-radius: 5px;
-  width: 75%;
+  width: 80%;
   margin: 3px auto;
 }
 
 .WordWPM {
-  color: rgb(231, 231, 149); 
+  /* color: rgb(231, 231, 149);  */
+  color: #00e6e6;
   background-color: black;
   border-radius: 5px;
-  width: 40%;
+  width: 45%;
   margin: 3px auto;
 }
 
 .Score {
   text-align: center;
-  color: rgb(231, 231, 149); 
+  /* color: rgb(231, 231, 149);  */
+  color: #00e6e6;
   background-color: black;
   border-radius: 5px;
   width: 40%;
@@ -70,9 +100,12 @@
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #bfbd98;
+  background-color: #3d253c;
+  /* background-color: #00e6e6; */
+  /* background-color: #bfbd98; */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: white;
+  /* background: white; */
+  background-color: #00e6e6;
 }

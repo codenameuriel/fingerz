@@ -17,10 +17,14 @@
 
 .NavItem a:hover {
   cursor: pointer;
-  background-color: #bfbd98;
+  /* background-color: #bfbd98; */
+  /* background-color: teal; */
+  background-color: #00c4c4;
 }
 
 /* active class for NavLink element */
 .NavItem a.active {
-  background-color: #bfbd98; 
+  /* background-color: #bfbd98;  */
+  /* background-color: teal; */
+  background-color: #00c4c4;
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import WPMSummaryStyles from './WPMSummary.module.css';
+import Button from '../UI/Button/Button';
 
 const WPMSummary = props => {
   const renderWordSummary = () => {
@@ -11,7 +12,7 @@ const WPMSummary = props => {
       
       const scoreDisplay = (
         <div className={WPMSummaryStyles.WordWPM} key={key + score}>
-          <p><span style={{color: 'white'}}>{`${key}`}</span>: {`${score}`}</p>
+          <p><span style={{color: 'white'}}>{`${key}`}:</span> {`${score}`}</p>
         </div>
       );
       
@@ -81,31 +82,37 @@ const WPMSummary = props => {
   };
 
   return (
-    <div className={WPMSummaryStyles.WPMSummary}>
-      <div className={WPMSummaryStyles.Review}>
-        <div>
-          <h1>WPM Per Word</h1> 
+    <div className={WPMSummaryStyles.WPMSummaryContainer}>
+      <div className={WPMSummaryStyles.WPMSummary}>
+        <div className={WPMSummaryStyles.Review}>
+          <div>
+            <h1>WPM Per Word</h1> 
+          </div>
+          <div className={WPMSummaryStyles.WordSummary}>
+            {renderWordSummary()}
+          </div>
         </div>
-        <div className={WPMSummaryStyles.WordSummary}>
-          {renderWordSummary()}
+
+        <div className={WPMSummaryStyles.SlowestWordsContainer}>
+          <h1>Slowest Words</h1>
+          <div className={WPMSummaryStyles.SlowestWordsList}>
+            {renderSlowestWPMWords(slowestWPMWords())}
+          </div>
+        </div>
+
+        <div className={WPMSummaryStyles.Average}>
+          <div className={WPMSummaryStyles.ScoreHeader}>
+            <h1>Average WPM</h1>
+          </div>
+          <div className={WPMSummaryStyles.Score}>
+            {renderAverageWPM()}
+          </div>
         </div>
       </div>
 
-      <div className={WPMSummaryStyles.SlowestWordsContainer}>
-        <h1>Slowest Words</h1>
-        <div className={WPMSummaryStyles.SlowestWordsList}>
-          {renderSlowestWPMWords(slowestWPMWords())}
-        </div>
-      </div>
-
-      <div className={WPMSummaryStyles.Average}>
-        <div className={WPMSummaryStyles.ScoreHeader}>
-          <h1>Average WPM</h1>
-        </div>
-        <div className={WPMSummaryStyles.Score}>
-          {renderAverageWPM()}
-        </div>
-      </div>
+      <Button
+          text="Restart" 
+          handleClick={props.onRestartTest}/>
     </div>
   );
 }

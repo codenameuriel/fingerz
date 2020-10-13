@@ -31,8 +31,9 @@ class WordPanel extends Component {
         <div className={WordPanelStyles.WordPanel}>
           <WordList disableInput={onDisableInput} error={showInputError}/>
           {/* <Button text="Randomize Words"/> */}
+          {/* rgb(231, 231, 149) - aternative color */}
           <h5>
-            (press <span style={{color: 'rgb(231, 231, 149)'}}>space</span> for next word)
+            (press <span style={{color: '#00e6e6'}}>space</span> for next word)
           </h5> 
           <input 
             onChange={onHandleChange}
@@ -47,12 +48,7 @@ class WordPanel extends Component {
 
     if (showWPMSummary) {
       return (
-        <div className={WordPanelStyles.WPMSummary}>
-          <WPMSummary wpmCounter={wpmCounter}/>
-          <Button
-            text="Restart" 
-            handleClick={onRestartTest}/>
-        </div>
+        <WPMSummary wpmCounter={wpmCounter} onRestartTest={onRestartTest}/>
       );
     }
   }

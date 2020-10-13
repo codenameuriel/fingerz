@@ -40,7 +40,9 @@
   font-size: 165%;
   text-align: center;
   color: white;
-  background-color: #bfbd98;
+  /* background-color: #bfbd98; */
+  /* background-color: teal; */
+  background-color: #1c1c34;
   border: none;
   border-radius: 5px;
   align-self: center;
@@ -50,30 +52,3 @@
   outline: none;
 }
 
-.WPMSummary {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  width: 75%;
-  height: 50vh;
-  padding-top: 50px;
-}
-
-.WPMSummary button {
-  margin: 0 auto;
-  padding: 10px;
-  background-color: #3d253c;
-  color: white;
-  font-size: 90%;
-  border: none;
-  width: 10%;
-  border-radius: 5px;
-  outline: none;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.WPMSummary button:hover {
-  background-color: #7c4b7a;
-  color: white;
-}
