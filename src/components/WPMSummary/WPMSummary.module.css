@@ -8,26 +8,27 @@
 
 .Average {
   width: 30%;
-  margin: 15px auto 0 0;
+  margin: 0 auto;
 }
 
 .SlowestWordsContainer {
   width: 30%;
   text-align: center;
-  margin: 15px auto 0 0;
+  margin: 0 auto;
 }
 
 .SlowestWordsList {
   width: 50%;
   margin: 0 auto;
+  height: 75%;
 }
 
 .SlowWord {
   background-color: black;
-  color: rgb(231, 231, 149); 
+  color: white; 
   border-radius: 5px;
   width: 75%;
-  margin: 5px auto;
+  margin: 3px auto;
 }
 
 .WordWPM {
@@ -35,7 +36,7 @@
   background-color: black;
   border-radius: 5px;
   width: 40%;
-  margin: 5px auto;
+  margin: 3px auto;
 }
 
 .Score {
@@ -56,7 +57,7 @@
 }
 
 .Review {
-  margin: 15px auto 0 auto;
+  margin: 0 auto;
   width: 30%;
   height: 355px;
   overflow: scroll;
