@@ -59,6 +59,10 @@
   margin: 3px auto;
 }
 
+.WordSummary {
+  margin-bottom: 15px;
+}
+
 .WordWPM {
   /* color: rgb(231, 231, 149);  */
   color: #00e6e6;
