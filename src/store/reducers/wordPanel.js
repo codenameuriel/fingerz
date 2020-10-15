@@ -28,8 +28,8 @@ const reducer = (state=initialState, action) => {
     case actionTypes.HANDLE_KEY_PRESS:
       const pressedKey = {...state.pressedKey};
       const pressedKeyStyle = {
-        color: 'rgb(145, 82, 145)',
-        backgroundColor: 'rgb(0, 0, 0)'
+        color: 'white',
+        backgroundColor: '#3d253c'
       };
       pressedKey.value = state.typedKey;
       pressedKey.style = pressedKeyStyle;

@@ -22,42 +22,43 @@ class Keyboard extends Component {
       case 'top':
         return (
           TOPROWKEYS.map((key, index) => (
-          <div key={`${key} ${index}`} className={KeyboardStyles.TopRowKey}>
-            <div className="row"
-              id={key} 
-              ref={this[`${key}Key`]} 
-              style={this.setStyle(this[`${key}Key`])}>{key}
-            </div>
+          <div 
+            key={`${key} ${index}`} className={KeyboardStyles.TopRowKey}
+            id={key} 
+            ref={this[`${key}Key`]} 
+            style={this.setStyle(this[`${key}Key`])}>{key}
           </div>
         )));
       case 'mid':
         return (
           MIDROWKEYS.map((key, index) => (
-            <div key={`${key} ${index}`} className={KeyboardStyles.MidRowKey}>
-              <div className="row"
-                id={key} 
-                ref={this[`${key}Key`]} 
-                style={this.setStyle(this[`${key}Key`])}>{key}</div>
+            <div 
+              key={`${key} ${index}`} 
+              className={KeyboardStyles.MidRowKey}
+              id={key} 
+              ref={this[`${key}Key`]} 
+              style={this.setStyle(this[`${key}Key`])}>{key}
             </div>
           )));
         case 'bottom':
           return (
             BOTTOMROWKEYS.map((key, index) => (
-              <div key={`${key} ${index}`} className={KeyboardStyles.BottomRowKey}>
-                <div className="row"
-                  id={key} 
-                  ref={this[`${key}Key`]} 
-                  style={this.setStyle(this[`${key}Key`])}>{key}</div>
+              <div 
+                key={`${key} ${index}`} 
+                className={KeyboardStyles.BottomRowKey}
+                id={key} 
+                ref={this[`${key}Key`]} 
+                style={this.setStyle(this[`${key}Key`])}>{key}
               </div>
             )));
         case 'space':
           return (
-            <div className={KeyboardStyles.SpaceKey}>
-                <div className="row"
-                  id="space"
-                  ref={this.spaceKey} 
-                  style={this.setStyle(this.spaceKey)}>space</div>
-              </div>
+            <div 
+              className={KeyboardStyles.SpaceKey}
+              id="space"
+              ref={this.spaceKey} 
+              style={this.setStyle(this.spaceKey)}>space
+            </div>
           );
       default: return null;
     }
