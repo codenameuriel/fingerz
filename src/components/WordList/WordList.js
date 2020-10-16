@@ -7,7 +7,6 @@ class WordList extends Component {
   componentDidMount() {
     const { wordList, onGenerateMatrix } = this.props;
     const shuffledWordList = this.shuffleWords(wordList);
-
     const wordMatrix = this.createWordMatrix(shuffledWordList);
 
     onGenerateMatrix(wordMatrix);

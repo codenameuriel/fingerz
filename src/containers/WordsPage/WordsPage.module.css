@@ -1,0 +1,15 @@
+.WordsPage {
+  /* background-color: red; */
+  text-align: center;
+}
+
+.WordsPage h1 {
+  padding-top: 25px;
+  font-size: 250%;
+  color: white;
+}
+
+.WordsPage p {
+  color: #00e6e6;
+  font-size: 125%;
+}
