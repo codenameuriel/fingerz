@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as actionCreators from '../../store/actions/index';
 import WordsPageStyles from './WordsPage.module.css';
 import axios from 'axios';
 
 class WordsPage extends Component {
   componentDidMount() {
-   this.getWordLists();
+    this.getWords()
   }
 
-  getWordLists = async() => {
+  getWords = async() => {
     try {
-      const wordLists = await (await axios.get('http://localhost:4000/wordlists')).data;
+      const words = await (await axios.get('http://localhost:4000/wordlists')).data;
 
-      console.log(wordLists);
+      console.log(words);
+      this.props.onLoadWords(words);
     } catch (error) {
       console.log(error);
     }
@@ -44,4 +47,16 @@ class WordsPage extends Component {
   }
 }
 
-export default WordsPage;
+const mapStateToProps = state => {
+  return {
+    words: state.wordsPage.words
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onLoadWords: words => dispatch(actionCreators.loadWords(words))
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(WordsPage);
