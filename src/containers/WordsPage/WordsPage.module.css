@@ -9,7 +9,28 @@
   color: white;
 }
 
-.WordsPage p {
+.WordsPage table {
+  width: 75%;
+  margin: 0 auto;
+  margin-top: 25px;
+  border: 1px solid white;
+}
+
+.WordsPage table caption {
   color: #00e6e6;
-  font-size: 125%;
+  font-size: 115%;
+}
+
+.WordsPage th {
+  color: white;
+  text-align: center;
+}
+
+.WordsPage thead {
+  background-color: black;
+}
+
+.WordsPage tbody {
+  background-color: #3d253c;
+  color: white;
 }

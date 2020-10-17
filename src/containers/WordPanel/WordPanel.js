@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actionCreators from '../../store/actions/index';
 import WordList from '../../components/WordList/WordList';
 import WordPanelStyles from './WordPanel.module.css';
 import WPMSummary from '../../components/WPMSummary/WPMSummary';
-import Button from '../../components/UI/Button/Button';
 
 class WordPanel extends Component {
   componentDidMount() {
@@ -30,7 +28,6 @@ class WordPanel extends Component {
       return (
         <div className={WordPanelStyles.WordPanel}>
           <WordList disableInput={onDisableInput} error={showInputError}/>
-          {/* <Button text="Randomize Words"/> */}
           {/* rgb(231, 231, 149) - aternative color */}
           <h5>
             (press <span style={{color: '#00e6e6'}}>space</span> for next word)
