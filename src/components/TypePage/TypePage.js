@@ -2,13 +2,13 @@ import React from 'react';
 import WordPanel from '../../containers/WordPanel/WordPanel';
 import Keyboard from '../../containers/Keyboard/Keyboard';
 
-const TypeTest = () => {
+const TypePage = () => {
   return (
-    <div className="row">
+    <div>
       <WordPanel />
       <Keyboard />
     </div>
   );
 };
 
-export default TypeTest;
+export default TypePage;

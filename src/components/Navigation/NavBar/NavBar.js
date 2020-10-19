@@ -8,7 +8,7 @@ const NavBar = () => {
       <nav className={NavBarStyles.Nav}>
         <div className="row">
           <ul className={NavBarStyles.NavItems}>
-            <NavItem name="Type Test" link="/type-test"/>
+            <NavItem name="Type" link="/type"/>
             <NavItem name="Words" link="/words"/>
           </ul>
         </div>
