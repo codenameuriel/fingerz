@@ -6,6 +6,7 @@ import WordsPageStyles from './WordsPage.module.css';
 class WordsPage extends Component {
   componentDidMount() {
     this.props.onLoadWords();
+    this.props.onRestartTest();
   }
 
   componentDidUpdate() {
@@ -80,7 +81,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     onLoadWords: () => dispatch(actionCreators.loadWords()),
-    onChecked: (input, words) => dispatch(actionCreators.checkedInput(input, words))
+    onChecked: (input, words) => dispatch(actionCreators.checkedInput(input, words)),
+    onRestartTest: () => dispatch(actionCreators.restartTest())
   };
 };
 
