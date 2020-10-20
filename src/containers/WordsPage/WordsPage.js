@@ -36,22 +36,41 @@ class WordsPage extends Component {
                 name={wordList.name}
                 ref={this[`${wordList.name}`]}
                 type="radio" 
-                checked={this.props.checkedInput === this[`${wordList.name}`]}/>
+                checked={this.props.checkedInput === this[`${wordList.name}`]}
+              />
             </td>
             <td>{wordList.category}</td>
             <td>{wordList.name}</td>
-            <td>{wordsSummary}</td>
+            <td className={WordsPageStyles.WordsSummary}>
+              <p>{wordsSummary}</p>
+              <span>
+                <div 
+                  className={WordsPageStyles.Modal}
+                  style={{borderRadius: '5px'}}>
+                  <p>{this.formatWords(wordList.words)}</p>
+                </div>
+              </span>
+            </td>
           </tr>
         );
       })
     );
   }
 
+  formatWords = words => {
+    let wordString = '';
+    for (let i = 0; i < words.length; i++) {
+      if (i !== words.length - 1) wordString += words[i] + ', '
+      else wordString += words[i];
+    }
+
+    return wordString;
+  }
+
   render() {
     return (
       <div className={WordsPageStyles.WordsPage}>
         <h1>Select Words Pack</h1>
-
         <table>
           <caption>
             Select different collection of words to improve typing

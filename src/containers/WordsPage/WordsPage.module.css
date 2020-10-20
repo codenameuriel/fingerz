@@ -1,5 +1,4 @@
 .WordsPage {
-  /* background-color: red; */
   text-align: center;
 }
 
@@ -10,20 +9,24 @@
 }
 
 .WordsPage table {
-  width: 60%;
   margin: 0 auto;
   margin-top: 25px;
-  border: 1px solid white;
+  border: 1px solid #3d253c;
+  width: 70%;
 }
 
 .WordsPage table caption {
   color: #00e6e6;
-  font-size: 115%;
+  font-size: 105%;
 }
 
 .WordsPage th {
   color: white;
   text-align: center;
+}
+
+.WordsPage td {
+  height: 50px;
 }
 
 .WordsPage thead {
@@ -32,5 +35,38 @@
 
 .WordsPage tbody {
   background-color: #3d253c;
+  color: white;
+}
+
+.WordsPage input {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+}
+
+.WordsSummary {
+  transition: 0.2s color;
+}
+
+.WordsSummary:hover {
+  cursor: pointer;
+  color: #00e6e6;
+}
+
+span {
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+}
+
+.WordsSummary:hover span {
+  visibility: visible;
+}
+
+.Modal {
+  padding: 25px;
+  background-color: #1c1c34;
+  width: 75%;
+  text-align: center;
   color: white;
 }
