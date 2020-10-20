@@ -53,7 +53,7 @@
   color: #00e6e6;
 }
 
-span {
+table span {
   visibility: hidden;
   position: absolute;
   z-index: 1;

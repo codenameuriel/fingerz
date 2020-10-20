@@ -107,12 +107,11 @@ const WPMSummary = props => {
           <div className={WPMSummaryStyles.Score}>
             {renderAverageWPM()}
           </div>
+          <Button
+            text="Restart" 
+            handleClick={props.onRestartTest}/>
         </div>
       </div>
-
-      <Button
-          text="Restart" 
-          handleClick={props.onRestartTest}/>
     </div>
   );
 }

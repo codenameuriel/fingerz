@@ -15,28 +15,34 @@
   padding-top: 50px;
 }
 
-.WPMSummaryContainer button {
+.Average {
+  width: 30%;
   margin: 0 auto;
-  padding: 10px;
+}
+
+.Average p {
+  font-size: 200%;
+  padding: 5px;
+}
+
+.Average button {
+  padding: 15px;
   background-color: #3d253c;
   color: white;
   font-size: 90%;
   border: none;
-  width: 10%;
+  width: 50%;
   border-radius: 5px;
   outline: none;
   cursor: pointer;
   transition: background-color 0.2s;
+  margin-top: 20%;
+  margin-left: 25%;
 }
 
-.WPMSummaryContainer button:hover {
+.Average button:hover {
   background-color: #7c4b7a;
   color: white;
-}
-
-.Average {
-  width: 30%;
-  margin: 0 auto;
 }
 
 .SlowestWordsContainer {
@@ -48,7 +54,8 @@
 .SlowestWordsList {
   width: 50%;
   margin: 0 auto;
-  height: 75%;
+  height: 70%;
+  overflow: scroll;
 }
 
 .SlowWord {
@@ -57,6 +64,7 @@
   border-radius: 5px;
   width: 80%;
   margin: 3px auto;
+  padding: 5px;
 }
 
 .WordSummary {
@@ -68,8 +76,9 @@
   color: #00e6e6;
   background-color: black;
   border-radius: 5px;
-  width: 45%;
+  width: 50%;
   margin: 3px auto;
+  padding: 5px;
 }
 
 .Score {
@@ -86,14 +95,10 @@
   text-align: center;
 }
 
-.Average p {
-  font-size: 200%;
-}
-
 .Review {
   margin: 0 auto;
   width: 30%;
-  height: 355px;
+  height: 350px;
   overflow: scroll;
   text-align: center;
 }
