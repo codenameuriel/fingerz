@@ -73,7 +73,7 @@ class WordsPage extends Component {
         <h1>Select Words Pack</h1>
         <table>
           <caption>
-            Select different collection of words to improve typing
+            Select different words to practice typing
           </caption>
           <thead>
             <tr>

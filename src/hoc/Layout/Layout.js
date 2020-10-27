@@ -4,7 +4,7 @@ import NavBar from '../../components/Navigation/NavBar/NavBar';
 const Layout = props => {
   return (
     <div>
-      <div className="row">
+      <div>
         <NavBar />
         {props.children}
       </div>

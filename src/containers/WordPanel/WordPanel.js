@@ -35,7 +35,7 @@ class WordPanel extends Component {
           <input 
             onChange={onHandleChange}
             disabled={disabled}
-            style={showInputError ? {backgroundColor: '#9f0000'} : null}
+            // style={showInputError ? {backgroundColor: '#9f0000'} : null}
             type="text"
             value={input}
             ref={inputElement => this.inputElement = inputElement}/>

@@ -11,13 +11,7 @@ const initialState = {
   input: '',
   typedKey: '',
   disabled: false,
-  wordList: ['baby', 'back', 'backlash', 'balance', 'banking', 'baseball', 'bathroom', 'basic', 'better', 'below', 'basketball', 'barely', 'biggest', 'billionaire', 'board', 'blame', 'birth', 'blog', 'bold', 'breakthrough', 'brain', 'branch', 'brand', 'bridge', 'both', 'boost', 'break', 'born', 'brief', 'beautiful', 'backpack', 'boot', 'border', 'brunch', 'buyer', 'bypass', 'business', 'bullet', 'broker', 'brilliant', 'broadband', 'brightness', 'breached', 'book', 'boss'],
-  // wordList: [
-  //   'grass', 'grease','race', 'Swedes', 'Qatar', 'Greece', 'verde', 'terse', 'tweed', 'west', 'east', 'gas', 'far', 'as', 'geez', 'we', 'sat', 'cart', 'tree', 'faster', 'fast', 'reverberate', 'cascade', 'greatest', 'accrete', 'abracadabra', 'defaced', 'redfaced', 'barge', 'tweet', 'retract', 'drag', 'starve', 'water', 'effect', 'state'
-  // ],
-  // wordList: [
-  //   'lollipop', 'monopoly', 'polyphony', 'jumpily', 'pool', 'holly', 'homonym', 'lumpy', 'million', 'kimono', 'pippin', 'pompom', 'unholy', 'hippo', 'nylon', 'nymph', 'onion', 'puppy', 'union', 'molly', 'minimum', 'opinion', 'milky', 'kill', 'you', 'hippy', 'mop', 'yolk', 'oily', 'knoll', 'hypophyllium', 'honk', 'hook', 'kinky', 'upon', 'linkup'
-  // ],     
+  wordList: ['would', 'being', 'without', 'look', 'even', 'something', 'made', 'people', 'home', 'large', 'number', 'same', 'seem', 'word', 'is', 'where', 'so', 'he', 'that', 'girl', 'go', 'saw', 'few', 'by', 'the', 'you', 'what', 'give', 'not', 'could', 'after', 'than', 'off', 'great', 'live', 'very'],
   wpmCounter: {},
   showInputError: false,
   typoCounter: [],
