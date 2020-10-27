@@ -1,3 +1,20 @@
 .Timer {
+  display: flex;
+  flex-direction: row;
   color: white;
+  width: 25%;
+  margin: 0 auto;
+}
+
+.Timer p {
+  width: 35%;
+  text-align: center;
+  margin-top: 55px;
+  margin-left: 50px;
+  font-size: 150%;
+}
+
+.Timer button {
+  width: 35%;
+  margin-left: 5px;
 }
