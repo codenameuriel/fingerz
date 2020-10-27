@@ -4,6 +4,7 @@ import * as actionCreators from '../../store/actions/index';
 import WordList from '../../components/WordList/WordList';
 import WordPanelStyles from './WordPanel.module.css';
 import WPMSummary from '../../components/WPMSummary/WPMSummary';
+import Timer from '../Timer/Timer';
 
 class WordPanel extends Component {
   componentDidMount() {
@@ -29,6 +30,7 @@ class WordPanel extends Component {
         <div className={WordPanelStyles.WordPanel}>
           <WordList disableInput={onDisableInput} error={showInputError}/>
           {/* rgb(231, 231, 149) - aternative color */}
+          <Timer />
           <h5>
             (press <span style={{color: '#00e6e6'}}>space</span> for next word)
           </h5> 
