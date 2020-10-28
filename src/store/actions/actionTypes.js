@@ -17,3 +17,4 @@ export const SET_WORDS = 'SET_WORDS';
 export const GET_WORDS_FAILED = 'GET_WORDS_FAILED';
 export const SET_CHECKED_INPUT = 'CHECKED_INPUT';
 export const SET_WORD_LIST = 'SET_WORD_LIST';
+export const MINUS_ONE_SECOND = 'MINUS_ONE_SECOND';

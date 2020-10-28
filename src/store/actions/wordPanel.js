@@ -167,6 +167,17 @@ export const showWPMSummary = () => {
   }
 };
 
+export const startTimer = () => {
+  return (dispatch) => {
+    let timer = setInterval(() => dispatch(minusOneSecond()), 1000);
+    setTimeout(() => clearInterval(timer), 60000);
+  };
+};
+
+const minusOneSecond = () => {
+  return { type: actionTypes.MINUS_ONE_SECOND };
+};
+
 // redux thunk
 export const handleChange = event => {
   return (dispatch, getState) => {

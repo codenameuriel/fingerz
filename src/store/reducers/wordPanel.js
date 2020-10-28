@@ -10,14 +10,15 @@ const initialState = {
   index: 0,
   input: '',
   typedKey: '',
-  disabled: false,
+  disabled: true,
   wordList: ['would', 'being', 'without', 'look', 'even', 'something', 'made', 'people', 'home', 'large', 'number', 'same', 'seem', 'word', 'is', 'where', 'so', 'he', 'that', 'girl', 'go', 'saw', 'few', 'by', 'the', 'you', 'what', 'give', 'not', 'could', 'after', 'than', 'off', 'great', 'live', 'very'],
   wpmCounter: {},
   showInputError: false,
   typoCounter: [],
   wordRowIndex: 0,
   matrix: [],
-  showWPMSummary: false
+  showWPMSummary: false,
+  time: 60
 };
 
 const reducer = (state=initialState, action) => {
@@ -67,7 +68,7 @@ const reducer = (state=initialState, action) => {
     case actionTypes.DISABLE_INPUT:
       return {
         ...state, 
-        disabled: true
+        disabled: false
       };
     case actionTypes.START_TIME:
       return {
@@ -97,8 +98,10 @@ const reducer = (state=initialState, action) => {
         index: 0,
         wpmCounter: {},
         wordRowIndex: 0,
-        showWPMSummary: false
-      }
+        showWPMSummary: false,
+        disabled: true,
+        time: 60
+      };
     case actionTypes.SHOW_INPUT_ERROR:
       return {
         ...state,
@@ -113,22 +116,27 @@ const reducer = (state=initialState, action) => {
       return {
         ...state,
         wordRowIndex: state.wordRowIndex + 1
-      }
+      };
      case actionTypes.GENERATE_WORD_MATRIX: 
       return {
         ...state,
         matrix: action.payload.matrix
-      }
+      };
     case actionTypes.SHOW_WPM_SUMMARY:
       return {
         ...state,
         showWPMSummary: true
-      }
+      };
     case actionTypes.SET_WORD_LIST:
       return {
         ...state, 
         wordList: action.payload.wordList
-      }
+      };
+    case actionTypes.MINUS_ONE_SECOND:
+      return {
+        ...state,
+        time: state.time - 1
+      };
     default: return state;
   }
 };

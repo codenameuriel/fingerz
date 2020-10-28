@@ -6,8 +6,8 @@ import * as actionCreators from '../../store/actions/index';
 class WordList extends Component {
   componentDidMount() {
     const { wordList, onGenerateMatrix } = this.props;
-    const shuffledWordList = this.shuffleWords(wordList);
-    const wordMatrix = this.createWordMatrix(shuffledWordList);
+    const increasedWordList = this.addWords(this.shuffleWords(wordList));
+    const wordMatrix = this.createWordMatrix(increasedWordList);
 
     onGenerateMatrix(wordMatrix);
   }
@@ -25,6 +25,16 @@ class WordList extends Component {
       }
     
       return shuffledWords;
+  }
+
+  addWords = arr => {
+    let addedWords = [];
+
+    for (let i = 0; i < 10; i++) {
+      addedWords = addedWords.concat(this.shuffleWords(arr));
+    }
+    
+    return addedWords;
   }
   
   createWordMatrix = arr => {
@@ -55,7 +65,7 @@ class WordList extends Component {
           {matrix[wordRowIndex + 1].map(word => {
             return (
               <div className={WordListStyles.Word} key={word}>
-                <h1>{word}</h1>
+                <p>{word}</p>
               </div>
             );
           })}
@@ -75,7 +85,7 @@ class WordList extends Component {
                   // 'rgb(185, 182, 141)' - alternative color
                   style={propIndex === index && !error ?
                     {backgroundColor: '#00c4c4'} : error && propIndex === index ? {backgroundColor: '#9f0000'} : null}>
-                  <h1>{word}</h1>
+                  <p>{word}</p>
                 </div>
               );
             })}

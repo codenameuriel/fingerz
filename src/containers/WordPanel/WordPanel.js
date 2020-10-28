@@ -7,22 +7,23 @@ import WPMSummary from '../../components/WPMSummary/WPMSummary';
 import Timer from '../Timer/Timer';
 
 class WordPanel extends Component {
-  componentDidMount() {
-    this.inputElement.focus();
-  }
+  // componentDidMount() {
+  //   this.inputElement.focus();
+  // }
 
   componentDidUpdate() {
-    const { matrix, wordRowIndex } = this.props;
+    // const { matrix, wordRowIndex } = this.props;
 
     if (this.inputElement) this.inputElement.focus();
-    if (wordRowIndex === matrix.length) {
-      this.props.onShowWPMSummary(); 
-    }
+    // if (wordRowIndex === matrix.length) {
+    //   this.props.onShowWPMSummary(); 
+    // }
+    if (this.props.time === 0) this.props.onShowWPMSummary();
   }
 
   showDisplay() {
     const { 
-      showWPMSummary, onDisableInput, onHandleChange, showInputError, input, wpmCounter, onRestartTest, disabled
+      showWPMSummary, onDisableInput, onHandleChange, showInputError, input, wpmCounter, onRestartTest, disabled, onStartTimer, time
     } = this.props; 
     
     if (!showWPMSummary) {
@@ -30,7 +31,7 @@ class WordPanel extends Component {
         <div className={WordPanelStyles.WordPanel}>
           <WordList disableInput={onDisableInput} error={showInputError}/>
           {/* rgb(231, 231, 149) - aternative color */}
-          <Timer />
+          <Timer disableInput={onDisableInput} startTimer={onStartTimer} time={time}/>
           <h5>
             (press <span style={{color: '#00e6e6'}}>space</span> for next word)
           </h5> 
@@ -40,6 +41,7 @@ class WordPanel extends Component {
             // style={showInputError ? {backgroundColor: '#9f0000'} : null}
             type="text"
             value={input}
+            style={this.props.disabled ? {cursor: 'not-allowed', backgroundColor: '#161629'} : null}
             ref={inputElement => this.inputElement = inputElement}/>
         </div>
       );
@@ -53,11 +55,7 @@ class WordPanel extends Component {
   }
 
   render() {
-    return (
-      <>
-        {this.showDisplay()}
-      </>
-    );
+    return this.showDisplay()
   }
 }
 
@@ -73,7 +71,8 @@ const mapStateToProps = state => {
     showInputError: state.wordPanel.showInputError,
     wordRowIndex: state.wordPanel.wordRowIndex,
     matrix: state.wordPanel.matrix,
-    showWPMSummary: state.wordPanel.showWPMSummary
+    showWPMSummary: state.wordPanel.showWPMSummary,
+    time: state.wordPanel.time
   };
 };
 
@@ -90,7 +89,8 @@ const mapDispatchToProps = dispatch => {
     },
     onShowWPMSummary: () => {
       dispatch(actionCreators.showWPMSummary());
-    }
+    },
+    onStartTimer: () => dispatch(actionCreators.startTimer())
   };
 };
 
