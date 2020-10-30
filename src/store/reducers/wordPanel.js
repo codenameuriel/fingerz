@@ -100,7 +100,9 @@ const reducer = (state=initialState, action) => {
         wordRowIndex: 0,
         showWPMSummary: false,
         disabled: true,
-        time: 60
+        time: 60,
+        input: '',
+        showInputError: false
       };
     case actionTypes.SHOW_INPUT_ERROR:
       return {

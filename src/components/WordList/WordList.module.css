@@ -3,7 +3,7 @@
   background-color: black;
   padding: 15px;
   border-radius: 5px;
-  width: 65%;
+  width: 75%;
   height: 130px;
   margin: 0 auto;
 }
@@ -27,5 +27,5 @@
 }
 
 .Word p {
-  font-size: 1.5vw;
+  font-size: 1.4vw;
 }
