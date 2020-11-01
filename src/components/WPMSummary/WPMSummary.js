@@ -33,11 +33,13 @@ const WPMSummary = props => {
   };
 
   const renderAverageWPM = () => {
-    const { wpmCounter } = props;
-    const total = getTotal(wpmCounter);
+    const { wpmCounter, typedWordCount } = props;
+    // const total = getTotal(wpmCounter);
 
-    const averageWPM = 
-      Math.floor(parseFloat((total / Object.keys(wpmCounter).length).toFixed(2)));
+    // const averageWPM = 
+    //   Math.floor(parseFloat((total / Object.keys(wpmCounter).length).toFixed(2)));
+
+    const averageWPM = typedWordCount;
 
     return <p>{averageWPM}</p>; 
   };

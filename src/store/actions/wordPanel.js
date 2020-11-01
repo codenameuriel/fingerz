@@ -178,13 +178,17 @@ const minusOneSecond = () => {
   return { type: actionTypes.MINUS_ONE_SECOND };
 };
 
+const typedWordCount = () => {
+  return { type: actionTypes.TYPED_WORD_COUNT };
+}
+
 // redux thunk
 export const handleChange = event => {
   return (dispatch, getState) => {
-    const { index, wordList, matrix, startTime, wpmCounter, typoCounter, wordRowIndex, showInputError } = 
+    const { input, index, matrix, startTime, wpmCounter, typoCounter, wordRowIndex, showInputError, time } = 
       getState().wordPanel;
 
-    const options = {};
+    let options = {};
  
     // if still typing words
     if (index < matrix[wordRowIndex].length) {
@@ -196,7 +200,7 @@ export const handleChange = event => {
   
       // if space was pressed
       if (event.target.value !== event.target.value.trim()) {
-        const options = {
+        options = {
           counter: wpmCounter,
           words: matrix[wordRowIndex],
           index: index,
@@ -207,7 +211,11 @@ export const handleChange = event => {
         
         dispatch(clearInput());
 
-        if (index === wordList.length) {
+        if (!showInputError && input === matrix[wordRowIndex][index]) {
+          dispatch(typedWordCount());
+        }
+
+        if (time === 0) {
           dispatch(disableInput()); 
         }
 
