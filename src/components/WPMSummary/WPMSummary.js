@@ -22,26 +22,24 @@ const WPMSummary = props => {
     return summary;
   };
 
-  const getTotal = obj => {
-    let total = 0;
+  // const getTotal = obj => {
+  //   let total = 0;
 
-    for (let key in obj) {
-      total += obj[key];
-    }
+  //   for (let key in obj) {
+  //     total += obj[key];
+  //   }
 
-    return total;
-  };
+  //   return total;
+  // };
 
   const renderAverageWPM = () => {
-    const { wpmCounter, typedWordCount } = props;
+    const { typedWordCount } = props;
     // const total = getTotal(wpmCounter);
 
     // const averageWPM = 
     //   Math.floor(parseFloat((total / Object.keys(wpmCounter).length).toFixed(2)));
 
-    const averageWPM = typedWordCount;
-
-    return <p>{averageWPM}</p>; 
+    return <p>{typedWordCount}</p>; 
   };
 
   const sort = (arr1, arr2) => {
