@@ -33,13 +33,16 @@ const WPMSummary = props => {
   // };
 
   const renderAverageWPM = () => {
-    const { typedWordCount } = props;
+    const { typedChars, typoCount } = props;
     // const total = getTotal(wpmCounter);
 
     // const averageWPM = 
     //   Math.floor(parseFloat((total / Object.keys(wpmCounter).length).toFixed(2)));
 
-    return <p>{typedWordCount}</p>; 
+    const grossWPM = Math.ceil((typedChars / 5) / 1);
+    const netWPM = grossWPM - typoCount;
+
+    return <p>{netWPM}</p>; 
   };
 
   const sort = (arr1, arr2) => {
@@ -102,7 +105,7 @@ const WPMSummary = props => {
 
         <div className={WPMSummaryStyles.Average}>
           <div className={WPMSummaryStyles.ScoreHeader}>
-            <h1>Average WPM</h1>
+            <h1>WPM</h1>
           </div>
           <div className={WPMSummaryStyles.Score}>
             {renderAverageWPM()}

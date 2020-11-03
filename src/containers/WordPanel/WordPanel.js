@@ -23,7 +23,7 @@ class WordPanel extends Component {
 
   showDisplay() {
     const { 
-      showWPMSummary, onDisableInput, onHandleChange, showInputError, input, wpmCounter, onRestartTest, disabled, onStartTimer, time, typedWordCount
+      showWPMSummary, onDisableInput, onHandleChange, showInputError, input, wpmCounter, onRestartTest, disabled, onStartTimer, time, typedChars, typoCount
     } = this.props; 
     
     if (!showWPMSummary) {
@@ -49,7 +49,7 @@ class WordPanel extends Component {
 
     if (showWPMSummary) {
       return (
-        <WPMSummary wpmCounter={wpmCounter} onRestartTest={onRestartTest} typedWordCount={typedWordCount}/>
+        <WPMSummary wpmCounter={wpmCounter} onRestartTest={onRestartTest} typedChars={typedChars} typoCount={typoCount}/>
       );
     }
   }
@@ -73,7 +73,8 @@ const mapStateToProps = state => {
     matrix: state.wordPanel.matrix,
     showWPMSummary: state.wordPanel.showWPMSummary,
     time: state.wordPanel.time,
-    typedWordCount: state.wordPanel.typedWordCount
+    typedChars: state.wordPanel.typedChars,
+    typoCount: state.wordPanel.typoCount
   };
 };
 

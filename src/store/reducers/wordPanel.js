@@ -15,7 +15,8 @@ const initialState = {
   wpmCounter: {},
   showInputError: false,
   typoCounter: [],
-  typedWordCount: 0,
+  typedChars: 0,
+  typoCount: 0,
   wordRowIndex: 0,
   matrix: [],
   showWPMSummary: false,
@@ -104,12 +105,18 @@ const reducer = (state=initialState, action) => {
         time: 60,
         input: '',
         showInputError: false,
-        typedWordCount: 0
+        typedChars: 0,
+        typoCount: 0
       };
-    case actionTypes.TYPED_WORD_COUNT:
+    case actionTypes.TYPED_CHARS:
       return {
         ...state,
-        typedWordCount: state.typedWordCount + 1
+        typedChars: state.typedChars + action.payload.numOfChars
+      };
+    case actionTypes.INCREASE_TYPO_COUNT:
+      return {
+        ...state,
+        typoCount: state.typoCount + action.payload.typoCount
       };
     case actionTypes.SHOW_INPUT_ERROR:
       return {

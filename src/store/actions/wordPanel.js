@@ -178,9 +178,29 @@ const minusOneSecond = () => {
   return { type: actionTypes.MINUS_ONE_SECOND };
 };
 
-const typedWordCount = () => {
-  return { type: actionTypes.TYPED_WORD_COUNT };
-}
+const typedChars = numOfChars => {
+  return { 
+    type: actionTypes.TYPED_CHARS,
+    payload: {
+      numOfChars: numOfChars
+    }
+   };
+};
+
+const countTypos = (typedWord, word) => {
+  let typoCount = 0;
+
+  for (let i = 0; i < word.length; i++) {
+    if (word[i] !== typedWord[i]) typoCount ++;
+  }
+
+  return {
+    type: actionTypes.INCREASE_TYPO_COUNT,
+    payload: {
+      typoCount: typoCount
+    }
+  };
+};
 
 // redux thunk
 export const handleChange = event => {
@@ -193,9 +213,7 @@ export const handleChange = event => {
     // if still typing words
     if (index < matrix[wordRowIndex].length) {
       calculateSpeed(options, dispatch, startTime, 'start');
-  
       dispatch(updateStateOnChange(event));
-
       checkForTypo(dispatch, matrix[wordRowIndex], index, event.target.value, typoCounter);
   
       // if space was pressed
@@ -208,12 +226,9 @@ export const handleChange = event => {
         };
 
         calculateSpeed(options, dispatch, startTime, 'end');
-        
         dispatch(clearInput());
-
-        if (!showInputError && input === matrix[wordRowIndex][index]) {
-          dispatch(typedWordCount());
-        }
+        dispatch(countTypos(input, matrix[wordRowIndex][index]));
+        dispatch(typedChars(input.length));
 
         if (time === 0) {
           dispatch(disableInput()); 

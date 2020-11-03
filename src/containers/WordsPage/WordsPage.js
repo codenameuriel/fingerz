@@ -1,10 +1,11 @@
-import React, { Component, createRef } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actionCreators from '../../store/actions/index';
 import WordsPageStyles from './WordsPage.module.css';
 
 class WordsPage extends Component {
   componentDidMount() {
+    console.log('WordsPage mounted');
     this.props.onLoadWords();
     this.props.onRestartTest();
   }
@@ -29,10 +30,10 @@ class WordsPage extends Component {
         const wordsSummary = `${wordList.words[0]}, ${wordList.words[1]}, ${wordList.words[2]}, ${wordList.words[3]}, ${wordList.words[4]}, ...`;
 
         return (
-          <tr>
+          <tr key={wordList.name}>
             <td>
               <input 
-                onClick={() => this.props.onChecked(this[`${wordList.name}`], wordList.words)} 
+                onChange={() => this.props.onChecked(this[`${wordList.name}`], wordList.words)} 
                 name={wordList.name}
                 ref={this[`${wordList.name}`]}
                 type="radio" 
@@ -45,8 +46,7 @@ class WordsPage extends Component {
               <p>{wordsSummary}</p>
               <span>
                 <div 
-                  className={WordsPageStyles.Modal}
-                  style={{borderRadius: '5px'}}>
+                  className={WordsPageStyles.Modal}>
                   <p>{this.formatWords(wordList.words)}</p>
                 </div>
               </span>
