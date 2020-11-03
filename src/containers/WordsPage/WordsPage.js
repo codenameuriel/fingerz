@@ -58,6 +58,10 @@ class WordsPage extends Component {
     return wordString;
   }
 
+  onClick = () => {
+    this.props.history.push('/type');
+  }
+
   render() {
     return (
       <div className={WordsPageStyles.WordsPage}>
@@ -76,6 +80,11 @@ class WordsPage extends Component {
           </thead>
           <tbody>{this.renderTableBody()}</tbody>
         </table>
+        <button 
+          onClick={this.onClick} 
+          disabled={!this.props.checkedInput}
+          style={!this.props.checkedInput ? {cursor: 'not-allowed', backgroundColor: '#333'} : null}
+        >Load</button>
       </div>
     );
   }

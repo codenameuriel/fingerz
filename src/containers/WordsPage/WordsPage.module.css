@@ -71,3 +71,22 @@ table span {
   color: white;
   border-radius: 5px;
 }
+
+.WordsPage button {
+  width: 10%;
+  padding: 10px;
+  background-color: rgb(72, 43, 70);
+  color: white;
+  font-size: 1vw;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  margin: 15px auto 0 auto;
+  transition: background-color 0.2s;
+}
+
+.WordsPage button:hover {
+  background-color: rgb(67 1 62);
+  color: white;
+}
