@@ -5,13 +5,15 @@ import WordsPageStyles from './WordsPage.module.css';
 
 class WordsPage extends Component {
   componentDidMount() {
-    if (this.props.words.length === 0) {
-      this.props.onLoadWords();
-    }
+    this.setUpWordsPage();
   }
 
-  componentDidUpdate() {
-    this.createInputRefs();
+  async setUpWordsPage() {
+    if (this.props.words.length === 0) {
+      await this.props.onLoadWords(); // asynchronous
+    }
+
+    this.createInputRefs(); 
   }
 
   createInputRefs = () => {
