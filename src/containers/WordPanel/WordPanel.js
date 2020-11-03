@@ -7,10 +7,6 @@ import WPMSummary from '../../components/WPMSummary/WPMSummary';
 import Timer from '../Timer/Timer';
 
 class WordPanel extends Component {
-  // componentDidMount() {
-  //   this.inputElement.focus();
-  // }
-
   componentDidUpdate() {
     // const { matrix, wordRowIndex } = this.props;
 

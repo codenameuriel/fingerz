@@ -5,9 +5,9 @@ import WordsPageStyles from './WordsPage.module.css';
 
 class WordsPage extends Component {
   componentDidMount() {
-    console.log('WordsPage mounted');
-    this.props.onLoadWords();
-    this.props.onRestartTest();
+    if (this.props.words.length === 0) {
+      this.props.onLoadWords();
+    }
   }
 
   componentDidUpdate() {
@@ -15,7 +15,7 @@ class WordsPage extends Component {
   }
 
   createInputRefs = () => {
-    const words = this.props.words;
+    const { words } = this.props;
 
     return words.map(wordList => {
       return this[`${wordList.name}`] = React.createRef();
@@ -100,8 +100,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     onLoadWords: () => dispatch(actionCreators.loadWords()),
-    onChecked: (input, words) => dispatch(actionCreators.checkedInput(input, words)),
-    onRestartTest: () => dispatch(actionCreators.restartTest())
+    onChecked: (input, words) => dispatch(actionCreators.checkedInput(input, words))
   };
 };
 
