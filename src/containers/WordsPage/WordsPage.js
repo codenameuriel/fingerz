@@ -5,23 +5,13 @@ import WordsPageStyles from './WordsPage.module.css';
 
 class WordsPage extends Component {
   componentDidMount() {
-    this.setUpWordsPage();
-  }
-
-  async setUpWordsPage() {
     if (this.props.words.length === 0) {
-      await this.props.onLoadWords(); // asynchronous
+      try {
+        this.props.onLoadWords(); 
+      } catch (error) {
+        console.log(error);
+      }
     }
-
-    this.createInputRefs(); 
-  }
-
-  createInputRefs = () => {
-    const { words } = this.props;
-
-    return words.map(wordList => {
-      return this[`${wordList.name}`] = React.createRef();
-    });
   }
 
   renderTableBody = () => {
@@ -35,11 +25,10 @@ class WordsPage extends Component {
           <tr key={wordList.name}>
             <td>
               <input 
-                onChange={() => this.props.onChecked(this[`${wordList.name}`], wordList.words)} 
+                onChange={event => this.props.onChecked(event, wordList.words)} 
                 name={wordList.name}
-                ref={this[`${wordList.name}`]}
                 type="radio" 
-                checked={this.props.checkedInput === this[`${wordList.name}`]}
+                checked={this.props.checkedInput === wordList.name}
               />
             </td>
             <td>{wordList.category}</td>
@@ -102,7 +91,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     onLoadWords: () => dispatch(actionCreators.loadWords()),
-    onChecked: (input, words) => dispatch(actionCreators.checkedInput(input, words))
+    onChecked: (event, words) => dispatch(actionCreators.checkedInput(event, words))
   };
 };
 

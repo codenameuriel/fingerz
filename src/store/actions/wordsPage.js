@@ -1,18 +1,18 @@
 import * as actionTypes from './actionTypes';
 import axios from 'axios';
 
-export const checkedInput = (input, words) => {
+export const checkedInput = (event, words) => {
   return dispatch => {
-    dispatch(setCheckedInput(input));
+    dispatch(setCheckedInput(event));
     dispatch(setWordList(words));
   };
 }
 
-const setCheckedInput = input => {
+const setCheckedInput = event => {
   return {
     type: actionTypes.SET_CHECKED_INPUT,
     payload: {
-      checkedInput: input
+      checkedInput: event.target.name
     }
   };
 };
