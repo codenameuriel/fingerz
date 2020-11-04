@@ -167,15 +167,38 @@ export const showWPMSummary = () => {
   }
 };
 
+const setTimer = dispatch => {
+  return setInterval(() => {
+    dispatch(minusOneSecond());
+  }, 1000);
+};
+
+export const stopTimer = timer => {
+  clearInterval(timer);
+};
+
+// executed when Start button is clicked on Timer
 export const startTimer = () => {
-  return (dispatch) => {
-    let timer = setInterval(() => dispatch(minusOneSecond()), 1000);
-    setTimeout(() => clearInterval(timer), 60000);
+  return (dispatch, getState) => {
+    const { timerStarted } = getState().wordPanel;
+
+    let timer = setTimer(dispatch);
+    setTimeout(() => stopTimer(timer), 60000);
+
+    if (timerStarted) return stopTimer(timer);
+
+    // dispatch(storeTimer(timer)); REMOVE ALL LOGIC
+    dispatch(disableInput());
+    dispatch(timerStarted());
   };
 };
 
 const minusOneSecond = () => {
   return { type: actionTypes.MINUS_ONE_SECOND };
+};
+
+const beginTimer = () => {
+  return { type: actionTypes.TIMER_STARTED }; 
 };
 
 const typedChars = numOfChars => {
@@ -205,8 +228,16 @@ const countTypos = (typedWord, word) => {
 // redux thunk
 export const handleChange = event => {
   return (dispatch, getState) => {
-    const { input, index, matrix, startTime, wpmCounter, typoCounter, wordRowIndex, showInputError, time } = 
+    const { input, index, matrix, startTime, wpmCounter, typoCounter, wordRowIndex, showInputError, time, timerStarted } = 
       getState().wordPanel;
+
+    // start timer
+    if (!timerStarted) {
+      let timer = setTimer(dispatch);
+      setTimeout(() => stopTimer(timer), 60000);
+      dispatch(disableInput());
+      dispatch(beginTimer());
+    }
 
     let options = {};
  

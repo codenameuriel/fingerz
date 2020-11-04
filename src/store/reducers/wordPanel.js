@@ -10,7 +10,7 @@ const initialState = {
   index: 0,
   input: '',
   typedKey: '',
-  disabled: true,
+  disabled: false,
   wordList: ['would', 'being', 'without', 'look', 'even', 'something', 'made', 'people', 'home', 'large', 'number', 'same', 'seem', 'word', 'is', 'where', 'so', 'he', 'that', 'girl', 'go', 'saw', 'few', 'by', 'the', 'you', 'what', 'give', 'not', 'could', 'after', 'than', 'off', 'great', 'live', 'very'],
   wpmCounter: {},
   showInputError: false,
@@ -20,7 +20,8 @@ const initialState = {
   wordRowIndex: 0,
   matrix: [],
   showWPMSummary: false,
-  time: 60
+  time: 60,
+  timerStarted: false
 };
 
 const reducer = (state=initialState, action) => {
@@ -101,12 +102,12 @@ const reducer = (state=initialState, action) => {
         wpmCounter: {},
         wordRowIndex: 0,
         showWPMSummary: false,
-        disabled: true,
         time: 60,
         input: '',
         showInputError: false,
         typedChars: 0,
-        typoCount: 0
+        typoCount: 0,
+        timerStarted: false
       };
     case actionTypes.TYPED_CHARS:
       return {
@@ -152,6 +153,11 @@ const reducer = (state=initialState, action) => {
       return {
         ...state,
         time: state.time - 1
+      };
+    case actionTypes.TIMER_STARTED:
+      return {
+        ...state,
+        timerStarted: true
       };
     default: return state;
   }

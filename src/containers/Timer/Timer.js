@@ -15,10 +15,7 @@ const Timer = props => {
   return (
     <div className={TimerStyles.Timer}>
       <p>{timeDisplay}</p>
-      <button onClick={() => {
-        props.disableInput()
-        props.startTimer()
-        }}>Start</button>
+      <button onClick={() => {}}>Restart</button>
     </div>
   );
 };

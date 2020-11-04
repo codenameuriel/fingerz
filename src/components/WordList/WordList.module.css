@@ -3,7 +3,7 @@
   background-color: black;
   padding: 15px;
   border-radius: 5px;
-  width: 75%;
+  width: 55%;
   height: 130px;
   margin: 0 auto;
 }
@@ -11,21 +11,22 @@
 .WordRowOne {
   display: flex;
   justify-content: center;
-  width: 100%;
 }
 
 .WordRowTwo {
   display: flex;
   justify-content: center;
-  width: 100%;
 }
 
 .Word {
   border-radius: 5px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  margin-left: 3px;
+  margin-right: 3px;
   padding: 5px;
 }
 
 .Word p {
-  font-size: 1.4vw;
+  /* font-size: 1.3vw; */
+  font-size: 112%;
 }

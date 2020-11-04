@@ -7,19 +7,20 @@ import WPMSummary from '../../components/WPMSummary/WPMSummary';
 import Timer from '../Timer/Timer';
 
 class WordPanel extends Component {
+  componentDidMount() {
+    this.inputElement.focus();
+  }
+
   componentDidUpdate() {
-    // const { matrix, wordRowIndex } = this.props;
+    const { time, onShowWPMSummary } = this.props;
 
     if (this.inputElement) this.inputElement.focus();
-    // if (wordRowIndex === matrix.length) {
-    //   this.props.onShowWPMSummary(); 
-    // }
-    if (this.props.time === 0) this.props.onShowWPMSummary();
+    if (time === 0) onShowWPMSummary();
   }
 
   showDisplay() {
     const { 
-      showWPMSummary, onDisableInput, onHandleChange, showInputError, input, wpmCounter, onRestartTest, disabled, onStartTimer, time, typedChars, typoCount
+      showWPMSummary, onDisableInput, onHandleChange, showInputError, input, wpmCounter, onRestartTest, disabled, time, typedChars, typoCount
     } = this.props; 
     
     if (!showWPMSummary) {
@@ -27,7 +28,7 @@ class WordPanel extends Component {
         <div className={WordPanelStyles.WordPanel}>
           <WordList disableInput={onDisableInput} error={showInputError}/>
           {/* rgb(231, 231, 149) - aternative color */}
-          <Timer disableInput={onDisableInput} startTimer={onStartTimer} time={time}/>
+          <Timer time={time}/>
           <h5>
             (press <span style={{color: '#00e6e6'}}>space</span> for next word)
           </h5> 
@@ -37,7 +38,7 @@ class WordPanel extends Component {
             // style={showInputError ? {backgroundColor: '#9f0000'} : null}
             type="text"
             value={input}
-            style={this.props.disabled ? {cursor: 'not-allowed', backgroundColor: '#161629'} : null}
+            style={disabled ? {cursor: 'not-allowed', backgroundColor: '#161629'} : null}
             ref={inputElement => this.inputElement = inputElement}/>
         </div>
       );
@@ -45,7 +46,11 @@ class WordPanel extends Component {
 
     if (showWPMSummary) {
       return (
-        <WPMSummary wpmCounter={wpmCounter} onRestartTest={onRestartTest} typedChars={typedChars} typoCount={typoCount}/>
+        <WPMSummary 
+          wpmCounter={wpmCounter} 
+          onRestartTest={onRestartTest} 
+          typedChars={typedChars} 
+          typoCount={typoCount}/>
       );
     }
   }
@@ -76,19 +81,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onHandleChange: event => {
-      dispatch(actionCreators.handleChange(event));
-    },
-    onDisableInput: () => {
-      dispatch(actionCreators.disableInput());
-    },
-    onRestartTest: () => {
-      dispatch(actionCreators.restartTest());
-    },
-    onShowWPMSummary: () => {
-      dispatch(actionCreators.showWPMSummary());
-    },
-    onStartTimer: () => dispatch(actionCreators.startTimer())
+    onHandleChange: event => dispatch(actionCreators.handleChange(event)),
+    onDisableInput: () => dispatch(actionCreators.disableInput()),
+    onRestartTest: () => dispatch(actionCreators.restartTest()),
+    onShowWPMSummary: () => dispatch(actionCreators.showWPMSummary())
   };
 };
 

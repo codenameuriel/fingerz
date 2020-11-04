@@ -5,9 +5,11 @@ import WordsPageStyles from './WordsPage.module.css';
 
 class WordsPage extends Component {
   componentDidMount() {
-    if (this.props.words.length === 0) {
+    const { words, onLoadWords } = this.props;
+
+    if (words.length === 0) {
       try {
-        this.props.onLoadWords(); 
+        onLoadWords(); 
       } catch (error) {
         console.log(error);
       }
@@ -15,30 +17,31 @@ class WordsPage extends Component {
   }
 
   renderTableBody = () => {
-    const words = this.props.words;
+    const { words, onChecked, checkedInput } = this.props;
 
     return (
       words.map(wordList => {
-        const wordsSummary = `${wordList.words[0]}, ${wordList.words[1]}, ${wordList.words[2]}, ${wordList.words[3]}, ${wordList.words[4]}, ...`;
+        const { words, name, category } = wordList;
+        const wordsSummary = (
+          `${words[0]}, ${words[1]}, ${words[2]}, ${words[3]}, ${words[4]}, ...`
+         );
 
         return (
-          <tr key={wordList.name}>
+          <tr key={name}>
             <td>
               <input 
-                onChange={event => this.props.onChecked(event, wordList.words)} 
-                name={wordList.name}
+                onChange={event => onChecked(event, words)} 
+                name={name}
                 type="radio" 
-                checked={this.props.checkedInput === wordList.name}
-              />
+                checked={checkedInput === name}/>
             </td>
-            <td>{wordList.category}</td>
-            <td>{wordList.name}</td>
+            <td>{category}</td>
+            <td>{name}</td>
             <td className={WordsPageStyles.WordsSummary}>
               <p>{wordsSummary}</p>
               <span>
-                <div 
-                  className={WordsPageStyles.Modal}>
-                  <p>{this.formatWords(wordList.words)}</p>
+                <div className={WordsPageStyles.Modal}>
+                  <p>{this.formatWords(words)}</p>
                 </div>
               </span>
             </td>
@@ -63,13 +66,12 @@ class WordsPage extends Component {
   }
 
   render() {
+    const { checkedInput } = this.props;
     return (
       <div className={WordsPageStyles.WordsPage}>
-        <h1>Select Words Pack</h1>
+        <h1>Word Collection</h1>
         <table>
-          <caption>
-            Select different words to practice typing
-          </caption>
+          <caption>Select words to practice typing</caption>
           <thead>
             <tr>
               <th>Select</th>
@@ -82,9 +84,10 @@ class WordsPage extends Component {
         </table>
         <button 
           onClick={this.onClick} 
-          disabled={!this.props.checkedInput}
-          style={!this.props.checkedInput ? {cursor: 'not-allowed', backgroundColor: '#333'} : null}
-        >Load</button>
+          disabled={!checkedInput}
+          style={
+            !checkedInput ? {cursor: 'not-allowed', backgroundColor: '#161629'} : null
+          }>Load</button>
       </div>
     );
   }

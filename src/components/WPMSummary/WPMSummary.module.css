@@ -41,7 +41,9 @@
 }
 
 .Average button:hover {
-  background-color: #7c4b7a;
+  /* background-color: #7c4b7a;
+  color: white; */
+  background-color: rgb(67 1 62);
   color: white;
 }
 
