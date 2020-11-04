@@ -167,36 +167,32 @@ export const showWPMSummary = () => {
   }
 };
 
+const minusOneSecond = () => {
+  return { type: actionTypes.MINUS_ONE_SECOND };
+};
+
+// starts decrementing seconds
 const setTimer = dispatch => {
   return setInterval(() => {
     dispatch(minusOneSecond());
   }, 1000);
 };
 
-export const stopTimer = timer => {
+const stopTimer = timer => {
   clearInterval(timer);
 };
 
-// executed when Start button is clicked on Timer
-export const startTimer = () => {
-  return (dispatch, getState) => {
-    const { timerStarted } = getState().wordPanel;
-
+// sets the timer to start and when to end
+const startTimer = (dispatch, timerStarted) => {
+  if (!timerStarted) {
     let timer = setTimer(dispatch);
     setTimeout(() => stopTimer(timer), 60000);
-
-    if (timerStarted) return stopTimer(timer);
-
-    // dispatch(storeTimer(timer)); REMOVE ALL LOGIC
     dispatch(disableInput());
-    dispatch(timerStarted());
-  };
+    dispatch(beginTimer());
+  }
 };
 
-const minusOneSecond = () => {
-  return { type: actionTypes.MINUS_ONE_SECOND };
-};
-
+// track when timer has started
 const beginTimer = () => {
   return { type: actionTypes.TIMER_STARTED }; 
 };
@@ -231,13 +227,7 @@ export const handleChange = event => {
     const { input, index, matrix, startTime, wpmCounter, typoCounter, wordRowIndex, showInputError, time, timerStarted } = 
       getState().wordPanel;
 
-    // start timer
-    if (!timerStarted) {
-      let timer = setTimer(dispatch);
-      setTimeout(() => stopTimer(timer), 60000);
-      dispatch(disableInput());
-      dispatch(beginTimer());
-    }
+    startTimer(dispatch, timerStarted);
 
     let options = {};
  
