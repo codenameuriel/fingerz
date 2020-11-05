@@ -15,7 +15,7 @@ const Timer = props => {
   return (
     <div className={TimerStyles.Timer}>
       <p>{timeDisplay}</p>
-      <button onClick={() => {}}>Restart</button>
+      <button onClick={() => props.stopTimer(props.activeTimer)}>Restart</button>
     </div>
   );
 };

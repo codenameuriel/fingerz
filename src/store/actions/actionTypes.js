@@ -21,3 +21,5 @@ export const MINUS_ONE_SECOND = 'MINUS_ONE_SECOND';
 export const TYPED_CHARS = 'TYPED_CHARS';
 export const INCREASE_TYPO_COUNT = 'INCREASE_TYPO_COUNT';
 export const TIMER_STARTED = 'TIMER_STARTED';
+export const STORE_TIMER = 'STORE_TIMER';
+export const STOP_TIMER = 'STOP_TIMER';

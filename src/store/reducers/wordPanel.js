@@ -21,7 +21,8 @@ const initialState = {
   matrix: [],
   showWPMSummary: false,
   time: 60,
-  timerStarted: false
+  timerStarted: false,
+  activeTimer: null
 };
 
 const reducer = (state=initialState, action) => {
@@ -159,6 +160,16 @@ const reducer = (state=initialState, action) => {
         ...state,
         timerStarted: true
       };
+    case actionTypes.STORE_TIMER:
+      return {
+        ...state,
+        activeTimer: action.payload.timer
+      }
+    case actionTypes.STOP_TIMER:
+      return {
+        ...state,
+        activeTimer: null
+      }
     default: return state;
   }
 };

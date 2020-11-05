@@ -180,16 +180,40 @@ const setTimer = dispatch => {
 
 const stopTimer = timer => {
   clearInterval(timer);
+  return {
+    type: actionTypes.STOP_TIMER
+  };
+}
+
+export const stopAndReset = timer => {
+  return dispatch => {
+    dispatch(stopTimer(timer));
+    dispatch(restartTest());
+  }
+};
+
+const storeTimer = timer => {
+  return {
+    type: actionTypes.STORE_TIMER,
+    payload: {
+      timer: timer
+    }
+  }
 };
 
 // sets the timer to start and when to end
 const startTimer = (dispatch, timerStarted) => {
+  let timer;
+  // starts the timer only once
   if (!timerStarted) {
-    let timer = setTimer(dispatch);
+    timer = setTimer(dispatch);
+    dispatch(storeTimer(timer));
     setTimeout(() => stopTimer(timer), 60000);
     dispatch(disableInput());
     dispatch(beginTimer());
   }
+
+  return timer;
 };
 
 // track when timer has started
@@ -224,8 +248,9 @@ const countTypos = (typedWord, word) => {
 // redux thunk
 export const handleChange = event => {
   return (dispatch, getState) => {
-    const { input, index, matrix, startTime, wpmCounter, typoCounter, wordRowIndex, showInputError, time, timerStarted } = 
-      getState().wordPanel;
+    const { 
+      input, index, matrix, startTime, wpmCounter, typoCounter, wordRowIndex, showInputError, time, timerStarted 
+    } = getState().wordPanel;
 
     startTimer(dispatch, timerStarted);
 

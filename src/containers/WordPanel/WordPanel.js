@@ -5,6 +5,7 @@ import WordList from '../../components/WordList/WordList';
 import WordPanelStyles from './WordPanel.module.css';
 import WPMSummary from '../../components/WPMSummary/WPMSummary';
 import Timer from '../Timer/Timer';
+import { act } from 'react-dom/test-utils';
 
 class WordPanel extends Component {
   componentDidMount() {
@@ -20,7 +21,7 @@ class WordPanel extends Component {
 
   showDisplay() {
     const { 
-      showWPMSummary, onDisableInput, onHandleChange, showInputError, input, wpmCounter, onRestartTest, disabled, time, typedChars, typoCount
+      showWPMSummary, onDisableInput, onHandleChange, showInputError, input, wpmCounter, onRestartTest, disabled, time, typedChars, typoCount, onStopTimer, activeTimer
     } = this.props; 
     
     if (!showWPMSummary) {
@@ -28,7 +29,7 @@ class WordPanel extends Component {
         <div className={WordPanelStyles.WordPanel}>
           <WordList disableInput={onDisableInput} error={showInputError}/>
           {/* rgb(231, 231, 149) - aternative color */}
-          <Timer time={time}/>
+          <Timer time={time} stopTimer={onStopTimer} activeTimer={activeTimer}/>
           <h5>
             (press <span style={{color: '#00e6e6'}}>space</span> for next word)
           </h5> 
@@ -75,7 +76,8 @@ const mapStateToProps = state => {
     showWPMSummary: state.wordPanel.showWPMSummary,
     time: state.wordPanel.time,
     typedChars: state.wordPanel.typedChars,
-    typoCount: state.wordPanel.typoCount
+    typoCount: state.wordPanel.typoCount,
+    activeTimer: state.wordPanel.activeTimer
   };
 };
 
@@ -84,7 +86,8 @@ const mapDispatchToProps = dispatch => {
     onHandleChange: event => dispatch(actionCreators.handleChange(event)),
     onDisableInput: () => dispatch(actionCreators.disableInput()),
     onRestartTest: () => dispatch(actionCreators.restartTest()),
-    onShowWPMSummary: () => dispatch(actionCreators.showWPMSummary())
+    onShowWPMSummary: () => dispatch(actionCreators.showWPMSummary()),
+    onStopTimer: timer => dispatch(actionCreators.stopAndReset(timer))
   };
 };
 
