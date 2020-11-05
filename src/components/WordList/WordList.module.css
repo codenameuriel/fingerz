@@ -1,32 +1,37 @@
 .WordsContainer {
+  display: flex;
+  flex-flow: column;
   color: white;
   background-color: black;
   padding: 15px;
   border-radius: 5px;
-  width: 55%;
+  width: 50%;
   height: 130px;
   margin: 0 auto;
+  justify-content: center;
 }
 
 .WordRowOne {
   display: flex;
   justify-content: center;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .WordRowTwo {
   display: flex;
   justify-content: center;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .Word {
   border-radius: 5px;
-  /* margin: 0 auto; */
   margin-left: 3px;
   margin-right: 3px;
   padding: 5px;
 }
 
 .Word p {
-  /* font-size: 1.3vw; */
-  font-size: 112%;
+  font-size: 110%;
 }
