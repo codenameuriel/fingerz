@@ -67,10 +67,18 @@ const endTime = (time) => {
 
 const calcEndTimeAndWPM = (...args) => {
   const [options, dispatch, doneTime] = args;
-  const { counter, words, index } = options;
+  const { counter, words, index, _error, numOfTypedChars, numOfTypos } = options;
+  const speedCounterData = {
+    counter,
+    words,
+    index,
+    doneTime,
+    numOfTypedChars,
+    numOfTypos
+  };
 
   dispatch(endTime(doneTime));
-  dispatch(updateSpeedCounter(counter, words, index, doneTime));
+  dispatch(updateSpeedCounter(speedCounterData));
 }
 
 const calculateSpeed = (...args) => {
@@ -100,11 +108,15 @@ const calculateSpeed = (...args) => {
   } 
 };
 
-const updateSpeedCounter = (...args) => {
-  const [wpmCounter, wordList, index, endTime] = args;
-  const updatedCounter = {...wpmCounter};
+const updateSpeedCounter = dataObj => {
+  const { counter, words, index, doneTime, numOfTypedChars, numOfTypos } = dataObj;
+  const updatedCounter = {...counter};
 
-  updatedCounter[wordList[index]] = endTime === 0 ? 0 : +(60 / endTime).toFixed(2);
+  const timeInSec = .0166 * doneTime;
+  const grossWPM = Math.ceil((numOfTypedChars / 5) / timeInSec);
+  const netWPM = grossWPM - numOfTypos;
+
+  updatedCounter[words[index]] = doneTime === 0 ? 0 : +(netWPM).toFixed(2);
   
   return {
     type: actionTypes.UPDATE_WPM_COUNTER,
@@ -208,8 +220,10 @@ const startTimer = (dispatch, timerStarted) => {
   if (!timerStarted) {
     timer = setTimer(dispatch);
     dispatch(storeTimer(timer));
-    setTimeout(() => stopTimer(timer), 60000);
-    dispatch(disableInput());
+    setTimeout(() => {
+      stopTimer(timer);
+      dispatch(disableInput());
+    }, 60000);
     dispatch(beginTimer());
   }
 
@@ -230,6 +244,15 @@ const typedChars = numOfChars => {
    };
 };
 
+const increaseTypoCount = numOfTypos => {
+  return {
+    type: actionTypes.INCREASE_TYPO_COUNT,
+    payload: {
+      typoCount: numOfTypos
+    }
+  }; 
+};
+
 const countTypos = (typedWord, word) => {
   let typoCount = 0;
 
@@ -237,19 +260,14 @@ const countTypos = (typedWord, word) => {
     if (word[i] !== typedWord[i]) typoCount ++;
   }
 
-  return {
-    type: actionTypes.INCREASE_TYPO_COUNT,
-    payload: {
-      typoCount: typoCount
-    }
-  };
+  return typoCount;
 };
 
 // redux thunk
 export const handleChange = event => {
   return (dispatch, getState) => {
     const { 
-      input, index, matrix, startTime, wpmCounter, typoCounter, wordRowIndex, showInputError, time, timerStarted 
+      input, index, matrix, startTime, wpmCounter, typoCounter, wordRowIndex, showInputError, timerStarted 
     } = getState().wordPanel;
 
     startTimer(dispatch, timerStarted);
@@ -264,21 +282,22 @@ export const handleChange = event => {
   
       // if space was pressed
       if (event.target.value !== event.target.value.trim()) {
+        let currWord = matrix[wordRowIndex][index];
+        let numOfTypos = countTypos(input, currWord);
+
         options = {
           counter: wpmCounter,
           words: matrix[wordRowIndex],
-          index: index,
-          error: showInputError
+          index,
+          error: showInputError,
+          numOfTypedChars: input.length,
+          numOfTypos
         };
 
         calculateSpeed(options, dispatch, startTime, 'end');
         dispatch(clearInput());
-        dispatch(countTypos(input, matrix[wordRowIndex][index]));
+        dispatch(increaseTypoCount(numOfTypos));
         dispatch(typedChars(input.length));
-
-        if (time === 0) {
-          dispatch(disableInput()); 
-        }
 
         const lastIndexInMatrix = matrix[wordRowIndex].length - 1;
         if (index === lastIndexInMatrix) dispatch(loadNextWordRow());

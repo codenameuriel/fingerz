@@ -5,7 +5,6 @@ import WordList from '../../components/WordList/WordList';
 import WordPanelStyles from './WordPanel.module.css';
 import WPMSummary from '../../components/WPMSummary/WPMSummary';
 import Timer from '../Timer/Timer';
-import { act } from 'react-dom/test-utils';
 
 class WordPanel extends Component {
   componentDidMount() {

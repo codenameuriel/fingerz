@@ -72,7 +72,7 @@ const reducer = (state=initialState, action) => {
     case actionTypes.DISABLE_INPUT:
       return {
         ...state, 
-        disabled: false
+        disabled: true
       };
     case actionTypes.START_TIME:
       return {

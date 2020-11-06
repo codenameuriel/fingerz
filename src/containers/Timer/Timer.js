@@ -14,7 +14,7 @@ const Timer = props => {
 
   return (
     <div className={TimerStyles.Timer}>
-      <p>{timeDisplay}</p>
+      <p style={props.time < 10 ? { color: 'red' } : null}>{timeDisplay}</p>
       <button onClick={() => props.stopTimer(props.activeTimer)}>Restart</button>
     </div>
   );

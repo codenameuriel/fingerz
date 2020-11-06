@@ -73,7 +73,7 @@ const WPMSummary = props => {
 
     for (let i = 0; i < arr.length; i++) {
       const wordDisplay = (
-        <div className={WPMSummaryStyles.SlowWord}>
+        <div key={arr[i]} className={WPMSummaryStyles.SlowWord}>
           <p>{arr[i]}</p>
         </div>
       );

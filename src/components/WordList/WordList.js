@@ -22,9 +22,9 @@ class WordList extends Component {
       shuffledWords.push(words[randomIndex]);
       
       words = words.filter(word => word !== words[randomIndex]);
-      }
+    }
     
-      return shuffledWords;
+    return shuffledWords;
   }
 
   addWords = arr => {
