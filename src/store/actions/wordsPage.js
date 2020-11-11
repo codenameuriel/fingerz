@@ -46,7 +46,20 @@ const getWordsFailed = error => {
 
 const getWords = async (dispatch) => {
   try {
-    const words = await (await axios.get('http://localhost:4000/wordlists')).data;
+    let words = await (await axios.get('http://localhost:4000/wordlists')).data;
+
+    let alphabetWords = words.filter(wordList => wordList.category === 'alphabet');
+    alphabetWords = alphabetWords.sort((a, b) => {
+      if (a.name < b.name) return -1;
+      if (a.name > b.name) return 1;
+      return 0;
+    });
+   
+    const handWords = words.filter(wordList => wordList.category === 'hand');
+
+    words = [...handWords, ...alphabetWords];
+
+    console.log(words);
 
     dispatch(setWords(words));
   } catch (error) {
