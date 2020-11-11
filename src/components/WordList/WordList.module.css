@@ -5,7 +5,7 @@
   background-color: black;
   padding: 15px;
   border-radius: 5px;
-  width: 55%;
+  width: 60%;
   height: 130px;
   margin: 0 auto;
   justify-content: center;
@@ -33,5 +33,5 @@
 }
 
 .Word p {
-  font-size: 105%;
+  font-size: 100%;
 }

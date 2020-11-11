@@ -6,10 +6,18 @@ import * as actionCreators from '../../store/actions/index';
 class WordList extends Component {
   componentDidMount() {
     const { wordList, onGenerateMatrix } = this.props;
-    const increasedWordList = this.addWords(this.shuffleWords(wordList));
-    const wordMatrix = this.createWordMatrix(increasedWordList);
+    let increasedWordList, wordMatrix;
 
-    onGenerateMatrix(wordMatrix);
+    const words = JSON.parse(localStorage.getItem('words'));
+    if (words) {
+      increasedWordList = this.addWords(this.shuffleWords(words));
+      wordMatrix = this.createWordMatrix(increasedWordList);
+      onGenerateMatrix(wordMatrix);
+    } else {
+      increasedWordList = this.addWords(this.shuffleWords(wordList));
+      wordMatrix = this.createWordMatrix(increasedWordList);
+      onGenerateMatrix(wordMatrix);
+    }
   }
 
   shuffleWords = arr => {
