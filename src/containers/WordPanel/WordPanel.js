@@ -8,7 +8,7 @@ import Timer from '../Timer/Timer';
 
 class WordPanel extends Component {
   componentDidMount() {
-    this.inputElement.focus();
+    // this.inputElement.focus();
   }
 
   componentDidUpdate() {

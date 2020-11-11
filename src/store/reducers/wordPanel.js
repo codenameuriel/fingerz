@@ -19,7 +19,7 @@ const initialState = {
   typoCount: 0,
   wordRowIndex: 0,
   matrix: [],
-  showWPMSummary: false,
+  showWPMSummary: false, // change back to false
   time: 60,
   timerStarted: false,
   activeTimer: null
@@ -108,7 +108,8 @@ const reducer = (state=initialState, action) => {
         showInputError: false,
         typedChars: 0,
         typoCount: 0,
-        timerStarted: false
+        timerStarted: false,
+        disabled: false
       };
     case actionTypes.TYPED_CHARS:
       return {
