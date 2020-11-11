@@ -98,6 +98,7 @@ const reducer = (state=initialState, action) => {
       return {
         ...state,
         pressedKey: restartPressedKey,
+        startTime: 0,
         endTime: 0,
         index: 0,
         wpmCounter: {},

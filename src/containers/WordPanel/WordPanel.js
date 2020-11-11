@@ -30,7 +30,7 @@ class WordPanel extends Component {
           {/* rgb(231, 231, 149) - aternative color */}
           <Timer time={time} stopTimer={onStopTimer} activeTimer={activeTimer}/>
           <h5>
-            (press <span style={{color: '#00e6e6'}}>space</span> for next word)
+            press <span style={{color: '#00e6e6'}}>space</span> for next word
           </h5> 
           <input 
             onChange={onHandleChange}
