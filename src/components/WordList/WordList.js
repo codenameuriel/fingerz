@@ -12,12 +12,12 @@ class WordList extends Component {
     if (words) {
       increasedWordList = this.addWords(this.shuffleWords(words));
       wordMatrix = this.createWordMatrix(increasedWordList);
-      onGenerateMatrix(wordMatrix);
     } else {
       increasedWordList = this.addWords(this.shuffleWords(wordList));
       wordMatrix = this.createWordMatrix(increasedWordList);
-      onGenerateMatrix(wordMatrix);
     }
+
+    onGenerateMatrix(wordMatrix);
   }
 
   shuffleWords = arr => {
