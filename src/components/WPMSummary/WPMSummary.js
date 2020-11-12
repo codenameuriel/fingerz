@@ -1,8 +1,14 @@
 import React from 'react';
+import { useEffect } from 'react';
 import WPMSummaryStyles from './WPMSummary.module.css';
 import Button from '../UI/Button/Button';
 
 const WPMSummary = props => {
+  useEffect(() => {
+    const { onDisableInput } = props;
+    onDisableInput();
+  }, []);
+
   const renderWordSummary = () => {
     const { wpmCounter } = props;
     const summary = [];

@@ -16,7 +16,7 @@ class WordPanel extends Component {
 
   showDisplay() {
     const { 
-      showWPMSummary, onHandleChange, showInputError, input, wpmCounter, onRestartTest, disabled, time, typedChars, typoCount, onStopTimer, activeTimer, timerStarted
+      showWPMSummary, onHandleChange, showInputError, input, wpmCounter, onRestartTest, disabled, time, typedChars, typoCount, onStopTimer, activeTimer, timerStarted, onDisableInput
     } = this.props; 
     
     if (!showWPMSummary) {
@@ -50,7 +50,8 @@ class WordPanel extends Component {
           wpmCounter={wpmCounter} 
           onRestartTest={onRestartTest} 
           typedChars={typedChars} 
-          typoCount={typoCount}/>
+          typoCount={typoCount}
+          onDisableInput={onDisableInput}/>
       );
     }
   }
@@ -86,7 +87,8 @@ const mapDispatchToProps = dispatch => {
     onHandleChange: event => dispatch(actionCreators.handleChange(event)),
     onRestartTest: () => dispatch(actionCreators.restartTest()),
     onShowWPMSummary: () => dispatch(actionCreators.showWPMSummary()),
-    onStopTimer: timer => dispatch(actionCreators.stopAndReset(timer))
+    onStopTimer: timer => dispatch(actionCreators.stopAndReset(timer)),
+    onDisableInput: () => dispatch(actionCreators.disableInput())
   };
 };
 
