@@ -19,7 +19,7 @@ const initialState = {
   typoCount: 0,
   wordRowIndex: 0,
   matrix: [],
-  showWPMSummary: false, // change back to false
+  showWPMSummary: false,
   time: 60,
   timerStarted: false,
   activeTimer: null

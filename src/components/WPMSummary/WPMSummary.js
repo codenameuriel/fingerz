@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import WPMSummaryStyles from './WPMSummary.module.css';
-import Button from '../UI/Button/Button';
+import { IoIosRefresh } from 'react-icons/io';
 
 const WPMSummary = props => {
   useEffect(() => {
@@ -119,9 +119,9 @@ const WPMSummary = props => {
             </div>
           </div>
 
-          <Button
-            text="Restart" 
-            handleClick={props.onRestartTest}/>
+          <IoIosRefresh 
+            className={WPMSummaryStyles.ResetIcon}
+            onClick={props.onRestartTest}/>
         </div>
       </div>
     </div>

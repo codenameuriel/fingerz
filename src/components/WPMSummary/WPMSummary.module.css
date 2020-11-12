@@ -42,13 +42,6 @@ button {
   margin-top: 20%;
 }
 
-button:hover {
-  /* background-color: #7c4b7a;
-  color: white; */
-  background-color: rgb(67 1 62);
-  color: white;
-}
-
 .SlowestWordsContainer {
   width: 30%;
   text-align: center;
@@ -155,4 +148,18 @@ button:hover {
   flex-direction: column;
   width: 45%;
   margin: 0 auto;
+}
+
+.ResetIcon {
+  background-color: transparent;
+  color: white;
+  width: 20%;
+  height: 100px;
+  margin: 0 auto;
+  margin-top: 8%;
+}
+
+.ResetIcon:hover {
+  color: #00c4c4;
+  cursor: pointer;
 }
