@@ -17,12 +17,14 @@ class WordsPage extends Component {
   }
 
   renderTableBody = () => {
-    const { words, onChecked, checkedInput } = this.props;
-
-    // words === wordList
+    const { words, filteredWords, onChecked, checkedInput } = this.props;
+    let wordCollection;
+    
+    if (filteredWords.length > 0) wordCollection = filteredWords;
+    else wordCollection = words;
 
     return (
-      words.map(wordList => {
+      wordCollection.map(wordList => {
         const { words, name, category } = wordList;
         const wordsSummary = (
           `${words[0]}, ${words[1]}, ${words[2]}, ${words[3]}, ${words[4]}, ...`
@@ -67,11 +69,17 @@ class WordsPage extends Component {
     this.props.history.push('/type');
   }
 
+  onChange = event => {
+    // dispatch the value as a payload
+    this.props.onFilter(event.target.value);
+    // filter words array in Redux state
+  }
+
   renderSelect = () => {
     return (
       <>
         <label>Filter By: </label>
-        <select onChange={() => console.log('option changed')}>
+        <select onChange={this.onChange}>
           <option value="default">Default</option>
           <option value="hand">Hand</option>
           <option value="alphabet">Alphabet</option>
@@ -126,14 +134,16 @@ class WordsPage extends Component {
 const mapStateToProps = state => {
   return {
     words: state.wordsPage.words,
-    checkedInput: state.wordsPage.checkedInput
+    checkedInput: state.wordsPage.checkedInput,
+    filteredWords: state.wordsPage.filteredWords
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     onLoadWords: () => dispatch(actionCreators.loadWords()),
-    onChecked: (event, words) => dispatch(actionCreators.checkedInput(event, words))
+    onChecked: (event, words) => dispatch(actionCreators.checkedInput(event, words)),
+    onFilter: category => dispatch(actionCreators.filterWords(category))
   };
 };
 

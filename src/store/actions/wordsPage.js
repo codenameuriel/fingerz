@@ -72,3 +72,12 @@ export const loadWords = () => {
     getWords(dispatch);
   };
 };
+
+export const filterWords = category => {
+  return {
+    type: actionTypes.FILTER_WORDS,
+    payload: {
+      category: category
+    }
+  };
+};

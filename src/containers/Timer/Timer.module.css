@@ -35,4 +35,5 @@
 
 .ResetIcon:hover {
   color: #00c4c4;
+  cursor: pointer;
 }
