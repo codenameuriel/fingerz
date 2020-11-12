@@ -5,7 +5,9 @@ import WordsPageStyles from './WordsPage.module.css';
 
 class WordsPage extends Component {
   componentDidMount() {
-    const { words, onLoadWords } = this.props;
+    const { words, onLoadWords, onClearFilters } = this.props;
+
+    onClearFilters();
 
     if (words.length === 0) {
       try {
@@ -19,7 +21,7 @@ class WordsPage extends Component {
   renderTableBody = () => {
     const { words, filteredWords, onChecked, checkedInput } = this.props;
     let wordCollection;
-    
+
     if (filteredWords.length > 0) wordCollection = filteredWords;
     else wordCollection = words;
 
@@ -70,9 +72,7 @@ class WordsPage extends Component {
   }
 
   onChange = event => {
-    // dispatch the value as a payload
     this.props.onFilter(event.target.value);
-    // filter words array in Redux state
   }
 
   renderSelect = () => {
@@ -143,7 +143,8 @@ const mapDispatchToProps = dispatch => {
   return {
     onLoadWords: () => dispatch(actionCreators.loadWords()),
     onChecked: (event, words) => dispatch(actionCreators.checkedInput(event, words)),
-    onFilter: category => dispatch(actionCreators.filterWords(category))
+    onFilter: category => dispatch(actionCreators.filterWords(category)),
+    onClearFilters: () => dispatch(actionCreators.clearFilters())
   };
 };
 

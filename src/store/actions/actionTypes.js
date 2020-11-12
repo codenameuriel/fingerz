@@ -24,3 +24,4 @@ export const TIMER_STARTED = 'TIMER_STARTED';
 export const STORE_TIMER = 'STORE_TIMER';
 export const STOP_TIMER = 'STOP_TIMER';
 export const FILTER_WORDS = 'FILTER_WORDS';
+export const CLEAR_FILTERS = 'CLEAR_FILTERS';

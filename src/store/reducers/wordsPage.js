@@ -29,7 +29,12 @@ const reducer = (state=initialState, action) => {
       return {
         ...state,
         filteredWords: wordsCopy.filter(wordList => wordList.category === action.payload.category)
-      }
+      };
+    case actionTypes.CLEAR_FILTERS:
+      return {
+        ...state,
+        filteredWords: []
+      };
     default: return state;
   }
 };

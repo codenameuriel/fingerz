@@ -81,3 +81,9 @@ export const filterWords = category => {
     }
   };
 };
+
+export const clearFilters = () => {
+  return {
+    type: actionTypes.CLEAR_FILTERS
+  };
+};
