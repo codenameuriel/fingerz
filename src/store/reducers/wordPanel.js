@@ -110,7 +110,8 @@ const reducer = (state=initialState, action) => {
         typedChars: 0,
         typoCount: 0,
         timerStarted: false,
-        disabled: false
+        disabled: false,
+        activeTimer: null
       };
     case actionTypes.TYPED_CHARS:
       return {
