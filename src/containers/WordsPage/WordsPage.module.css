@@ -10,7 +10,7 @@
 
 .WordsPage table {
   margin: 0 auto;
-  margin-top: 25px;
+  margin-top: 20px;
   border: 1px solid #3d253c;
   width: 70%;
 }
@@ -89,4 +89,44 @@ table span {
 .WordsPage button:hover {
   background-color: rgb(67 1 62);
   color: white;
+}
+
+.WordsPage label {
+  color: #00e6e6;
+  font-size: 125%;
+}
+
+.WordsPage select {
+  margin-right: 25px;
+  width: 25%;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 100%;
+}
+
+.Forms {
+  /* background: red; */
+  width: 35%;
+  margin: 35px 300px 0 auto;
+}
+
+.Forms input {
+  width: 35%;
+  padding: 25px;
+  border-radius: 5px;
+  font-size: 100%;
+  border: none;
+  background-color: black;
+  color: white;
+}
+
+.Forms input:focus {
+  outline: none;
+}
+
+.Forms select:focus {
+  outline: none;
 }

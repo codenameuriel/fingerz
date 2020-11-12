@@ -19,6 +19,8 @@ class WordsPage extends Component {
   renderTableBody = () => {
     const { words, onChecked, checkedInput } = this.props;
 
+    // words === wordList
+
     return (
       words.map(wordList => {
         const { words, name, category } = wordList;
@@ -65,11 +67,39 @@ class WordsPage extends Component {
     this.props.history.push('/type');
   }
 
+  renderSelect = () => {
+    return (
+      <>
+        <label>Filter By: </label>
+        <select onChange={() => console.log('option changed')}>
+          <option value="default">Default</option>
+          <option value="hand">Hand</option>
+          <option value="alphabet">Alphabet</option>
+        </select>
+      </>
+    );
+  }
+
+  renderSearch = () => {
+    return (
+      <>
+        <label>Search: </label>
+        <input 
+          type="text" 
+          placeholder="Search by Name"/>
+      </>
+    );
+  }
+
   render() {
     const { checkedInput } = this.props;
     return (
       <div className={WordsPageStyles.WordsPage}>
         <h1>Word Collection</h1>
+        <div className={WordsPageStyles.Forms}>
+          {this.renderSelect()}
+          {this.renderSearch()}
+        </div>
         <table>
           <caption>Select words to practice typing</caption>
           <thead>

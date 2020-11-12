@@ -61,8 +61,6 @@ const getWords = async (dispatch) => {
 
     words = [...handWords, ...alphabetWords];
 
-    console.log(words);
-
     dispatch(setWords(words));
   } catch (error) {
     dispatch(getWordsFailed(error));
