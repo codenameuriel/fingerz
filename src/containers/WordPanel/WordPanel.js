@@ -7,10 +7,6 @@ import WPMSummary from '../../components/WPMSummary/WPMSummary';
 import Timer from '../Timer/Timer';
 
 class WordPanel extends Component {
-  // componentDidMount() {
-  //   this.inputElement.focus();
-  // }
-
   componentDidUpdate() {
     const { time, onShowWPMSummary } = this.props;
 
@@ -20,13 +16,13 @@ class WordPanel extends Component {
 
   showDisplay() {
     const { 
-      showWPMSummary, onDisableInput, onHandleChange, showInputError, input, wpmCounter, onRestartTest, disabled, time, typedChars, typoCount, onStopTimer, activeTimer, timerStarted
+      showWPMSummary, onHandleChange, showInputError, input, wpmCounter, onRestartTest, disabled, time, typedChars, typoCount, onStopTimer, activeTimer, timerStarted
     } = this.props; 
     
     if (!showWPMSummary) {
       return (
         <div className={WordPanelStyles.WordPanel}>
-          <WordList disableInput={onDisableInput} error={showInputError}/>
+          <WordList error={showInputError}/>
           {/* rgb(231, 231, 149) - aternative color */}
           <Timer 
             time={time} 
@@ -88,7 +84,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     onHandleChange: event => dispatch(actionCreators.handleChange(event)),
-    onDisableInput: () => dispatch(actionCreators.disableInput()),
     onRestartTest: () => dispatch(actionCreators.restartTest()),
     onShowWPMSummary: () => dispatch(actionCreators.showWPMSummary()),
     onStopTimer: timer => dispatch(actionCreators.stopAndReset(timer))

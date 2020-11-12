@@ -222,7 +222,7 @@ const startTimer = (dispatch, timerStarted) => {
     dispatch(storeTimer(timer));
     setTimeout(() => {
       stopTimer(timer);
-      dispatch(disableInput());
+      // dispatch(disableInput());
     }, 60000);
     dispatch(beginTimer());
   }
