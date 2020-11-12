@@ -2,19 +2,37 @@
   display: flex;
   flex-direction: row;
   color: white;
-  width: 25%;
+  width: 30%;
   margin: 0 auto;
+  justify-content: center;
+  /* background: red; */
+  margin-top: 20px;
 }
 
 .Timer p {
-  width: 35%;
+  width: 25%;
   text-align: center;
-  margin-top: 55px;
-  margin-left: 50px;
+  padding: 15px;
+  margin-bottom: 45px;
+  margin-top: 25px;
   font-size: 200%;
+  background-color: black;
+  border-radius: 5px;
 }
 
 .Timer button {
   width: 35%;
   margin-left: 5px;
+}
+
+.ResetIcon {
+  background-color: transparent;
+  color: white;
+  width: 20%;
+  margin-top: 30px;
+  height: 75px;
+}
+
+.ResetIcon:hover {
+  color: #00c4c4;
 }
