@@ -25,15 +25,22 @@ const reducer = (state=initialState, action) => {
         error: action.payload.error
       };
     case actionTypes.FILTER_WORDS:
-      let wordsCopy = [...state.words];
+      let filterWords = [...state.words];
       return {
         ...state,
-        filteredWords: wordsCopy.filter(wordList => wordList.category === action.payload.category)
+        filteredWords: filterWords.filter(wordList => wordList.category === action.payload.category)
       };
     case actionTypes.CLEAR_FILTERS:
       return {
         ...state,
         filteredWords: []
+      };
+    case actionTypes.SEARCH_WORDS:
+      let searchWords = [...state.words];
+      return {
+        ...state,
+        // where name is identical match or includes characters
+        filteredWords: searchWords.filter(wordList => wordList.name.includes(action.payload.name))
       };
     default: return state;
   }

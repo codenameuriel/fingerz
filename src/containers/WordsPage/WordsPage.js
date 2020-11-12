@@ -71,15 +71,16 @@ class WordsPage extends Component {
     this.props.history.push('/type');
   }
 
-  onChange = event => {
-    this.props.onFilter(event.target.value);
-  }
+  onSearchChange = event => {
+    // dispatch action to filter by search value
+    console.log(event.target.value);
+  };
 
   renderSelect = () => {
     return (
       <>
         <label>Filter By: </label>
-        <select onChange={this.onChange}>
+        <select onChange={event => this.props.onFilter(event.target.value)}>
           <option value="default">Default</option>
           <option value="hand">Hand</option>
           <option value="alphabet">Alphabet</option>
@@ -93,7 +94,8 @@ class WordsPage extends Component {
       <>
         <label>Search: </label>
         <input 
-          type="text" 
+          type="text"
+          onChange={event => this.props.onSearch(event.target.value)}
           placeholder="Search by Name"/>
       </>
     );
@@ -144,7 +146,8 @@ const mapDispatchToProps = dispatch => {
     onLoadWords: () => dispatch(actionCreators.loadWords()),
     onChecked: (event, words) => dispatch(actionCreators.checkedInput(event, words)),
     onFilter: category => dispatch(actionCreators.filterWords(category)),
-    onClearFilters: () => dispatch(actionCreators.clearFilters())
+    onClearFilters: () => dispatch(actionCreators.clearFilters()),
+    onSearch: name => dispatch(actionCreators.searchWords(name))
   };
 };
 

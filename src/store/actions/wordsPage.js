@@ -76,14 +76,19 @@ export const loadWords = () => {
 export const filterWords = category => {
   return {
     type: actionTypes.FILTER_WORDS,
-    payload: {
-      category: category
-    }
+    payload: { category }
   };
 };
 
 export const clearFilters = () => {
   return {
     type: actionTypes.CLEAR_FILTERS
+  };
+};
+
+export const searchWords = name => {
+  return {
+    type: actionTypes.SEARCH_WORDS,
+    payload: { name }
   };
 };
