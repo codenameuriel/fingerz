@@ -20,7 +20,7 @@ class WordPanel extends Component {
 
   showDisplay() {
     const { 
-      showWPMSummary, onDisableInput, onHandleChange, showInputError, input, wpmCounter, onRestartTest, disabled, time, typedChars, typoCount, onStopTimer, activeTimer
+      showWPMSummary, onDisableInput, onHandleChange, showInputError, input, wpmCounter, onRestartTest, disabled, time, typedChars, typoCount, onStopTimer, activeTimer, timerStarted
     } = this.props; 
     
     if (!showWPMSummary) {
@@ -28,7 +28,11 @@ class WordPanel extends Component {
         <div className={WordPanelStyles.WordPanel}>
           <WordList disableInput={onDisableInput} error={showInputError}/>
           {/* rgb(231, 231, 149) - aternative color */}
-          <Timer time={time} stopTimer={onStopTimer} activeTimer={activeTimer}/>
+          <Timer 
+            time={time} 
+            stopTimer={onStopTimer} 
+            activeTimer={activeTimer} 
+            timerStarted={timerStarted}/>
           <h5>
             press <span style={{color: '#00e6e6'}}>space</span> for next word
           </h5> 
@@ -76,7 +80,8 @@ const mapStateToProps = state => {
     time: state.wordPanel.time,
     typedChars: state.wordPanel.typedChars,
     typoCount: state.wordPanel.typoCount,
-    activeTimer: state.wordPanel.activeTimer
+    activeTimer: state.wordPanel.activeTimer,
+    timerStarted: state.wordPanel.timerStarted
   };
 };
 
