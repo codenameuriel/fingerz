@@ -82,6 +82,7 @@ class WordsPage extends Component {
         <label>Filter By: </label>
         <select onChange={event => this.props.onFilter(event.target.value)}>
           <option value="default">Default</option>
+          <option value="keyboard">Keyboard</option>
           <option value="hand">Hand</option>
           <option value="alphabet">Alphabet</option>
         </select>
