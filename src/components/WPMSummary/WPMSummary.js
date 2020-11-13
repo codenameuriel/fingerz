@@ -32,7 +32,9 @@ const WPMSummary = props => {
     const { typedChars, typoCount } = props;
 
     const correctlyTypedChars = typedChars - typoCount;
-    const accuracy = (correctlyTypedChars / typedChars) * 100;
+    let accuracy;
+    if (correctlyTypedChars === 0 && typedChars === 0) accuracy = 0;
+    else accuracy = (correctlyTypedChars / typedChars) * 100;
     const accScore = Math.floor(accuracy);
 
     return <p><span style={{color: '#00c4c4'}}>{accScore}</span>%</p>;
