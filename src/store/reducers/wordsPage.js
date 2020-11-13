@@ -39,8 +39,8 @@ const reducer = (state=initialState, action) => {
       let searchWords = [...state.words];
       return {
         ...state,
-        // where name is identical match or includes characters
-        filteredWords: searchWords.filter(wordList => wordList.name.includes(action.payload.name))
+        // where name is identical match or includes
+        filteredWords: searchWords.filter(wordList => wordList.name.slice(0, action.payload.name.length) === (action.payload.name))
       };
     default: return state;
   }
