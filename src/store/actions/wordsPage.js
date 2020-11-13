@@ -46,21 +46,25 @@ const getWordsFailed = error => {
   };
 };
 
+const sortWords = words => {
+  let alphabetWords = 
+    words.filter(wordList => wordList.category === 'alphabet');
+  
+  alphabetWords = alphabetWords.sort((a, b) => {
+    if (a.name < b.name) return -1;
+    if (a.name > b.name) return 1;
+    return 0;
+  });
+   
+  const handWords = words.filter(wordList => wordList.category === 'hand');
+
+  return [...handWords, ...alphabetWords];
+};
+
 const getWords = async (dispatch) => {
   try {
     let words = await (await axios.get('http://localhost:4000/wordlists')).data;
-
-    let alphabetWords = words.filter(wordList => wordList.category === 'alphabet');
-    alphabetWords = alphabetWords.sort((a, b) => {
-      if (a.name < b.name) return -1;
-      if (a.name > b.name) return 1;
-      return 0;
-    });
-   
-    const handWords = words.filter(wordList => wordList.category === 'hand');
-
-    words = [...handWords, ...alphabetWords];
-
+    words = sortWords(words);
     dispatch(setWords(words));
   } catch (error) {
     dispatch(getWordsFailed(error));
