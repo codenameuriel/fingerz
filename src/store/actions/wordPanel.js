@@ -109,14 +109,28 @@ const calculateSpeed = (...args) => {
 };
 
 const updateSpeedCounter = dataObj => {
-  const { counter, words, index, doneTime, numOfTypedChars, numOfTypos } = dataObj;
+  const { 
+    counter, words, index, doneTime, numOfTypedChars, numOfTypos
+   } = dataObj;
   const updatedCounter = {...counter};
 
+  // prevents NaN when typing word and timer runs out
+  if (doneTime < 0) doneTime = 0;
   const timeInSec = .0166 * doneTime;
   const grossWPM = Math.ceil((numOfTypedChars / 5) / timeInSec);
   const netWPM = grossWPM - numOfTypos;
+  let score;
 
-  updatedCounter[words[index]] = doneTime === 0 ? 0 : +(netWPM).toFixed(2);
+  // first check if key exist
+  if (updatedCounter[words[index]]) {
+    score = +((updatedCounter[words[index]] + netWPM) / 2).toFixed(2); 
+    updatedCounter[words[index]] = score;
+  } else {
+    // creating k:v
+    score = +(netWPM).toFixed(2);
+    if (score < 0) score = 0;
+    updatedCounter[words[index]] = doneTime === 0 ? 0 : score;
+  }
   
   return {
     type: actionTypes.UPDATE_WPM_COUNTER,
