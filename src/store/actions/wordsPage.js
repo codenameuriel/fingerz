@@ -55,10 +55,11 @@ const sortWords = words => {
     if (a.name > b.name) return 1;
     return 0;
   });
-   
+  
   const handWords = words.filter(wordList => wordList.category === 'hand');
+  const keyboardWords = words.filter(wordList => wordList.category === 'keyboard');
 
-  return [...handWords, ...alphabetWords];
+  return [...keyboardWords, ...handWords, ...alphabetWords];
 };
 
 const getWords = async (dispatch) => {
