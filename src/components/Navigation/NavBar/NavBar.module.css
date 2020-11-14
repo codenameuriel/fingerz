@@ -1,7 +1,12 @@
 /* nav element */
+.Header {
+  max-width: 100%;
+}
+
 .Nav {
   background-color: #3d253c;
   height: 80px;
+  max-width: 100%;
 }
 
 /* experimenting with a logo */

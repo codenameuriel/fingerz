@@ -4,10 +4,10 @@ import Keyboard from '../../containers/Keyboard/Keyboard';
 
 const TypePage = () => {
   return (
-    <div>
+    <>
       <WordPanel />
       <Keyboard />
-    </div>
+    </>
   );
 };
 

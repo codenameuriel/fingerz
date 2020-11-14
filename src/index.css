@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 
-html {
+body {
   background-color: rgb(26, 0, 22);
   font-family: 'Red Hat Text', sans-serif;
   font-weight: 100;
@@ -14,9 +14,4 @@ html {
   text-rendering: optimizeLegibility;
   letter-spacing: 1px;
   word-spacing: 1px;
-}
-
-.row {
-  max-width: 100%;
-  margin: 0 auto;
 }

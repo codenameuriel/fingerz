@@ -104,8 +104,9 @@ class WordsPage extends Component {
 
   render() {
     const { checkedInput } = this.props;
+
     return (
-      <div className={WordsPageStyles.WordsPage}>
+      <section className={WordsPageStyles.WordsPageSection}>
         <h1>Word Collection</h1>
         <div className={WordsPageStyles.Forms}>
           {this.renderSelect()}
@@ -129,7 +130,7 @@ class WordsPage extends Component {
           style={
             !checkedInput ? {cursor: 'not-allowed', backgroundColor: '#161629'} : null
           }>Load</button>
-      </div>
+      </section>
     );
   }
 }

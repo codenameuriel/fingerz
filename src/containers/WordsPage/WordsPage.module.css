@@ -1,59 +1,48 @@
-.WordsPage {
-  text-align: center;
-}
-
-.WordsPage h1 {
-  padding-top: 25px;
-  font-size: 250%;
+.WordsPageSection, .Forms select, .Forms input, .Modal {
   color: white;
 }
 
-.WordsPage table {
+.WordsPageSection h1 {
+  padding-top: 25px;
+  font-size: 250%;
+}
+
+.WordsPageSection table {
   margin: 0 auto;
   margin-top: 20px;
   border: 1px solid #3d253c;
-  width: 70%;
+  width: 60%;
 }
 
-.WordsPage table caption {
+.WordsPageSection table caption, .WordsSummary:hover, .Forms label {
   color: #00e6e6;
+}
+
+.WordsPageSection table caption {
   font-size: 105%;
 }
 
-.WordsPage th {
-  color: white;
-  text-align: center;
+.WordsPageSection td {
+  height: 45px;
 }
 
-.WordsPage td {
-  height: 50px;
-}
-
-.WordsPage thead {
-  background-color: black;
-}
-
-.WordsPage tbody {
+.WordsPageSection tbody {
   background-color: #3d253c;
-  color: white;
 }
 
-.WordsPage input {
+.WordsPageSection input, .WordsPageSection button, .WordsSummary:hover {
   cursor: pointer;
+}
+
+.WordsPageSection input {
   height: 15px;
-  width: 15px;
 }
 
 .WordsSummary {
   transition: 0.2s color;
 }
 
-.WordsSummary:hover {
-  cursor: pointer;
-  color: #00e6e6;
-}
-
-table span {
+.WordsPageSection table span {
   visibility: hidden;
   position: absolute;
   z-index: 1;
@@ -67,40 +56,35 @@ table span {
   padding: 25px;
   background-color: #1c1c34;
   width: 75%;
-  text-align: center;
-  color: white;
   border-radius: 5px;
 }
 
-.WordsPage button {
+.WordsPageSection button {
   width: 10%;
   padding: 10px;
-  background-color: rgb(72, 43, 70);
-  color: white;
+  background-color: #482b46;
   font-size: 1vw;
   border: none;
   border-radius: 5px;
-  outline: none;
-  cursor: pointer;
   margin: 15px auto 0 auto;
   transition: background-color 0.2s;
 }
 
-.WordsPage button:hover {
-  background-color: rgb(67 1 62);
-  color: white;
+.WordsPageSection button:hover {
+  background-color: #43013e;
 }
 
-.WordsPage label {
-  color: #00e6e6;
-  font-size: 125%;
+.Forms label {
+  font-size: 115%;
 }
 
-.WordsPage select {
+.Forms select, input, .WordsPageSection thead {
+  background-color: black;
+}
+
+.Forms select {
   margin-right: 25px;
   width: 25%;
-  background-color: black;
-  color: white;
   border: none;
   padding: 10px;
   border-radius: 5px;
@@ -108,9 +92,8 @@ table span {
 }
 
 .Forms {
-  /* background: red; */
   width: 35%;
-  margin: 35px 280px 0 auto;
+  margin: 35px 385px 0 auto;
 }
 
 .Forms input {
@@ -119,14 +102,8 @@ table span {
   border-radius: 5px;
   font-size: 100%;
   border: none;
-  background-color: black;
-  color: white;
 }
 
-.Forms input:focus {
-  outline: none;
-}
-
-.Forms select:focus {
+.Forms input:focus, .Forms select:focus, .WordsPageSection button {
   outline: none;
 }

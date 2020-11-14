@@ -5,8 +5,8 @@
   background-color: black;
   padding: 15px;
   border-radius: 5px;
-  width: 60%;
-  height: 130px;
+  width: 90%;
+  height: 100px;
   margin: 0 auto;
   justify-content: center;
 }
@@ -14,14 +14,16 @@
 .WordRowOne {
   display: flex;
   justify-content: center;
-  width: 90%;
+  /* width: 90%; */
+  width: 25%;
   margin: 0 auto;
 }
 
 .WordRowTwo {
   display: flex;
   justify-content: center;
-  width: 90%;
+  /* width: 90%; */
+  /* width: 25%; */
   margin: 0 auto;
 }
 
@@ -30,8 +32,16 @@
   margin-left: 3px;
   margin-right: 3px;
   padding: 5px;
+  width: 50%;
 }
 
 .Word p {
   font-size: 100%;
+}
+
+@media screen and (min-width: 800px) {
+  .WordsContainer {
+    width: 60%;
+    height: 130px;
+  }
 }

@@ -13,7 +13,7 @@ class WordPanel extends Component {
     if (this.inputElement) this.inputElement.focus();
     if (time === 0) onShowWPMSummary();
   }
-
+ 
   showDisplay() {
     const { 
       showWPMSummary, onHandleChange, showInputError, input, wpmCounter, onRestartTest, disabled, time, typedChars, typoCount, onStopTimer, activeTimer, timerStarted, onDisableInput
