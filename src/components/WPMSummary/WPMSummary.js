@@ -42,7 +42,7 @@ const WPMSummary = props => {
 
   const renderAverageWPM = () => {
     const { typedChars, typoCount } = props;
-    const grossWPM = Math.ceil((typedChars / 5) / 1);
+    const grossWPM = Math.floor((typedChars / 3.5) / 1);
     const netWPM = grossWPM - typoCount;
 
     return <p>{netWPM}</p>; 

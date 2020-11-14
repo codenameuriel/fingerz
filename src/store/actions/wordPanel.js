@@ -117,8 +117,15 @@ const updateSpeedCounter = dataObj => {
   // prevents NaN when typing word and timer runs out
   if (doneTime < 0) doneTime = 0;
   const timeInSec = .0166 * doneTime;
-  const grossWPM = Math.ceil((numOfTypedChars / 5) / timeInSec);
-  const netWPM = grossWPM - numOfTypos;
+  let grossWPM, netWPM;
+  if (timeInSec === 0) {
+    grossWPM = 0;
+    netWPM = 0;
+  } else {
+    grossWPM = Math.floor((numOfTypedChars / 5) / timeInSec);
+    netWPM = grossWPM - numOfTypos;
+  }
+
   let score;
 
   // first check if key exist
