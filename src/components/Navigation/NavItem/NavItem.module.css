@@ -25,3 +25,15 @@
 .NavItem a.active {
   background-color: #00c4c4;
 }
+
+@media (max-width: 499px) {
+  .NavItem {
+    display: flex;
+    margin: 5px 0 25px 0;
+  }
+
+  .NavItem a {
+    padding: 15px;
+    width: 150px;
+  }
+}
