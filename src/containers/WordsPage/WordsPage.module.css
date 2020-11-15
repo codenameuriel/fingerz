@@ -4,7 +4,7 @@
 
 .WordsPageSection h1 {
   padding-top: 25px;
-  font-size: 250%;
+  font-size: 175%;
 }
 
 .WordsPageSection table {
@@ -16,10 +16,6 @@
 
 .WordsPageSection table caption, .WordsSummary:hover, .Forms label {
   color: #00e6e6;
-}
-
-.WordsPageSection table caption {
-  font-size: 105%;
 }
 
 .WordsPageSection td {
@@ -55,7 +51,6 @@
 .Modal {
   padding: 25px;
   background-color: #1c1c34;
-  width: 75%;
   border-radius: 5px;
 }
 
@@ -74,36 +69,71 @@
   background-color: #43013e;
 }
 
-.Forms label {
-  font-size: 115%;
-}
-
 .Forms select, input, .WordsPageSection thead {
   background-color: black;
 }
 
 .Forms select {
-  margin-right: 25px;
-  width: 25%;
   border: none;
-  padding: 10px;
+  padding: 5px;
   border-radius: 5px;
-  font-size: 100%;
+  font-size: 50%;
+  margin-right: 10px;
+  width: 25%;
 }
 
 .Forms {
-  width: 35%;
-  margin: 35px 385px 0 auto;
+  margin: 25px auto 0 auto;
+}
+
+.Forms label {
+  font-size: 65%;
 }
 
 .Forms input {
-  width: 35%;
-  padding: 25px;
+  padding: 15px;
   border-radius: 5px;
-  font-size: 100%;
+  font-size: 50%;
   border: none;
+  width: 25%;
 }
 
 .Forms input:focus, .Forms select:focus, .WordsPageSection button {
   outline: none;
+}
+
+@media screen and (min-width: 800px) {
+  .WordsPageSection h1 {
+    font-size: 250%;
+  }
+
+  .Forms {
+    width: 35%;
+    margin: 35px 385px 0 auto;
+  }
+
+  .Forms input {
+    font-size: 100%;
+    padding: 25px;
+    width: 35%;
+  }
+
+  .Forms select {
+    margin-right: 25px;
+    width: 25%;
+    padding: 10px;
+    font-size: 100%;
+  }
+
+  .Forms label {
+    font-size: 115%;
+  }
+
+  .Modal {
+    width: 75%;
+  }
+
+  .WordsPageSection table caption {
+    font-size: 105%;
+  }
 }
