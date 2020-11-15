@@ -2,12 +2,18 @@ import React from 'react';
 import SideDrawerNavStyles from './SideDrawerNav.module.css';
 import NavItem from '../NavItem/NavItem';
 
-const SideDrawerNav = () => {
+const SideDrawerNav = props => {
   return (
       <nav className={SideDrawerNavStyles.SideDrawerNav}>
         <ul>
-          <NavItem name="Type" link="/type"/>
-          <NavItem name="Words" link="/words"/>
+          <NavItem
+            closeSideDrawer={props.closeSideDrawer} 
+            name="Type" 
+            link="/type"/>
+          <NavItem
+            closeSideDrawer={props.closeSideDrawer}  
+            name="Words" 
+            link="/words"/>
         </ul>
       </nav>
   );

@@ -6,8 +6,14 @@ const NavBar = () => {
   return (
       <nav className={NavBarStyles.Nav}>
         <ul className={NavBarStyles.NavItems}>
-          <NavItem name="Type" link="/type"/>
-          <NavItem name="Words" link="/words"/>
+          <NavItem
+            closeSideDrawer={null} 
+            name="Type" 
+            link="/type"/>
+          <NavItem
+            closeSideDrawer={null} 
+            name="Words" 
+            link="/words"/>
         </ul>
       </nav>
   );

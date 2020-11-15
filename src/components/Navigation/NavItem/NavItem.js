@@ -4,7 +4,12 @@ import { NavLink } from 'react-router-dom';
 
 const NavItem = props => {
   return (
-    <li className={NavItemStyles.NavItem}>
+    <li 
+      className={NavItemStyles.NavItem}
+      onClick={
+        props.closeSideDrawer ? 
+          () => props.closeSideDrawer(prevState => false) : null
+      }>
       <NavLink activeClassName={NavItemStyles.active} to={props.link}>{props.name}</NavLink>
     </li>
   );
