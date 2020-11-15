@@ -4,7 +4,6 @@ import NavItem from '../NavItem/NavItem';
 
 const NavBar = () => {
   return (
-    <header className={NavBarStyles.Header}>
       <nav className={NavBarStyles.Nav}>
         <div className="row">
           <ul className={NavBarStyles.NavItems}>
@@ -13,7 +12,6 @@ const NavBar = () => {
           </ul>
         </div>
       </nav>
-    </header>
   );
 };
 

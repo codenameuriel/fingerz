@@ -1,10 +1,10 @@
 import React from 'react';
-import NavBar from '../../components/Navigation/NavBar/NavBar';
+import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
 
 const Layout = props => {
   return (
     <>
-      <NavBar />
+      <Toolbar />
       <main>
         {props.children}
       </main>
