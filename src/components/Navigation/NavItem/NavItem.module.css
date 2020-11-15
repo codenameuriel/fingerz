@@ -2,12 +2,13 @@
 .NavItem {
   display: inline-block;
   margin-right: 35px;
+  margin-top: 18px;
 }
 
 /* a link - NavLink element */
 .NavItem a {
   text-decoration: none;
-  font-size: 130%;
+  /* font-size: 130%; */
   color: white;
   background-color: black;
   border-radius: 3px;
@@ -17,14 +18,10 @@
 
 .NavItem a:hover {
   cursor: pointer;
-  /* background-color: #bfbd98; */
-  /* background-color: teal; */
   background-color: #00c4c4;
 }
 
 /* active class for NavLink element */
 .NavItem a.active {
-  /* background-color: #bfbd98;  */
-  /* background-color: teal; */
   background-color: #00c4c4;
 }

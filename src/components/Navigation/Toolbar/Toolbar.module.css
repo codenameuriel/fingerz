@@ -1,0 +1,12 @@
+.Toolbar {
+  height: 60px;
+  display: flex;
+  background-color: #3d253c;
+  width: 100%;
+}
+
+@media (max-width: 499px) {
+  .Toolbar {
+    height: 40px;
+  }
+}

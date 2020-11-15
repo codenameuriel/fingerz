@@ -5,12 +5,10 @@ import NavItem from '../NavItem/NavItem';
 const NavBar = () => {
   return (
       <nav className={NavBarStyles.Nav}>
-        <div className="row">
-          <ul className={NavBarStyles.NavItems}>
-            <NavItem name="Type" link="/type"/>
-            <NavItem name="Words" link="/words"/>
-          </ul>
-        </div>
+        <ul className={NavBarStyles.NavItems}>
+          <NavItem name="Type" link="/type"/>
+          <NavItem name="Words" link="/words"/>
+        </ul>
       </nav>
   );
 };

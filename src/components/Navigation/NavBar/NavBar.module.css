@@ -1,20 +1,17 @@
 .Nav {
-  background-color: #3d253c;
-  height: 80px;
-  max-width: 100%;
-}
-
-/* experimenting with a logo */
-.Nav img {
-  width: 5%;
-  height: 80px;
-  background-color: #3d253c;
-  margin-left: 1%;
+  width: 50%;
+  background-color: red;
+  margin-left: 950px;
 }
 
 /* ul element */
 .NavItems {
   list-style: none;
-  float: right;
-  margin-top: 20px;
+  height: 100%;
+}
+
+@media screen and (max-width: 499px) {
+  .Nav {
+    display: none;
+  }
 }
