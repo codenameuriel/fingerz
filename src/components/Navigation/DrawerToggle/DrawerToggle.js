@@ -3,7 +3,9 @@ import DrawerToggleStyles from './DrawerToggle.module.css';
 
 const DrawerToggle = props => {
   return (
-    <div className={DrawerToggleStyles.DrawerToggle}>
+    <div 
+      className={DrawerToggleStyles.DrawerToggle}
+      onClick={() => props.clicked(prevState => !prevState)}>
       <div></div>
       <div></div>
       <div></div>

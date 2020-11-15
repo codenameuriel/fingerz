@@ -6,7 +6,7 @@ import NavBar from '../NavBar/NavBar';
 const Toolbar = props => {
   return (
     <header className={ToolbarStyles.Toolbar}>
-      <DrawerToggle />
+      <DrawerToggle clicked={props.sideDrawerToggle}/>
       <NavBar />
     </header>
   );
