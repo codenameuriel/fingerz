@@ -71,11 +71,6 @@ class WordsPage extends Component {
     this.props.history.push('/type');
   }
 
-  onSearchChange = event => {
-    // dispatch action to filter by search value
-    console.log(event.target.value);
-  };
-
   renderSelect = () => {
     return (
       <>
