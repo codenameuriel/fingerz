@@ -14,7 +14,7 @@
   background-color: #00c4c4;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 600px) {
   .DrawerToggle {
     display: none;
   }

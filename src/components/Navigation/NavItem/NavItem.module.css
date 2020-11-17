@@ -37,3 +37,13 @@
     width: 150px;
   }
 }
+
+@media (min-width: 700px) {
+  .NavItem {
+    margin-right: 25px;
+  }
+
+  .NavItem a {
+    padding: 10px;
+  }
+}

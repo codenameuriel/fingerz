@@ -1,17 +1,45 @@
 .Nav {
-  width: 50%;
-  background-color: red;
-  margin-left: 950px;
+  display: none;
 }
 
 /* ul element */
 .NavItems {
   list-style: none;
   height: 100%;
+  margin-left: 0px;
 }
 
-@media screen and (max-width: 499px) {
+@media (min-width: 600px) {
   .Nav {
-    display: none;
+    display: flex;
+    margin-left: 63%;
+  }
+}
+
+@media (min-width: 700px) {
+  .Nav {
+    display: flex;
+    margin-left: 68%;
+  }
+}
+
+@media (min-width: 850px) {
+  .Nav {
+    display: flex;
+    margin-left: 74%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .Nav {
+    display: flex;
+    margin-left: 78%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .Nav {
+    display: flex;
+    margin-left: 88%;
   }
 }
