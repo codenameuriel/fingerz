@@ -1,98 +1,24 @@
 /* KEYBOARD */
 .Keyboard {
-  width: 90%;
   background-color: #1c1c34;
   border-radius: 5px;
   margin: 0 auto;
-  padding-top: 20px;
-  overflow: hidden;
 }
 
-/* KEYBOARD TOP ROW */
-.TopRow {
-  width: 95%;
+.TopRow, .MidRow, .BottomRow, .Space {
   display: inline-flex;
+  margin-bottom: 1.5%;
+}
+
+.TopRow, .MidRow, .BottomRow {
   justify-content: center;
-  margin-bottom: 2%;
-  margin-left: 2.5%;
 }
 
-.TopRowKey { 
+.TopRowKey, .MidRowKey, .BottomRowKey, .SpaceKey { 
   background-color: black;
   color: #00e6e6;
-  width: 7%;
-  height: 70px;
   border-radius: 5px;
   margin-left: 1.5%;
-  font-size: 150%;
-  text-align: center;
-  padding-top: 15px;
-}
-
-/* KEYBOARD MID ROW */
-.MidRow {
-  display: inline-flex;
-  justify-content: center;
-  width: 95%;
-  margin-left: 1%;
-  margin-bottom: 2%;
- }
-
-.MidRowKey {
-  background-color: black;
-  width: 7%;
-  height: 70px;
-  border-radius: 5px;
-  margin-left: 1.5%;
-  color: #00e6e6;
-  border-radius: 5px;
-  font-size: 150%;
-  text-align: center;
-  padding-top: 15px;
-}
-
-/* KEYBOARD BOTTOM ROW */
-.BottomRow {
-  display: inline-flex;
-  justify-content: center;
-  width: 95%;
-  margin-left: -4%;
-  margin-bottom: 2%;
-}
-
-.BottomRowKey {
-  background-color: black;
-  width: 7%;
-  height: 70px;
-  border-radius: 5px;
-  margin-left: 1.5%;
-  color: #00e6e6;
-  border-radius: 5px;
-  font-size: 150%;
-  text-align: center;
-  padding-top: 15px;
-}
-
-
-/* KEYBOARD SPACE ROW */
-.Space {
-  display: inline-flex;
-  margin-left: 28%;
-  margin-bottom: 2%;
-  width: 95%;
-}
-
-.SpaceKey {
-  background-color: black;
-  width: 50%;
-  height: 70px;
-  border-radius: 5px;
-  margin-left: 1.5%;
-  color: #00e6e6;
-  font-size: 150%;
-  border-radius: 5px;
-  text-align: center;
-  padding-top: 15px;
 }
 
 /* landscape mode */
@@ -119,18 +45,6 @@
   }
 }
 
-/* @media (min-width: 1000px) {
-  .Keyboard {
-    width: 75%;
-  }
-}
-
-@media (min-width: 1400px) {
-  .Keyboard {
-    width: 60%;
-  }
-} */
-
 /* portrait mode */
 @media (max-width: 649px) {
   .Keyboard {
@@ -147,6 +61,40 @@
     font-size: 75%;
     height: 25px;
     padding: 0;
+  }
+
+  .SpaceKey {
+    width: 50%;
+  }
+}
+
+/* desktop */
+@media (min-width: 800px) {
+  .Keyboard {
+    width: 65%;
+    padding-top: 20px;
+    height: 350px;
+  }
+
+  .TopRow, .MidRow, .BottomRow, .Space {
+    width: 110%;
+    margin-left: -5%;
+  }
+
+  .BottomRow {
+    margin-left: -10%;
+  }
+
+  .Space {
+    width: 100%;
+    margin-right: -65%;
+  }
+
+  .TopRowKey, .MidRowKey, .BottomRowKey, .SpaceKey {
+    width: 6%;
+    font-size: 120%;
+    height: 65px;
+    padding: 15px;
   }
 
   .SpaceKey {

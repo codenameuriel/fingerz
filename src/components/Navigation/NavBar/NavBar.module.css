@@ -9,30 +9,17 @@
   margin-left: 0px;
 }
 
+/* desktop */
 @media (min-width: 800px) {
-  .Nav {
+  .Nav, .NavItems {
     display: flex;
-    margin-left: 63%;
+    width: 100%;
+    justify-content: flex-end;
   }
-}
 
-@media (min-width: 850px) {
-  .Nav {
-    display: flex;
-    margin-left: 74%;
-  }
-}
-
-@media screen and (min-width: 1000px) {
-  .Nav {
-    display: flex;
-    margin-left: 78%;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .Nav {
-    display: flex;
-    margin-left: 88%;
+  .NavItems { 
+    width: 500px;
+    align-items: center;
+    padding-bottom: 18px;
   }
 }

@@ -3,16 +3,10 @@
   text-align: center;
 }
 
-@media (min-width: 1600px) {
-  .App {
-    max-width: 85%;
-    margin: 0 auto;
-  }
-}
-
-@media (min-width: 1900px) {
+/* desktop */
+@media (min-width: 1200px) {
   .App { 
-    max-width: 85%;
+    max-width: 80%;
     margin: 0 auto;
    }
 }

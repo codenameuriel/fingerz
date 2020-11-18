@@ -12,8 +12,16 @@
   }
 }
 
-@media (max-width: 499px) {
+/* portrait mode */
+@media (max-width: 649px) {
   .Toolbar {
     height: 40px;
+  }
+}
+
+/* desktop */
+@media (min-width: 800px) {
+  .Toolbar {
+    height: 60px;
   }
 }

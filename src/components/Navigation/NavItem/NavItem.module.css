@@ -1,6 +1,6 @@
 /* li element */
 .NavItem {
-  display: inline-block;
+  display: flex;
   margin-right: 35px;
   margin-top: 18px;
 }
@@ -54,6 +54,7 @@
   }
 
   .NavItem a {
-    padding: 10px;
+    width: 100px;
+    height: 45px;
   }
 }
