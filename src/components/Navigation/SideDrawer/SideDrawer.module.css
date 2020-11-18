@@ -2,6 +2,14 @@
   display: none;
 }
 
+.Show {
+  transform: translateX(0);
+}
+
+.Hide {
+  transform: translateX(-100%);
+}
+
 /* landscape mode */
 @media (min-width: 650px) {
   .SideDrawer {
@@ -34,12 +42,4 @@
     box-sizing: border-box;
     transition: transform 0.3s ease-out;
   }
-}
-
-.Show {
-  transform: translateX(0);
-}
-
-.Hide {
-  transform: translateX(-100%);
 }
