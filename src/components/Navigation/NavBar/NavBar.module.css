@@ -9,17 +9,10 @@
   margin-left: 0px;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 800px) {
   .Nav {
     display: flex;
     margin-left: 63%;
-  }
-}
-
-@media (min-width: 700px) {
-  .Nav {
-    display: flex;
-    margin-left: 68%;
   }
 }
 

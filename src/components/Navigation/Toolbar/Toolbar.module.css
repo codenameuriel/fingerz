@@ -5,6 +5,13 @@
   width: 100%;
 }
 
+/* landscape mode */
+@media (min-width: 650px) {
+  .Toolbar {
+    height: 45px;
+  }
+}
+
 @media (max-width: 499px) {
   .Toolbar {
     height: 40px;

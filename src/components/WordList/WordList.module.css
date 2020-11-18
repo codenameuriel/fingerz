@@ -1,21 +1,27 @@
+/* display at 450px wide */
 .WordsContainer {
   display: flex;
   flex-flow: column;
   color: white;
   background-color: black;
-  padding: 15px;
+  /* background-color: green; */
+  /* padding: 15px; */
+  padding: 5px;
   border-radius: 5px;
-  width: 90%;
-  height: 100px;
+  width: 100%;
+  /* height: 100px; */
+  height: 70px;
   margin: 0 auto;
   justify-content: center;
+
+  /* testing */
+  /* overflow: hidden; */
 }
 
 .WordRowOne {
   display: flex;
   justify-content: center;
-  /* width: 90%; */
-  width: 25%;
+  /* width: 25%; */
   margin: 0 auto;
 }
 
@@ -29,19 +35,57 @@
 
 .Word {
   border-radius: 5px;
-  margin-left: 3px;
-  margin-right: 3px;
-  padding: 5px;
-  width: 50%;
+  /* margin-left: 1px;
+  margin-right: 1px; */
+  /* padding: 5px; */
+  padding: 3px;
 }
 
 .Word p {
-  font-size: 100%;
+  /* font-size: 100%; */
+  font-size: 40%;
 }
 
-@media screen and (min-width: 800px) {
-  .WordsContainer {
-    width: 60%;
-    height: 130px;
+/* @media (min-width: 440px) {
+  .Word p {
+    font-size: 35%;
   }
 }
+
+@media (min-width: 500px) {
+  .Word p {
+    font-size: 45%;
+  }
+}
+
+@media (min-width: 550px) {
+  .WordsContainer {
+    width: 85%;
+  }
+} */
+
+/* landscape mode */
+@media (min-width: 650px) {
+  .WordsContainer {
+    width: 75%;
+  }
+}
+
+/* portrait mode */
+@media (max-width: 649px) {
+  .WordsContainer {
+    width: 90%;
+    height: 80px;
+  }
+
+  .Word p {
+    font-size: 40%;
+  }
+}
+
+/* @media screen and (min-width: 800px) {
+  .WordsContainer {
+    width: 85%;
+    height: 130px;
+  }
+} */

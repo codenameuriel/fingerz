@@ -26,19 +26,29 @@
   background-color: #00c4c4;
 }
 
-@media (max-width: 499px) {
+/* landscape mode */
+@media (min-width: 650px) {
   .NavItem {
     display: flex;
-    margin: 5px 0 25px 0;
   }
 
   .NavItem a {
-    padding: 15px;
     width: 150px;
   }
 }
 
-@media (min-width: 700px) {
+@media (max-width: 649px) {
+  .NavItem {
+    display: flex;
+  }
+
+  .NavItem a {
+    width: 150px;
+  }
+}
+
+/* desktop */
+@media (min-width: 800px) {
   .NavItem {
     margin-right: 25px;
   }

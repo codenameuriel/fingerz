@@ -1,6 +1,6 @@
 /* KEYBOARD */
 .Keyboard {
-  width: 55%;
+  width: 90%;
   background-color: #1c1c34;
   border-radius: 5px;
   margin: 0 auto;
@@ -93,4 +93,63 @@
   border-radius: 5px;
   text-align: center;
   padding-top: 15px;
+}
+
+/* landscape mode */
+@media (min-width: 650px) {
+  .Keyboard {
+    width: 65%;
+    padding-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .TopRow, .MidRow, .BottomRow, .Space {
+    width: 100%;
+  }
+
+  .TopRowKey, .MidRowKey, .BottomRowKey, .SpaceKey {
+    width: 6%;
+    font-size: 100%;
+    height: 30px;
+    padding: 0;
+  }
+
+  .SpaceKey {
+    width: 50%;
+  }
+}
+
+/* @media (min-width: 1000px) {
+  .Keyboard {
+    width: 75%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .Keyboard {
+    width: 60%;
+  }
+} */
+
+/* portrait mode */
+@media (max-width: 649px) {
+  .Keyboard {
+    width: 75%;
+    padding-top: 10px;
+  }
+
+  .TopRow, .MidRow, .BottomRow, .Space {
+    width: 100%;
+  }
+
+  .TopRowKey, .MidRowKey, .BottomRowKey, .SpaceKey {
+    width: 7%;
+    font-size: 75%;
+    height: 25px;
+    padding: 0;
+  }
+
+  .SpaceKey {
+    width: 50%;
+  }
 }
