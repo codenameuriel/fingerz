@@ -23,12 +23,6 @@ const Timer = props => {
           if (props.timerStarted) props.stopTimer(props.activeTimer)
           }} 
       />
-      {/* <button 
-        disable={!props.timerStarted} 
-        style={props.timerStarted ? null : { backgroundColor: '#161629', cursor: 'not-allowed' }}
-        onClick={() => {
-          if (props.timerStarted) props.stopTimer(props.activeTimer)
-          }}>Restart</button> */}
     </div>
   );
 };
