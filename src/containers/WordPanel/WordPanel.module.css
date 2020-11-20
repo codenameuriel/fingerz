@@ -61,3 +61,10 @@
    font-size: 150%;
  }
 }
+
+/* widescreen desktops */
+@media (min-width: 1800px) {
+  .WordPanel input {
+    width: 25%;
+  }
+}
