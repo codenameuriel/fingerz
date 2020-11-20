@@ -1,6 +1,9 @@
 .WordsContainer, .WordRowOne, .WordRowTwo {
   display: flex;
   justify-content: center;
+}
+
+.WordRowOne, .WordRowTwo {
   margin: 0 auto;
 }
 
@@ -8,17 +11,12 @@
   flex-flow: column;
   color: white;
   background-color: black;
+  margin: 25px auto 0 auto;
+  width: 80%;
 }
 
 .WordsContainer, .Word {
   border-radius: 5px;
-}
-
-/* landscape mode */
-@media (min-width: 650px) {
-  .WordsContainer {
-    width: 75%;
-  }
 }
 
 /* portrait mode */
@@ -28,17 +26,35 @@
     height: 80px;
   }
 
+  .Word {
+    padding: 2px;
+  }
+
   .Word p {
-    font-size: 40%;
+    font-size: 38%;
+  }
+}
+
+/* landscape mode */
+@media (min-width: 650px) {
+  .WordsContainer {
+    height: 100px;
+  }
+
+  .Word {
+    padding: 3px;
+  }
+
+  .Word p {
+    font-size: 60%;
   }
 }
 
 /* desktop */
 @media screen and (min-width: 800px) {
   .WordsContainer {
-    width: 80%;
     height: 130px;
-    margin-top: 50px;
+    margin-top: 30px;
   }
 
   .Word {
@@ -47,5 +63,12 @@
 
   .Word p {
     font-size: 100%;
+  }
+}
+
+/* widescreen desktops */
+@media (min-width: 1800px) {
+  .WordsContainer {
+    width: 1200px;
   }
 }
