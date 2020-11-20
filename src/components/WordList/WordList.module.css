@@ -1,4 +1,3 @@
-/* display at 450px wide */
 .WordsContainer, .WordRowOne, .WordRowTwo {
   display: flex;
   justify-content: center;

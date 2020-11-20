@@ -29,9 +29,9 @@ class WordPanel extends Component {
             stopTimer={onStopTimer} 
             activeTimer={activeTimer} 
             timerStarted={timerStarted}/>
-          <h5>
+          <p className={WordPanelStyles.Direction}>
             press <span style={{color: '#00e6e6'}}>space</span> for next word
-          </h5> 
+          </p> 
           <input 
             onChange={onHandleChange}
             disabled={disabled}

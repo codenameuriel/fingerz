@@ -1,49 +1,25 @@
 .WordPanel {
-  padding: 5% 3%;
-  /* padding-bottom: 1%; */
   display: flex;
   flex-direction: column;
-  /* padding-top: 50px; */
-  height: 50vh;
+  margin-top: 25px;
+  background-color: blue;
 }
 
-.WordPanel button {
-  width: 10%;
-  padding: 10px;
-  background-color: rgb(72, 43, 70);
-  color: white;
-  font-size: 1vw;
-  border: none;
-  border-radius: 5px;
-  outline: none;
-  cursor: pointer;
-  margin: 50px auto 0 auto;
-  transition: background-color 0.2s;
-}
-
-.WordPanel button:hover {
-  background-color: rgb(67 1 62);
-  color: white;
-}
-
-.WordPanel h5 {
-  width: 20%;
-  font-size: 120%;
+.Direction {
   color: white;
   text-align: center;
-  margin: 25px auto 10px auto;
+  margin: 0 auto 3px auto; 
 }
 
 .WordPanel input {
-  width: 20%;
-  padding: 5px;
-  font-size: 155%;
-  text-align: center;
   color: white;
   background-color: #1c1c34;
+  text-align: center;
+  align-self: center;
   border: none;
   border-radius: 5px;
-  align-self: center;
+  margin-bottom: 10px;
+  padding: 3px;
 }
 
 .WordPanel input:focus {
@@ -52,41 +28,37 @@
 
 /* landscape mode */
 @media (min-width: 650px) {
-  .WordPanel {
-    padding: 0;
-    margin-top: 25px;
-  }
-
-  .WordPanel h5 {
-    width: 35%;
+  .Direction {
     font-size: 55%;
-    margin: 0 auto 3px auto; 
   }
 
   .WordPanel input {
     width: 25%;
-    padding: 2px;
-    font-size: 90%;
+    font-size: 85%;
   }
 }
 
 /* portrait mode */
 @media (max-width: 649px) {
-  .WordPanel {
-    padding: 0;
-    margin-top: 25px;
-    height: 230px;
-  }
-
-  .WordPanel h5 {
-    width: 45%;
-    font-size: 50%;
-    margin: 0 auto 3px auto; 
+  .Direction {
+    font-size: 45%;
   }
 
   .WordPanel input {
-    width: 40%;
-    padding: 2px;
-    font-size: 90%;
+    width: 35%;
+    font-size: 80%;
   }
+}
+
+/* desktop */ 
+@media (min-width: 800px) {
+ .Direction {
+   font-size: 120%;
+ }
+ 
+ .WordPanel input {
+   width: 30%;
+   padding: 5px;
+   font-size: 150%;
+ }
 }
