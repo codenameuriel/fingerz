@@ -1,11 +1,5 @@
-/* portrait mode on mobile device */
 .WordsPageSection, .Forms select, .Forms input, .Modal {
   color: white;
-}
-
-.WordsPageSection h1 {
-  padding-top: 20px;
-  font-size: 130%;
 }
 
 .WordsPageSection table {
@@ -120,13 +114,13 @@
   outline: none;
 }
 
-/* landscape mode on mobile device */
-@media screen and (min-width: 700px) {
-  .WordsPageSection h1 {
-    font-size: 200%;
-    padding-top: 25px;
-  }
+/* portrait mode */
+@media (max-width: 649px) {
 
+}
+
+/* landscape mode */
+@media screen and (max-width: 799px) {
   .Forms {
     width: 100%;
     margin-top: 70px;
@@ -192,61 +186,117 @@
   }
 }
 
-/* desktop display */
-@media screen and (min-width: 800px) {
+/* desktop */
+@media (min-width: 800px) {
   .WordsPageSection h1 {
-    font-size: 200%;
-    padding-top: 25px;
+    font-size: 180%;
+    margin-top: 50px;
   }
 
   .Forms {
-    width: 35%;
-    margin: 35px 385px 0 auto;
+    display: flex;
+    width: 85%;
+    margin: 50px auto;
   }
 
-  .Forms input {
+  .Filter, .Search {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+  }
+
+  .Filter select, .Search input {
     font-size: 100%;
-    padding: 25px;
-    width: 35%;
+    width: 60%;
   }
 
-  .Forms select {
-    margin-right: 25px;
-    padding: 10px;
-    font-size: 100%;
+  .Filter select {
+    padding: 5px;
   }
 
-  .Forms label {
-    font-size: 115%;
+  .Search input {
+    padding: 20px;
   }
 
-  .Modal {
-    width: 70%;
-  }
-
-  .WordsPageSection table caption {
-    font-size: 105%;
+  .Filter label, .Search label {
+    font-size: 125%;
+    margin-right: 5px;
   }
 
   .WordsPageSection table {
-    width: 70%;
+    width: 85%;
+    margin-top: 50px;
+  }
+
+  .WordsPageSection table caption {
+    font-size: 100%;
   }
 
   .WordsPageSection th {
-    font-size: 100%;
-  }
-
-  .WordsPageSection td {
-    height: 45px;
     font-size: 90%;
   }
 
+  .WordsPageSection td {
+    height: 50px;
+    font-size: 80%;
+  }
+
   .WordsPageSection button {
-    width: 10%;
-    font-size: 100%;
+    width: 15%;
+    padding: 10px;
+    font-size: 120%;
   }
 
   .WordsPageSection table span {
-    width: 30%;
+    width: 35%;
+  }
+
+  .Modal {
+    width: 50%;
+  }
+}
+
+/* ultra-wide desktop */
+@media (min-width: 1200px) {
+  .WordsPageSection h1 {
+    font-size: 190%;
+  }
+
+  .Forms {
+    display: flex;
+    width: 90%;
+  }
+
+  .Filter, .Search {
+    width: 60%;
+  }
+
+  .Filter select, .Search input {
+    font-size: 110%;
+    width: 55%;
+  }
+
+  .Filter select {
+    padding: 10px;
+  }
+
+  .Search input {
+    padding: 25px;
+  }
+
+  .Filter label, .Search label {
+    font-size: 135%;
+  }
+
+  .WordsPageSection table {
+    width: 90%;
+  }
+
+  .WordsPageSection th {
+    font-size: 95%;
+  }
+
+  .WordsPageSection td {
+    font-size: 85%;
   }
 }

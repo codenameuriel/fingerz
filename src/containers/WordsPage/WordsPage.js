@@ -73,7 +73,7 @@ class WordsPage extends Component {
 
   renderSelect = () => {
     return (
-      <>
+      <div className={WordsPageStyles.Filter}>
         <label>Filter By: </label>
         <select onChange={event => this.props.onFilter(event.target.value)}>
           <option value="default">Default</option>
@@ -81,19 +81,19 @@ class WordsPage extends Component {
           <option value="hand">Hand</option>
           <option value="alphabet">Alphabet</option>
         </select>
-      </>
+      </div>
     );
   }
 
   renderSearch = () => {
     return (
-      <>
+      <div className={WordsPageStyles.Search}>
         <label>Search: </label>
         <input 
           type="text"
           onChange={event => this.props.onSearch(event.target.value)}
           placeholder="Search by Name"/>
-      </>
+      </div>
     );
   }
 
