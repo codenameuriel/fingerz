@@ -13,7 +13,7 @@
   font-size: 70%;
 }
 
-.WordsPageSection table caption, .WordsSummary:hover, .Forms label {
+.WordsPageSection table caption, .WordsSummary:hover {
   color: #00e6e6;
 }
 
@@ -63,7 +63,7 @@
   padding: 15px;
   background-color: #1c1c34;
   border-radius: 5px;
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
 }
 
 .WordsPageSection button {
@@ -147,6 +147,8 @@
     width: 100%;
     padding: 20px;
   }
+
+
 
   .WordsPageSection table caption {
     font-size: 100%;
@@ -247,12 +249,12 @@
     font-size: 120%;
   }
 
-  .WordsPageSection table span {
-    width: 35%;
-  }
-
-  .Modal {
-    width: 50%;
+  .WordsSummary span {
+    width: 25%;
+    margin-left: 25%;
+    margin-top: 10%;
+    overflow: scroll;
+    height: 150px;
   }
 }
 
@@ -298,5 +300,11 @@
 
   .WordsPageSection td {
     font-size: 85%;
+  }
+
+  .WordsSummary span {
+    width: 20%;
+    margin-left: 20%;
+    margin-top: 8%;
   }
 }
