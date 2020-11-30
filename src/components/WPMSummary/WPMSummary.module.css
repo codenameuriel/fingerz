@@ -2,7 +2,8 @@
   display: flex;
   text-align: center;
   color: white;
-  height: 50vh;
+  height: 424px;
+  padding-top: 30px;
 }
 
 .SlowestWords {
@@ -97,7 +98,6 @@
 @media (max-width: 649px) {
   .WPMSummary {
     height: 40vh;
-    padding-top: 30px;
   }
 
   .PerWordsSummary, .SlowestWordsList {
@@ -126,11 +126,6 @@
 
 /* landscape */
 @media (min-width: 650px) {
-  .WPMSummary {
-    height: 40vh;
-    padding-top: 30px;
-  }
-
   .PerWordsSummary, .SlowestWordsList {
     height: 100px;
   }
@@ -151,10 +146,6 @@
 
 /* desktop */
 @media (min-width: 800px) {
-  .WPMSummary {
-    padding-top: 50px;
-  }
-
   .WPMPerWords h1, .SlowestWords h1, .Stats h1 {
     font-size: 100%;
   }
@@ -169,7 +160,7 @@
   }
 
   .PerWordsSummary, .SlowestWordsList {
-    height: 250px;
+    height: 200px;
   }
 }
 
