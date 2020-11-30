@@ -55,6 +55,7 @@
   .WordsContainer {
     height: 125px;
     margin-top: 30px;
+    width: 90%;
   }
 
   .Word {
@@ -62,13 +63,21 @@
   }
 
   .Word p {
-    font-size: 100%;
+    font-size: 88%;
   }
 }
 
 /* widescreen desktops */
-@media (min-width: 1800px) {
+@media (min-width: 1200px) {
   .WordsContainer {
     width: 1200px;
+  }
+
+  .Word {
+    padding: 7px;
+  }
+
+  .Word p {
+    font-size: 95%;
   }
 }

@@ -97,7 +97,7 @@
 /* portrait */
 @media (max-width: 649px) {
   .WPMSummary {
-    height: 40vh;
+    height: 246px;
   }
 
   .PerWordsSummary, .SlowestWordsList {
@@ -126,8 +126,11 @@
 
 /* landscape */
 @media (min-width: 650px) {
+  .WPMSummary {
+    height: 278px;
+  }
   .PerWordsSummary, .SlowestWordsList {
-    height: 100px;
+    height: 150px;
   }
 
   .WPMPerWords h1, .SlowestWords h1, .Stats h1 {
@@ -146,12 +149,16 @@
 
 /* desktop */
 @media (min-width: 800px) {
+  .WPMSummary {
+    height: 424px;
+  }
+
   .WPMPerWords h1, .SlowestWords h1, .Stats h1 {
-    font-size: 100%;
+    font-size: 125%;
   }
 
   .AverageWPM p, .AccScore p {
-    font-size: 125%;
+    font-size: 130%;
     padding: 5px;
   }
 
@@ -160,7 +167,7 @@
   }
 
   .PerWordsSummary, .SlowestWordsList {
-    height: 200px;
+    height: 250px;
   }
 }
 
