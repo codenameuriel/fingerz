@@ -1,122 +1,51 @@
 .WPMSummary {
+  display: flex;
+  text-align: center;
   color: white;
-  display: flex;
-  flex-direction: row;
-  font-size: 100%;
-  margin-bottom: 20px;
-  /* background-color: peachpuff; */
-}
-
-.WPMSummaryContainer {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  width: 65%;
   height: 50vh;
-  padding-top: 50px;
-  /* background-color: red; */
 }
 
-.Average {
-  width: 50%;
-  text-align: center;
+.SlowestWords {
+  width: 35%;
 }
 
-.Average p {
-  font-size: 200%;
-  padding: 5px;
-}
-
-button {
-  padding: 15px;
-  background-color: #3d253c;
-  color: white;
-  font-size: 90%;
-  border: none;
-  width: 30%;
-  border-radius: 5px;
-  outline: none;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  margin: 0 auto;
-  margin-top: 20%;
-}
-
-.SlowestWordsContainer {
-  width: 30%;
-  text-align: center;
-  margin: 0 auto;
-  height: 350px;
-}
-
-.SlowestWordsList {
-  margin: 15px auto 0 auto;
-  height: 250px;
-  overflow: scroll;
-}
-
-.SlowWord {
+.SlowWord, .WordWPM, .AvgWPMScore, .AccScore {
   background-color: black;
-  color: white; 
   border-radius: 5px;
-  width: 60%;
+}
+
+.SlowWord, .WordWPM {
+  width: 65%;
   margin: 3px auto;
   padding: 5px;
 }
 
-.WordSummary {
-  margin-bottom: 15px;
+.WordWPM, .AvgWPMScore {
+  color: #00e6e6;
 }
 
-.WordWPM {
-  /* color: rgb(231, 231, 149);  */
-  color: #00e6e6;
-  background-color: black;
-  border-radius: 5px;
-  width: 60%;
-  margin: 3px auto;
-  padding: 5px;
-}
-
-.Score {
-  text-align: center;
-  /* color: rgb(231, 231, 149);  */
-  color: #00e6e6;
-  background-color: black;
-  border-radius: 5px;
+.AvgWPMScore {
   width: 40%;
   margin: 15px auto;
 }
 
-.ScoreHeader {
-  text-align: center;
+.WPMPerWords {
+  width: 35%;
 }
 
-.Review {
-  width: 40%;
-  text-align: center;
-  margin: 0 auto;
-  height: 350px;
-}
-
-.WordSummary {
-  margin: 15px auto 0 auto;
+.SlowestWordsList, .PerWordsSummary {
   width: 75%;
+  margin: 15px auto 0 auto;
   height: 250px;
   overflow: scroll;
-  text-align: center;
 }
 
-.Accuracy {
+.Accuracy, .AverageWPM {
   width: 50%;
-  text-align: center;
-  /* background-color: blue; */
 }
 
 .AccScore {
-  background-color: black;
-  border-radius: 5px;
-  width: 60%;
+  width: 50%;
   padding: 5px;
   margin: 0 auto;
   margin-top: 15px;
@@ -143,10 +72,10 @@ button {
   display: flex;
 }
 
-.StatsContainer {
+.Stats {
   display: flex;
   flex-direction: column;
-  width: 45%;
+  width: 30%;
   margin: 0 auto;
 }
 
@@ -162,4 +91,100 @@ button {
 .ResetIcon:hover {
   color: #00c4c4;
   cursor: pointer;
+}
+
+/* portrait */
+@media (max-width: 649px) {
+  .WPMSummary {
+    height: 40vh;
+    padding-top: 30px;
+  }
+
+  .PerWordsSummary, .SlowestWordsList {
+    height: 150px;
+  }
+
+  .WPMPerWords h1, .SlowestWords h1, .Stats h1 {
+    font-size: 60%;
+  }
+
+  .AverageWPM p, .AccScore p {
+    font-size: 50%;
+    padding: 5px;
+  }
+
+  .WordWPM p, .SlowWord p {
+    font-size: 35%;
+  }
+
+  .ResetIcon {
+    width: 40%;
+    height: 150px;
+    margin: 0 auto;
+  }
+}
+
+/* landscape */
+@media (min-width: 650px) {
+  .WPMSummary {
+    height: 40vh;
+    padding-top: 30px;
+  }
+
+  .PerWordsSummary, .SlowestWordsList {
+    height: 100px;
+  }
+
+  .WPMPerWords h1, .SlowestWords h1, .Stats h1 {
+    font-size: 80%;
+  }
+
+  .AverageWPM p, .AccScore p {
+    font-size: 100%;
+    padding: 5px;
+  }
+
+  .WordWPM p, .SlowWord p {
+    font-size: 50%;
+  }
+}
+
+/* desktop */
+@media (min-width: 800px) {
+  .WPMSummary {
+    padding-top: 50px;
+  }
+
+  .WPMPerWords h1, .SlowestWords h1, .Stats h1 {
+    font-size: 100%;
+  }
+
+  .AverageWPM p, .AccScore p {
+    font-size: 125%;
+    padding: 5px;
+  }
+
+  .WordWPM p, .SlowWord p {
+    font-size: 75%;
+  }
+
+  .PerWordsSummary, .SlowestWordsList {
+    height: 250px;
+  }
+}
+
+/* ultra-wide desktop */
+@media (min-width: 1200px) {
+  .WPMPerWords h1, .SlowestWords h1, .Stats h1 {
+    font-size: 150%;
+  }
+
+  .AverageWPM p, .AccScore p {
+    font-size: 150%;
+    padding: 5px;
+  }
+
+  .WordWPM p, .SlowWord p {
+    font-size: 90%;
+  }
 }

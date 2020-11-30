@@ -9,7 +9,7 @@ const WPMSummary = props => {
     onDisableInput();
   }, []);
 
-  const renderWordSummary = () => {
+  const renderPerWordsSummary = () => {
     const { wpmCounter } = props;
     const summary = [];
 
@@ -88,43 +88,37 @@ const WPMSummary = props => {
   };
 
   return (
-    <div className={WPMSummaryStyles.WPMSummaryContainer}>
-      <div className={WPMSummaryStyles.WPMSummary}>
-        <div className={WPMSummaryStyles.Review}>
-          <h1>WPM Per Word</h1>
-          <div className={WPMSummaryStyles.WordSummary}>
-            {renderWordSummary()}
-          </div>
+    <div className={WPMSummaryStyles.WPMSummary}>
+      <div className={WPMSummaryStyles.WPMPerWords}>
+        <h1>WPM Per Word</h1>
+        <div className={WPMSummaryStyles.PerWordsSummary}>
+          {renderPerWordsSummary()}
         </div>
-
-        <div className={WPMSummaryStyles.SlowestWordsContainer}>
-          <h1>Slowest Words</h1>
-          <div className={WPMSummaryStyles.SlowestWordsList}>
-            {renderSlowestWPMWords(slowestWPMWords())}
-          </div>
+      </div>
+      <div className={WPMSummaryStyles.SlowestWords}>
+        <h1>Slowest Words</h1>
+        <div className={WPMSummaryStyles.SlowestWordsList}>
+          {renderSlowestWPMWords(slowestWPMWords())}
         </div>
-
-        <div className={WPMSummaryStyles.StatsContainer}>
-          <div className={WPMSummaryStyles.AccAvgContainer}>
-            <div className={WPMSummaryStyles.Accuracy}>
-              <h1>Accuracy</h1>
-              <div className={WPMSummaryStyles.AccScore}>
-                {renderAccScore()}
-              </div>
-            </div>
-
-            <div className={WPMSummaryStyles.Average}>
-              <h1>WPM</h1>
-              <div className={WPMSummaryStyles.Score}>
-                {renderAverageWPM()}
-              </div>
+      </div>
+      <div className={WPMSummaryStyles.Stats}>
+        <div className={WPMSummaryStyles.AccAvgContainer}>
+          <div className={WPMSummaryStyles.Accuracy}>
+            <h1>Accuracy</h1>
+            <div className={WPMSummaryStyles.AccScore}>
+              {renderAccScore()}
             </div>
           </div>
-
-          <IoIosRefresh 
-            className={WPMSummaryStyles.ResetIcon}
-            onClick={props.onRestartTest}/>
+          <div className={WPMSummaryStyles.AverageWPM}>
+            <h1>WPM</h1>
+            <div className={WPMSummaryStyles.AvgWPMScore}>
+              {renderAverageWPM()}
+            </div>
+          </div>
         </div>
+        <IoIosRefresh 
+          className={WPMSummaryStyles.ResetIcon}
+          onClick={props.onRestartTest}/>
       </div>
     </div>
   );
