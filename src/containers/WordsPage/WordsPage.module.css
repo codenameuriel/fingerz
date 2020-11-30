@@ -100,7 +100,7 @@
 }
 
 .Forms input {
-  padding: 15px;
+  padding: 10px;
   border-radius: 5px;
   font-size: 50%;
   border: none;
@@ -128,25 +128,25 @@
 /* landscape mode */
 @media screen and (min-width: 650px) {
   .Forms {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     margin-top: 70px;
   }
 
   .Forms input {
-    font-size: 100%;
-    padding: 25px;
-    width: 35%;
+    font-size: 75%;
+    padding: 14px;
   }
 
   .Forms select {
+    margin-bottom: 5px;
     margin-right: 25px;
-    padding: 10px;
-    font-size: 100%;
-    width: 20%;
+    font-size: 75%;
   }
 
   .Forms label {
-    font-size: 75%;
+    font-size: 80%;
   }
 
   .WordsPageSection table caption {
@@ -200,6 +200,7 @@
 
   .Forms {
     display: flex;
+    flex-direction: row;
     width: 85%;
     margin: 50px auto;
   }
@@ -275,27 +276,24 @@
   .Forms {
     display: flex;
     width: 90%;
-  }
-
-  .Filter, .Search {
-    width: 60%;
+    margin-top: 90px;
+    align-items: center;
   }
 
   .Filter select, .Search input {
-    font-size: 110%;
-    width: 55%;
-  }
-
-  .Filter select {
-    padding: 10px;
-  }
-
-  .Search input {
-    padding: 25px;
+    width: 50%;
   }
 
   .Filter label, .Search label {
-    font-size: 135%;
+    font-size: 120%;
+  }
+
+  .Filter select {
+    margin-bottom: 0;
+  }
+
+  .Search input {
+    padding: 17px;
   }
 
   .WordsPageSection table {
