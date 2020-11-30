@@ -36,10 +36,10 @@ class WordsPage extends Component {
           <tr key={name}>
             <td>
               <input 
-                onChange={event => onChecked(event, words)} 
+                onChange={event => onChecked(event, words, name)} 
                 name={name}
                 type="radio" 
-                checked={checkedInput === name}/>
+                checked={checkedInput === name || JSON.parse(localStorage.getItem('wordsName')) === name}/>
             </td>
             <td>{category}</td>
             <td>{name}</td>
@@ -141,7 +141,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     onLoadWords: () => dispatch(actionCreators.loadWords()),
-    onChecked: (event, words) => dispatch(actionCreators.checkedInput(event, words)),
+    onChecked: (event, words, name) => dispatch(actionCreators.checkedInput(event, words, name)),
     onFilter: category => dispatch(actionCreators.filterWords(category)),
     onClearFilters: () => dispatch(actionCreators.clearFilters()),
     onSearch: name => dispatch(actionCreators.searchWords(name))

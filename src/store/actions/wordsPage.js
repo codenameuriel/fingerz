@@ -2,11 +2,12 @@ import * as actionTypes from './actionTypes';
 import axios from 'axios';
 
 // access local storage
-export const checkedInput = (event, words) => {
+export const checkedInput = (event, words, name) => {
   return dispatch => {
     dispatch(setCheckedInput(event));
     dispatch(setWordList(words));
     localStorage.setItem('words', JSON.stringify(words));
+    localStorage.setItem('wordsName', JSON.stringify(name));
   };
 }
 
