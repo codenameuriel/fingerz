@@ -4,9 +4,9 @@ const initialState = {
   words: [],
   filteredWords: [],
   error: '',
-  checkedInput: null
+// 
+  checkedInput: JSON.parse(localStorage.getItem('wordsName')) ? JSON.parse(localStorage.getItem('wordsName')) : 'default'
 };
-
 const reducer = (state=initialState, action) => {
   switch (action.type) {
     case actionTypes.SET_CHECKED_INPUT:

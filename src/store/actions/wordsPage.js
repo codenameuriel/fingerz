@@ -57,10 +57,11 @@ const sortWords = words => {
     return 0;
   });
   
+  const defaultWords = words.filter(wordList => wordList.category === 'default');
   const handWords = words.filter(wordList => wordList.category === 'hand');
   const keyboardWords = words.filter(wordList => wordList.category === 'keyboard');
 
-  return [...keyboardWords, ...handWords, ...alphabetWords];
+  return [...defaultWords, ...keyboardWords, ...handWords, ...alphabetWords];
 };
 
 const getWords = async (dispatch) => {

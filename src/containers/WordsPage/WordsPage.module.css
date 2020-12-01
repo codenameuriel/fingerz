@@ -66,7 +66,7 @@
 .WordsPageSection button {
   width: 25%;
   padding: 10px;
-  background-color: #482b46;
+  background-color: black;
   font-size: 65%;
   border: none;
   border-radius: 5px;
@@ -74,8 +74,13 @@
   transition: background-color 0.2s;
 }
 
-.WordsPageSection button:hover {
-  background-color: #43013e;
+.WordsPageSection span {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.WordsPageSection button:hover > span {
+  background-color: #00c4c4;
 }
 
 .Forms select, input, .WordsPageSection thead {
@@ -263,7 +268,8 @@
 
   .WordsPageSection button {
     font-size: 100%;
-    width: 10%;
+    padding: 15px;
+    width: 150px;
   }
 }
 

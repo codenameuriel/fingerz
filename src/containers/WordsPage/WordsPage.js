@@ -33,7 +33,7 @@ class WordsPage extends Component {
          );
 
         return (
-          <tr key={name}>
+          <tr key={name} style={checkedInput && checkedInput === name ? {'backgroundColor' : '#523251'} : null}>
             <td>
               <input 
                 onChange={event => onChecked(event, words, name)} 
@@ -124,7 +124,7 @@ class WordsPage extends Component {
           disabled={!checkedInput}
           style={
             !checkedInput ? {cursor: 'not-allowed', backgroundColor: '#161629'} : null
-          }>Load</button>
+          }><span>Load</span></button>
       </section>
     );
   }
