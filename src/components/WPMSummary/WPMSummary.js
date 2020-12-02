@@ -37,7 +37,7 @@ const WPMSummary = props => {
     else accuracy = (correctlyTypedChars / typedChars) * 100;
     const accScore = Math.floor(accuracy);
 
-    return <p><span style={{color: '#00c4c4'}}>{accScore}</span>%</p>;
+    return <p><span style={{color: '#00c4c4'}}>{accScore < 0 ? 0 : accScore}</span>%</p>;
   };
 
   const renderAverageWPM = () => {
@@ -45,7 +45,9 @@ const WPMSummary = props => {
     const grossWPM = Math.floor((typedChars / 3.5) / 1);
     const netWPM = grossWPM - typoCount;
 
-    return <p>{netWPM}</p>; 
+    console.log(typeof netWPM);
+
+    return <p>{netWPM < 0 ? 0 : netWPM}</p>; 
   };
 
   const sort = (arr1, arr2) => {

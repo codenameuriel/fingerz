@@ -79,7 +79,7 @@
   border-radius: 5px;
 }
 
-.WordsPageSection button:hover > span {
+.WordsPageSection button:hover {
   background-color: #00c4c4;
 }
 

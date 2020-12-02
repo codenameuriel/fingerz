@@ -4,7 +4,6 @@ const initialState = {
   words: [],
   filteredWords: [],
   error: '',
-// 
   checkedInput: JSON.parse(localStorage.getItem('wordsName')) ? JSON.parse(localStorage.getItem('wordsName')) : 'default'
 };
 const reducer = (state=initialState, action) => {

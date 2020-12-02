@@ -124,7 +124,7 @@ class WordsPage extends Component {
           disabled={!checkedInput}
           style={
             !checkedInput ? {cursor: 'not-allowed', backgroundColor: '#161629'} : null
-          }><span>Load</span></button>
+          }>Load</button>
       </section>
     );
   }
