@@ -17,7 +17,7 @@ const Timer = props => {
     <div className={TimerStyles.Timer}>
       <p style={props.time < 10 ? { color: 'red' } : null}>{timeDisplay}</p>
       <IoIosRefresh className={TimerStyles.ResetIcon}
-        disable={!props.timerStarted} 
+        disable={(!props.timerStarted).toString()} 
         style={props.timerStarted ? null : { color: '#161629', cursor: 'not-allowed' }}
         onClick={() => {
           if (props.timerStarted) props.stopTimer(props.activeTimer)

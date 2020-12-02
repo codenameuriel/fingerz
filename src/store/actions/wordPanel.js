@@ -109,7 +109,7 @@ const calculateSpeed = (...args) => {
 };
 
 const updateSpeedCounter = dataObj => {
-  const { 
+  let { 
     counter, words, index, doneTime, numOfTypedChars, numOfTypos
    } = dataObj;
   const updatedCounter = {...counter};
