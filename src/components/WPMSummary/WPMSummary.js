@@ -45,8 +45,6 @@ const WPMSummary = props => {
     const grossWPM = Math.floor((typedChars / 3.5) / 1);
     const netWPM = grossWPM - typoCount;
 
-    console.log(typeof netWPM);
-
     return <p>{netWPM < 0 ? 0 : netWPM}</p>; 
   };
 
