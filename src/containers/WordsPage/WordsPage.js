@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actionCreators from '../../store/actions/index';
 import WordsPageStyles from './WordsPage.module.css';
+import Loader from '../../components/UI/Loader/Loader';
 
 class WordsPage extends Component {
   componentDidMount() {
@@ -97,8 +98,14 @@ class WordsPage extends Component {
     );
   }
 
+  renderLoader = () => {
+    const { words } = this.props;
+
+    return words.length < 1 ? <Loader /> : null;
+  }
+
   render() {
-    const { checkedInput } = this.props;
+    const { checkedInput, words } = this.props;
 
     return (
       <section className={WordsPageStyles.WordsPageSection}>
@@ -119,11 +126,12 @@ class WordsPage extends Component {
           </thead>
           <tbody>{this.renderTableBody()}</tbody>
         </table>
+        {this.renderLoader()}
         <button 
           onClick={this.onClick} 
-          disabled={!checkedInput}
+          disabled={words.length < 1 || !checkedInput}
           style={
-            !checkedInput ? {cursor: 'not-allowed', backgroundColor: '#161629'} : null
+            !checkedInput || words.length < 1 ? {cursor: 'not-allowed', backgroundColor: '#161629'} : null
           }>Load</button>
       </section>
     );
