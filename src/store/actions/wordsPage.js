@@ -66,8 +66,7 @@ const sortWords = words => {
 
 const getWords = async (dispatch) => {
   try {
-    // let words = await (await axios.get('https://fingerz-typing-app.herokuapp.com/wordlists')).data;
-    let words = await (await axios.get('localhost:4000/wordlists')).data;
+    let words = await (await axios.get('https://fingerz-typing-app.herokuapp.com/wordlists')).data;
     words = sortWords(words);
     dispatch(setWords(words));
   } catch (error) {
